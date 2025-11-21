@@ -1,0 +1,15 @@
+DEVELOPMENT
+- Add link scripts vào file index.html
+	+ <script src="popups/contact.js"></script>
+    + <script src="popups/about.js"></script>
+	+ ...
+
+
+
+CHỨC NĂNG
+
+- 03/11/2025: info có nhiều hình thì hiển thị 1 hình và có nút qua trái qua phải
+
+- 11/11/2025: thêm tên hiện vật dưới hình trong trang hiện vật
+
+- 20/11/2025: danh mục là list xổ xuống
