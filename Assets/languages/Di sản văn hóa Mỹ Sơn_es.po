@@ -1,0 +1,595 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Di sản văn hóa Mỹ Sơn\n"
+"PO-Revision-Date: 2025-11-21 15:29\n"
+"Language: es\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: \n"
+
+#: id=model_97574D71_9B35_F569_41E2_8AFDB7830602.label
+msgid "MysonMuseum_BothanNandin_final"
+msgstr ""
+
+#: id=model_97710F61_9B35_D568_41E1_5E415134E52F.label
+msgid "1_daithomysonE1_final"
+msgstr ""
+
+#: id=model_9753DF88_9B35_F5B8_41B3_E7001C25B4B2.label
+msgid "MysonMuseum_hoatiethoaco_final"
+msgstr ""
+
+#: id=model_979090FC_9B35_CB58_41DA_E9E2D0CA2D0D.label
+msgid "5_biada_final"
+msgstr ""
+
+#: id=model_97969069_9B35_CB78_41B0_FF30BC38C585.label
+msgid "03_shivamysonC1_final"
+msgstr ""
+
+#: id=Label_47125907_736F_B259_41D4_6F5EBCAC0607.text
+#: id=Label_C7B73E70_6C0C_F0B8_41CE_90D3A3A62D8A.text
+#: id=Label_6CFCB610_6DF5_9078_41DB_10BCB977314D.text
+msgid "<   1   2   3   4   5   ...   >"
+msgstr ""
+
+#: id=model_97D7CB1E_9B35_FEDB_41DC_C0BA7454C47C.label
+msgid "30_MysonSanctuaryB_Trucot_final"
+msgstr ""
+
+#: id=HTMLText_86486BE6_9B14_71C3_41DE_3107F96F3319.html
+msgid ""
+"<P ALIGN=\"center\" LEADING=\"91%\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"48px\" COLOR=\"#ffffff\"><B>LIÊN HỆ</B></FONT></FONT></P>"
+msgstr ""
+"<P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"25px\" COLOR=\"#dca937\">Project created by</FONT></FONT></P><P ALIGN=\"left\" LEADING=\"91%\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"55px\" COLOR=\"#ffffff\"><B>Lorem Ipsum</B></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"6px\" COLOR=\"#999999\"></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"14px\" COLOR=\"#999999\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas, libero eu vestibulum pulvinar, felis felis pharetra elit, nec vulputate tellus odio non nisl. Nunc elementum lorem nec purus ullamcorper, eget pretium sapien rutrum. Phasellus tempor condimentum metus eu sagittis.</FONT></FONT></P>"
+
+#: id=HTMLText_8606447B_9B14_56C1_41D2_FF8AB8B669EA.html
+#: id=HTMLText_74510EAF_6411_7F11_41B7_F2D642F12845.html
+msgid ""
+"<P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"20px\" COLOR=\"#ffffff\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent finibus elementum neque ut blandit. Aenean rutrum sem in purus egestas iaculis.</FONT></FONT></P>"
+msgstr ""
+"<P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"20px\" COLOR=\"#ffffff\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent finibus elementum neque ut blandit. Aenean rutrum sem in purus egestas iaculis.</FONT></FONT></P>"
+
+#: id=HTMLText_3846849D_79F3_C5F8_41DD_7E522E8E9329.html
+msgid ""
+"<P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"25px\" COLOR=\"#dca937\">Project created by</FONT></FONT></P><P ALIGN=\"left\" LEADING=\"91%\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"55px\" COLOR=\"#ffffff\"><B>Lorem Ipsum</B></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"6px\" COLOR=\"#999999\"></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"14px\" COLOR=\"#999999\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas, libero eu vestibulum pulvinar, felis felis pharetra elit, nec vulputate tellus odio non nisl. Nunc elementum lorem nec purus ullamcorper, eget pretium sapien rutrum. Phasellus tempor condimentum metus eu sagittis.</FONT></FONT></P>"
+msgstr ""
+"<P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"25px\" COLOR=\"#dca937\">Project created by</FONT></FONT></P><P ALIGN=\"left\" LEADING=\"91%\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"55px\" COLOR=\"#ffffff\"><B>Lorem Ipsum</B></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"6px\" COLOR=\"#999999\"></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"14px\" COLOR=\"#999999\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas, libero eu vestibulum pulvinar, felis felis pharetra elit, nec vulputate tellus odio non nisl. Nunc elementum lorem nec purus ullamcorper, eget pretium sapien rutrum. Phasellus tempor condimentum metus eu sagittis.</FONT></FONT></P>"
+
+#: id=model_97560CEB_9B35_FB79_41D2_57AB9CC32F80.label
+msgid "MysonMuseum_biadatheki12-13-03msd318_final"
+msgstr ""
+
+#: id=tour.description
+msgid ""
+"null"
+msgstr ""
+
+#: id=model_975A01B2_9B35_CDE8_41DB_DCB559145417.label
+msgid "MysonMuseum_trucuaF1_final"
+msgstr ""
+
+#: id=WebFrame_D1013A26_9D14_F243_41D1_B7CBC4B7135F.url
+msgid "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3839.7547422046305!2d108.12206571433317!3d15.764108451730927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314200815555551f%3A0x8baa2869b9f687b!2zS2h1IMSR4buBbiB0aMOhcCBN4bu5IFPGoW4!5e0!3m2!1svi!2s!4v1562141537747!5m2!1svi!2s"
+msgstr ""
+
+#: id=HTMLText_74195D79_6431_1DF1_41D6_64995F5D18F0.html
+#: id=HTMLText_8606D47C_9B14_56C7_41DD_761FFD152D9C.html
+msgid ""
+"<P TEXTSHADOW=\"1px 1px 7px rgba(0,0,0,0.44)\"  ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"15.000000000000002px\" COLOR=\"#ffffff\"><B>Fusce lobortis est fringilla odio suscipit, tincidunt convallis leo dictum. Phasellus aliquam finibus ex, nec tempus lorem bibendum sed. Vestibulum vel turpis in tellus imperdiet consectetur ut eu ligula. In ligula dui, condimentum ac magna ut, malesuada tempor libero. Phasellus nisi libero. </B></FONT></FONT></P>"
+msgstr ""
+"<P TEXTSHADOW=\"1px 1px 7px rgba(0,0,0,0.44)\"  ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"15.000000000000002px\" COLOR=\"#ffffff\"><B>Fusce lobortis est fringilla odio suscipit, tincidunt convallis leo dictum. Phasellus aliquam finibus ex, nec tempus lorem bibendum sed. Vestibulum vel turpis in tellus imperdiet consectetur ut eu ligula. In ligula dui, condimentum ac magna ut, malesuada tempor libero. Phasellus nisi libero. </B></FONT></FONT></P>"
+
+#: id=model_97953012_9B35_CAA8_41D2_4772A3E80BEE.label
+msgid "2_phudieudansinhbrahma_final"
+msgstr ""
+
+#: id=HTMLText_8ADCD080_A299_97C5_41D3_83E85792F5A8.html
+msgid ""
+"<P TEXTSHADOW=\"0px 0px 10px rgba(0,0,0,0.65)\"  ALIGN=\"left\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"45.99999999999999px\" COLOR=\"#ffffff\"><B>{{title}}</B></FONT></FONT></P>"
+msgstr ""
+"<P TEXTSHADOW=\"0px 0px 10px rgba(0,0,0,0.65)\"  ALIGN=\"left\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"45.99999999999999px\" COLOR=\"#ffffff\"><B>{{title}}</B></FONT></FONT></P>"
+
+#: id=model_97902143_9B35_CAA8_41E3_61C6111A64B7.label
+msgid "6_biada_final"
+msgstr ""
+
+#: id=model_97A6D905_9B35_FAA9_41CE_A74C1F3AA567.label
+msgid "27_laskmi_final"
+msgstr ""
+
+#: id=model_9745526A_9B35_CF78_41DD_AE87593B6A19.label
+msgid "MysonMuseum_warehousephudieu_final"
+msgstr ""
+
+#: id=model_9740B2AE_9B35_CFF8_41D8_97DEF173E9F8.label
+msgid "MysonMuseum_warehousephudieu2_final"
+msgstr ""
+
+#: id=model_97842526_9B35_CAEB_41D6_28A27276E74A.label
+msgid "17_chienbinhbay_final"
+msgstr ""
+
+#: id=model_975FF12F_9B35_CAF8_41E1_EEDF8888710E.label
+msgid "MysonMuseum_trucuaC2 (1)_final"
+msgstr ""
+
+#: id=Button_8693EA79_9B1D_D2C1_41C3_4131F89920A5.label
+msgid "Liên hệ"
+msgstr ""
+
+#: id=model_97D4DA68_9B35_FF67_41CA_D99D3F3ED2F4.label
+msgid "29_MysonSanctuaryB_Trucot_final"
+msgstr ""
+
+#: id=model_97B2877E_9B35_F55B_41D0_582C9B534980.label
+msgid "24_vattrangtri_final"
+msgstr ""
+
+#: id=HTMLText_BE70D482_A1ED_7F4D_41D9_9540EE82595A.html
+msgid ""
+"<P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"30px\" COLOR=\"#ffffff\"><B>Lorem Ipsum</B></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"14px\" COLOR=\"#ffffff\"><B></B></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"14px\" COLOR=\"#999999\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin velit nisi, eu rhoncus nunc finibus id. Phasellus ex lacus, luctus vel tempor sed, interdum at orci. Nulla vitae vehicula lorem, in finibus lorem. Aenean aliquam lacus in tempor semper. Ut vel augue mi. Sed fermentum sodales porta. Donec convallis tincidunt efficitur. Duis pulvinar, nisl in porta sodales, nunc mauris euismod dolor, in euismod est arcu sed risus. Mauris lacus nibh, aliquet ac tortor nec, blandit fermentum magna. Curabitur dolor risus, vestibulum in elementum non, sagittis non odio. Vestibulum ut venenatis nisi. Donec malesuada porttitor odio, dignissim blandit est.</FONT></FONT></P><P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"14px\" COLOR=\"#999999\"></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"14px\" COLOR=\"#999999\">Nam accumsan arcu a magna vestibulum finibus. Etiam at mi eu eros mattis lacinia. Nam eleifend eros eget elit rutrum consequat. Curabitur eget lectus in nunc rutrum finibus. Nunc maximus, diam sed viverra viverra, sapien eros vehicula erat, nec efficitur lacus mi non felis. Etiam vehicula lacinia est, vitae fringilla nulla mattis a. Proin sit amet nisi augue. Curabitur finibus mattis lacinia. Nullam elementum arcu eget sodales dignissim. In augue ligula, viverra ut diam eu, consequat dignissim tortor. Nunc eget dignissim magna. Donec condimentum vehicula enim rutrum finibus.</FONT></FONT></P><P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"14px\" COLOR=\"#999999\"></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"14px\" COLOR=\"#999999\">Nam vitae tempor est, quis bibendum nisl. Integer et est tincidunt, malesuada nisl varius, lobortis leo. In malesuada lacus a tristique faucibus. Nullam imperdiet ut nunc ac fermentum. Etiam aliquet, leo sed pellentesque scelerisque, magna sem congue orci, iaculis ultricies odio dui fringilla ex. Fusce tempus, mi ac facilisis tempor, tortor velit ultricies erat, sit amet sagittis sem ipsum iaculis ligula. In hendrerit ullamcorper tincidunt. Duis at est ut nisl congue elementum. Nam id suscipit neque. Mauris tincidunt magna a convallis sagittis. Pellentesque dapibus quam vitae luctus fringilla. Pellentesque convallis quam sed lorem luctus, a porttitor mi fringilla. Aenean congue risus vel metus pellentesque cursus. Fusce laoreet sapien non est cursus ornare. Phasellus in fringilla sem, eget cursus felis.</FONT></FONT></P>"
+msgstr ""
+"<P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"30px\" COLOR=\"#ffffff\"><B>Lorem Ipsum</B></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"14px\" COLOR=\"#ffffff\"><B></B></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"14px\" COLOR=\"#999999\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin velit nisi, eu rhoncus nunc finibus id. Phasellus ex lacus, luctus vel tempor sed, interdum at orci. Nulla vitae vehicula lorem, in finibus lorem. Aenean aliquam lacus in tempor semper. Ut vel augue mi. Sed fermentum sodales porta. Donec convallis tincidunt efficitur. Duis pulvinar, nisl in porta sodales, nunc mauris euismod dolor, in euismod est arcu sed risus. Mauris lacus nibh, aliquet ac tortor nec, blandit fermentum magna. Curabitur dolor risus, vestibulum in elementum non, sagittis non odio. Vestibulum ut venenatis nisi. Donec malesuada porttitor odio, dignissim blandit est.</FONT></FONT></P><P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"14px\" COLOR=\"#999999\"></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"14px\" COLOR=\"#999999\">Nam accumsan arcu a magna vestibulum finibus. Etiam at mi eu eros mattis lacinia. Nam eleifend eros eget elit rutrum consequat. Curabitur eget lectus in nunc rutrum finibus. Nunc maximus, diam sed viverra viverra, sapien eros vehicula erat, nec efficitur lacus mi non felis. Etiam vehicula lacinia est, vitae fringilla nulla mattis a. Proin sit amet nisi augue. Curabitur finibus mattis lacinia. Nullam elementum arcu eget sodales dignissim. In augue ligula, viverra ut diam eu, consequat dignissim tortor. Nunc eget dignissim magna. Donec condimentum vehicula enim rutrum finibus.</FONT></FONT></P><P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"14px\" COLOR=\"#999999\"></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"14px\" COLOR=\"#999999\">Nam vitae tempor est, quis bibendum nisl. Integer et est tincidunt, malesuada nisl varius, lobortis leo. In malesuada lacus a tristique faucibus. Nullam imperdiet ut nunc ac fermentum. Etiam aliquet, leo sed pellentesque scelerisque, magna sem congue orci, iaculis ultricies odio dui fringilla ex. Fusce tempus, mi ac facilisis tempor, tortor velit ultricies erat, sit amet sagittis sem ipsum iaculis ligula. In hendrerit ullamcorper tincidunt. Duis at est ut nisl congue elementum. Nam id suscipit neque. Mauris tincidunt magna a convallis sagittis. Pellentesque dapibus quam vitae luctus fringilla. Pellentesque convallis quam sed lorem luctus, a porttitor mi fringilla. Aenean congue risus vel metus pellentesque cursus. Fusce laoreet sapien non est cursus ornare. Phasellus in fringilla sem, eget cursus felis.</FONT></FONT></P>"
+
+#: id=model_97557CA7_9B35_FBE9_41DD_6C4AE822B9CD.label
+msgid "MuseumMyson_dinhchopnhon_final"
+msgstr ""
+
+#: id=Button_01108E24_6C3C_7058_41D1_8086FE7DD597.label
+#: id=Label_471E78F5_736F_B3B9_41B5_45795192EC99.text
+msgid "Phục dựng"
+msgstr ""
+
+#: id=model_979DE2CC_9B35_CFBF_41CE_12BD78AC29C9.label
+msgid "10_durga_final"
+msgstr ""
+
+#: id=model_97B8E876_9B35_FB6B_41D9_5A729BA2EB6E.label
+msgid "26_MysonSanctuaryB_Trucot_final"
+msgstr ""
+
+#: id=HTMLText_B47A9DEC_AC64_EB51_41DF_FC0F3D77C50E.html
+msgid ""
+"<P TEXTSHADOW=\"0px 2px 8px rgba(0,0,0,0.6)\"  ALIGN=\"center\" LEADING=\"80%\"><FONT FACE=\"Arial\" SIZE=\"1.7640573318632833vmin\" COLOR=\"#000000\" LETTERSPACING=\"0vmin\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"5.292171995589858vmin\" COLOR=\"#dca937\">Consectetur adipiscing</FONT></FONT></P><P TEXTSHADOW=\"0px 2px 8px rgba(0,0,0,0.6)\"  ALIGN=\"center\" LEADING=\"80%\"><FONT FACE=\"Arial\" SIZE=\"1.7640573318632833vmin\" COLOR=\"#000000\" LETTERSPACING=\"0vmin\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"13.671444321940465vmin\" COLOR=\"#ffffff\">Fusce nec</FONT></FONT></P>"
+msgstr ""
+"<P TEXTSHADOW=\"0px 2px 8px rgba(0,0,0,0.6)\"  ALIGN=\"center\" LEADING=\"80%\"><FONT FACE=\"Arial\" SIZE=\"1.7640573318632855vmin\" COLOR=\"#000000\" LETTERSPACING=\"0vmin\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"5.2921719955898565vmin\" COLOR=\"#dca937\">Consectetur adipiscing</FONT></FONT></P><P TEXTSHADOW=\"0px 2px 8px rgba(0,0,0,0.6)\"  ALIGN=\"center\" LEADING=\"80%\"><FONT FACE=\"Arial\" SIZE=\"1.7640573318632855vmin\" COLOR=\"#000000\" LETTERSPACING=\"0vmin\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"13.67144432194047vmin\" COLOR=\"#ffffff\">Fusce nec</FONT></FONT></P>"
+
+#: id=model_975EB0EC_9B35_CB78_41C1_CF358F9C5DF2.label
+msgid "MysonMuseum_makara_final"
+msgstr ""
+
+#: id=model_9799E44F_9B35_CAB9_4192_852F9E49C6A7.label
+msgid "14_thanphuonghuong_agni_final"
+msgstr ""
+
+#: id=model_9798E407_9B35_CAA9_41C0_5DBE07B1B9EE.label
+msgid "13_thanphuonghuong_VAYU_final"
+msgstr ""
+
+#: id=HTMLText_9AADBD4A_A26D_29DD_41E1_E9D1F18E86E1.html
+msgid ""
+"<P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"30px\" COLOR=\"#ffffff\"><B>Lorem Ipsum</B></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"14px\" COLOR=\"#ffffff\"><B></B></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"14px\" COLOR=\"#999999\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin velit nisi, eu rhoncus nunc finibus id. Phasellus ex lacus, luctus vel tempor sed, interdum at orci. Nulla vitae vehicula lorem, in finibus lorem. Aenean aliquam lacus in tempor semper. Ut vel augue mi. Sed fermentum sodales porta. Donec convallis tincidunt efficitur. Duis pulvinar, nisl in porta sodales, nunc mauris euismod dolor, in euismod est arcu sed risus. Mauris lacus nibh, aliquet ac tortor nec, blandit fermentum magna. Curabitur dolor risus, vestibulum in elementum non, sagittis non odio. Vestibulum ut venenatis nisi. Donec malesuada porttitor odio, dignissim blandit est.</FONT></FONT></P>"
+msgstr ""
+"<P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"30px\" COLOR=\"#ffffff\"><B>Lorem Ipsum</B></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"14px\" COLOR=\"#ffffff\"><B></B></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"14px\" COLOR=\"#999999\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin velit nisi, eu rhoncus nunc finibus id. Phasellus ex lacus, luctus vel tempor sed, interdum at orci. Nulla vitae vehicula lorem, in finibus lorem. Aenean aliquam lacus in tempor semper. Ut vel augue mi. Sed fermentum sodales porta. Donec convallis tincidunt efficitur. Duis pulvinar, nisl in porta sodales, nunc mauris euismod dolor, in euismod est arcu sed risus. Mauris lacus nibh, aliquet ac tortor nec, blandit fermentum magna. Curabitur dolor risus, vestibulum in elementum non, sagittis non odio. Vestibulum ut venenatis nisi. Donec malesuada porttitor odio, dignissim blandit est.</FONT></FONT></P>"
+
+#: id=model_978EE657_9B35_F6A9_41DE_4F7926FF8A3E.label
+msgid "21_detru_final"
+msgstr ""
+
+#: id=model_978255BB_9B35_F5D9_41E2_D27A3300B2AD.label
+msgid "19_thanphuonghuong_isana_final"
+msgstr ""
+
+#: id=model_97DDFBB1_9B35_FDE9_41DE_A4C20CDC2E4A.label
+msgid "31_vattrangtri_final"
+msgstr ""
+
+#: id=HTMLText_6E8D37B5_799C_14EB_418D_221B24F567D3.html
+msgid ""
+"<P ALIGN=\"left\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000007px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"30px\" COLOR=\"#ffffff\">Highlights</FONT></FONT></P>"
+msgstr ""
+"<P ALIGN=\"left\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000007px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"30px\" COLOR=\"#ffffff\">Highlights</FONT></FONT></P>"
+
+#: id=model_9787056B_9B35_F579_41E1_0ADA99C6C13B.label
+msgid "18_thanphuonghuong_kubera_final"
+msgstr ""
+
+#: id=model_979AF496_9B35_CBAB_41D9_E568AC8DD91F.label
+msgid "15_thanphuonghuong_varuna_final"
+msgstr ""
+
+#: id=model_6B769250_7B6C_A72C_41CD_312EC5D41497.label
+#: id=model_78B5E789_7671_0502_41D1_4876D80EFFCA.label
+msgid "Tháp G"
+msgstr ""
+
+#: id=model_97AE89D7_9B35_FDA9_41DB_C5D4E042142A.label
+msgid "28_MysonSanctuaryB_Trucot_final"
+msgstr ""
+
+#: id=model_97534FCA_9B35_F5B8_41C9_5D6AB1B3BE42.label
+msgid "MysonMuseum_hoavanhoaco_final"
+msgstr ""
+
+#: id=HTMLText_983C27E9_A2AB_F8DF_41C0_4C1BFE9F9E39.html
+#: id=HTMLText_9B9F3437_A2AB_FFB3_41DF_40CEA2B5B02C.html
+#: id=HTMLText_6E120794_7994_14A9_41BB_2CE3E0F7B001.html
+#: id=HTMLText_9BF1DA81_A2AB_EB4F_41E0_60CEC5A05837.html
+#: id=HTMLText_9BE485E5_A2AB_F8D7_41E3_784B25B10E6E.html
+#: id=HTMLText_9BE18773_A2AB_F9B3_41E3_0675F0AF1B88.html
+#: id=HTMLText_6EFADF74_799C_1469_41CD_B87105967661.html
+#: id=HTMLText_6F18F73E_799C_15D9_41B4_CEFDBD9BBE03.html
+#: id=HTMLText_6F254460_799C_1469_41AC_424128E883FC.html
+#: id=HTMLText_6F06D737_799C_15D7_41C1_A5DE85E53790.html
+#: id=HTMLText_662212C4_7E96_534A_41DD_0BE91F72E9C5.html
+#: id=HTMLText_6F269462_799C_1469_41A0_BA4528D838C2.html
+msgid ""
+"<P ALIGN=\"center\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000007px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"18px\"><B>Lorem Ipsum</B></FONT></FONT></P>"
+msgstr ""
+"<P ALIGN=\"center\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000007px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"18px\"><B>Lorem Ipsum</B></FONT></FONT></P>"
+
+#: id=Button_057EE9D5_6C3C_F3F8_41AB_8110FCE534DC.label
+msgid "Hiện vật"
+msgstr ""
+
+#: id=Button_BE28011F_A590_7760_41D3_6216B9680A80.label
+msgid "En"
+msgstr ""
+
+#: id=tour.name
+msgid "Di sản văn hóa Mỹ Sơn"
+msgstr ""
+
+#: id=Button_8E0B1A69_9B1C_52C1_41D8_9F407E957BAE.label
+msgid "Phù điêu"
+msgstr ""
+
+#: id=model_97572DB9_9B35_F5D9_41D7_8DA7C2A487CB.label
+msgid "MysonMuseum_Bothannandin2_final"
+msgstr ""
+
+#: id=HTMLText_D3B22BCF_FA51_002B_41DC_64912BC5554F.html
+msgid ""
+"<P ALIGN=\"center\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"50px\" COLOR=\"#dca937\"><B>Coming soon</B></FONT></FONT></P><P ALIGN=\"center\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"30.000000000000004px\" COLOR=\"#ffffff\">Measurements of distances and areas</FONT></FONT></P>"
+msgstr ""
+"<P ALIGN=\"center\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"50px\" COLOR=\"#dca937\"><B>Coming soon</B></FONT></FONT></P><P ALIGN=\"center\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"30px\" COLOR=\"#ffffff\">Measurements of distances and areas</FONT></FONT></P>"
+
+#: id=model_979FD35A_9B35_CD5B_41D2_DAB4E5C63467.label
+msgid "12_thanphuonghuong_vayu_final"
+msgstr ""
+
+#: id=model_97BBE8BF_9B35_FBD9_4185_F249B14F3993.label
+msgid "26_vattrangtri_final"
+msgstr ""
+
+#: id=model_97508E07_9B35_F6A9_41DC_A2C23F6450AF.label
+msgid "MysonMuseum_chimhamsa_final"
+msgstr ""
+
+#: id=HTMLText_4A40F931_79B7_CCC8_41AB_249FB0D5B8D4.html
+#: id=HTMLText_8607C47A_9B14_56C3_41B2_9B4F7E3B26D2.html
+msgid ""
+"<P TEXTSHADOW=\"1px 1px 15px rgba(0,0,0,0.97)\"  ALIGN=\"left\" LEADING=\"80%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"50.00000000000001px\" COLOR=\"#dca937\">Lorem Ipsum</FONT></FONT></P><P TEXTSHADOW=\"1px 1px 15px rgba(0,0,0,0.97)\"  ALIGN=\"left\" LEADING=\"80%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"136px\" COLOR=\"#ffffff\">Dolor</FONT></FONT></P>"
+msgstr ""
+"<P TEXTSHADOW=\"1px 1px 15px rgba(0,0,0,0.97)\"  ALIGN=\"left\" LEADING=\"80%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"50.00000000000001px\" COLOR=\"#dca937\">Lorem Ipsum</FONT></FONT></P><P TEXTSHADOW=\"1px 1px 15px rgba(0,0,0,0.97)\"  ALIGN=\"left\" LEADING=\"80%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"136px\" COLOR=\"#ffffff\">Dolor</FONT></FONT></P>"
+
+#: id=model_97D8DBF9_9B35_FD59_41D1_FB6025B427D4.label
+msgid "32_laskmi_final"
+msgstr ""
+
+#: id=Button_6226F019_EBFC_DF58_41EC_19C1F30D235D.label
+msgid "Skip Intro"
+msgstr "Skip Intro"
+
+#: id=LinkBehaviour_44E19287_0916_D39F_41A2_73D80DF6FEF8.source
+msgid "https://g.page/Chokoladobana?share"
+msgstr "https://g.page/Chokoladobana?share"
+
+#: id=LinkBehaviour_4A46D27F_0976_536F_419E_202C2955BDC1.source
+#: id=LinkBehaviour_2E3F5F29_0911_D290_418F_DFFBC5F997C0.source
+msgid "https://www.loremipsum.com"
+msgstr "https://www.loremipsum.com"
+
+#: id=model_97D2FB64_9B35_FD6F_41DC_2F3F5A1DF1CD.label
+msgid "30_vattrangtri_final"
+msgstr ""
+
+#: id=Label_6CFCB5FE_6DF5_93A8_41D3_5EEF007A882F.text
+msgid "Hiện vật/ Đá khắc"
+msgstr ""
+
+#: id=model_979B84DD_9B35_CB59_4177_0D56893BF4B6.label
+msgid "16_Skanda_final"
+msgstr ""
+
+#: id=HTMLText_BFB16597_AC5B_3BFE_41E2_2B378CA594A2.html
+msgid ""
+"<P TEXTSHADOW=\"0px 2px 8px rgba(0,0,0,0.6)\"  ALIGN=\"center\" LEADING=\"80%\"><FONT FACE=\"Arial\" SIZE=\"1.7640573318632833vmin\" COLOR=\"#000000\" LETTERSPACING=\"0vmin\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"5.292171995589858vmin\" COLOR=\"#dca937\">Lorem Ipsum dolor</FONT></FONT></P><P TEXTSHADOW=\"0px 2px 8px rgba(0,0,0,0.6)\"  ALIGN=\"center\" LEADING=\"80%\"><FONT FACE=\"Arial\" SIZE=\"1.7640573318632833vmin\" COLOR=\"#000000\" LETTERSPACING=\"0vmin\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"13.671444321940465vmin\" COLOR=\"#ffffff\">Sit Amet</FONT></FONT></P>"
+msgstr ""
+"<P TEXTSHADOW=\"0px 2px 8px rgba(0,0,0,0.6)\"  ALIGN=\"center\" LEADING=\"80%\"><FONT FACE=\"Arial\" SIZE=\"1.7640573318632855vmin\" COLOR=\"#000000\" LETTERSPACING=\"0vmin\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"5.2921719955898565vmin\" COLOR=\"#dca937\">Lorem Ipsum dolor</FONT></FONT></P><P TEXTSHADOW=\"0px 2px 8px rgba(0,0,0,0.6)\"  ALIGN=\"center\" LEADING=\"80%\"><FONT FACE=\"Arial\" SIZE=\"1.7640573318632855vmin\" COLOR=\"#000000\" LETTERSPACING=\"0vmin\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"13.67144432194047vmin\" COLOR=\"#ffffff\">Sit Amet</FONT></FONT></P>"
+
+#: id=model_975CA010_9B35_CAA8_41E3_1419F915203C.label
+msgid "MysonMuseum_KALA1_final"
+msgstr ""
+
+#: id=Button_8F274BD1_9B15_D1C1_41DC_D9FE3B86D14B.label
+msgid "Tượng thần"
+msgstr ""
+
+#: id=model_97A1C94F_9B35_FAB9_41E1_91887BB935C6.label
+msgid "27_MysonSanctuaryB_Trucot_final"
+msgstr ""
+
+#: id=HTMLText_6622F2C6_7E96_5356_41D7_0EE69BE06F8C.html
+#: id=HTMLText_6EFDDF74_799C_1469_4179_81096269CE56.html
+#: id=HTMLText_6F18A740_799C_15A9_41A7_307E681BFB9B.html
+#: id=HTMLText_9BE1E774_A2AB_F9B5_41A0_F404CDD4FD40.html
+#: id=HTMLText_6A3BAE2F_798C_37F7_41C5_FADE9ECE7DFE.html
+#: id=HTMLText_6F264463_799C_146F_41BD_389FA8EC808F.html
+#: id=HTMLText_9BF13A82_A2AB_EB4D_41C6_2641CFB1164A.html
+#: id=HTMLText_6F068739_799C_15DB_41A1_1951A4DD2BA2.html
+#: id=HTMLText_983D97E9_A2AB_F8DF_41BA_6078685CCF1E.html
+#: id=HTMLText_9BE4E5E6_A2AB_F8D5_41B7_F3954CEA0973.html
+#: id=HTMLText_6F252461_799C_146B_41CA_FC6B8208D3F5.html
+#: id=HTMLText_9B989438_A2AB_FFBD_41CC_AA31411199EB.html
+msgid ""
+"<P ALIGN=\"center\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"12px\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </FONT></FONT></P>"
+msgstr ""
+"<P ALIGN=\"center\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"12px\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </FONT></FONT></P>"
+
+#: id=model_979C8285_9B35_CFA9_41DD_B2DCEB21DF0E.label
+msgid "9_tuongganesa_final"
+msgstr ""
+
+#: id=HTMLText_703D37FC_6038_D7B3_41D5_A149EE2F89A2.html
+#: id=HTMLText_86073479_9B14_56C1_41CE_CA50C646990A.html
+msgid ""
+"<P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"19.999999999999993px\" COLOR=\"#ffffff\"><B>Lorem Ipsum:</B></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"12.999999999999998px\" COLOR=\"#ffffff\"><B></B></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"12.999999999999998px\" COLOR=\"#999999\">ULorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent finibus elementum neque ut blandit. Aenean rutrum sem in purus egestas iaculis. Fusce lobortis est fringilla odio suscipit, tincidunt convallis leo dictum. Phasellus aliquam finibus ex, nec tempus lorem bibendum sed. Vestibulum vel turpis in tellus imperdiet consectetur ut eu ligula. In ligula dui, condimentum ac magna ut, malesuada tempor libero. Phasellus nisi libero, laoreet et rhoncus eget, pellentesque at nisi. Fusce bibendum quis lectus viverra congue. Etiam tellus orci, scelerisque sed erat vitae, aliquam lobortis risus. In hac habitasse platea dictumst. Vivamus vel feugiat tellus, sed faucibus risus.</FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"12.999999999999998px\" COLOR=\"#999999\"></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"12.999999999999998px\" COLOR=\"#999999\">Suspendisse tristique enim quis convallis mollis. Suspendisse tempor pretium lacus pellentesque fermentum. Phasellus malesuada ultricies ex, ut mollis tellus. Integer vestibulum urna erat, at laoreet neque sodales ac. Pellentesque nec bibendum lorem. Vestibulum imperdiet, velit nec rutrum malesuada, orci felis rutrum mauris, vitae congue risus tellus id nisi. Integer pulvinar sapien dui, sit amet iaculis justo pharetra ac. Nunc sit amet enim sit amet metus hendrerit egestas. Morbi a nulla lectus. Duis in quam sed sapien sollicitudin cursus vel non leo. Duis id tortor nec quam laoreet faucibus.</FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"12.999999999999998px\" COLOR=\"#999999\"></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"19.999999999999993px\" COLOR=\"#ffffff\"><B>Lorem Ipsum:</B></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"12.999999999999998px\" COLOR=\"#ffffff\"><B></B></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"12.999999999999998px\" COLOR=\"#999999\">ULorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent finibus elementum neque ut blandit. Aenean rutrum sem in purus egestas iaculis. Fusce lobortis est fringilla odio suscipit, tincidunt convallis leo dictum. Phasellus aliquam finibus ex, nec tempus lorem bibendum sed. Vestibulum vel turpis in tellus imperdiet consectetur ut eu ligula. In ligula dui, condimentum ac magna ut, malesuada tempor libero. Phasellus nisi libero, laoreet et rhoncus eget, pellentesque at nisi. Fusce bibendum quis lectus viverra congue. Etiam tellus orci, scelerisque sed erat vitae, aliquam lobortis risus. In hac habitasse platea dictumst. Vivamus vel feugiat tellus, sed faucibus risus.</FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"12.999999999999998px\" COLOR=\"#999999\"></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"12.999999999999998px\" COLOR=\"#999999\">Suspendisse tristique enim quis convallis mollis. Suspendisse tempor pretium lacus pellentesque fermentum. Phasellus malesuada ultricies ex, ut mollis tellus. Integer vestibulum urna erat, at laoreet neque sodales ac. Pellentesque nec bibendum lorem. Vestibulum imperdiet, velit nec rutrum malesuada, orci felis rutrum mauris, vitae congue risus tellus id nisi. Integer pulvinar sapien dui, sit amet iaculis justo pharetra ac. Nunc sit amet enim sit amet metus hendrerit egestas. Morbi a nulla lectus. Duis in quam sed sapien sollicitudin cursus vel non leo. Duis id tortor nec quam laoreet faucibus.</FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"12.999999999999998px\" COLOR=\"#999999\"></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"19.999999999999993px\" COLOR=\"#ffffff\"><B>Lorem Ipsum:</B></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"12.999999999999998px\" COLOR=\"#ffffff\"><B></B></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"12.999999999999998px\" COLOR=\"#999999\">ULorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent finibus elementum neque ut blandit. Aenean rutrum sem in purus egestas iaculis. Fusce lobortis est fringilla odio suscipit, tincidunt convallis leo dictum. Phasellus aliquam finibus ex, nec tempus lorem bibendum sed. Vestibulum vel turpis in tellus imperdiet consectetur ut eu ligula. In ligula dui, condimentum ac magna ut, malesuada tempor libero. Phasellus nisi libero, laoreet et rhoncus eget, pellentesque at nisi. Fusce bibendum quis lectus viverra congue. Etiam tellus orci, scelerisque sed erat vitae, aliquam lobortis risus. In hac habitasse platea dictumst. Vivamus vel feugiat tellus, sed faucibus risus.</FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"12.999999999999998px\" COLOR=\"#999999\"></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"12.999999999999998px\" COLOR=\"#999999\">Suspendisse tristique enim quis convallis mollis. Suspendisse tempor pretium lacus pellentesque fermentum. Phasellus malesuada ultricies ex, ut mollis tellus. Integer vestibulum urna erat, at laoreet neque sodales ac. Pellentesque nec bibendum lorem. Vestibulum imperdiet, velit nec rutrum malesuada, orci felis rutrum mauris, vitae congue risus tellus id nisi. Integer pulvinar sapien dui, sit amet iaculis justo pharetra ac. Nunc sit amet enim sit amet metus hendrerit egestas. Morbi a nulla lectus. Duis in quam sed sapien sollicitudin cursus vel non leo. Duis id tortor nec quam laoreet faucibus.</FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"12.999999999999998px\" COLOR=\"#999999\"></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"12.999999999999998px\" COLOR=\"#999999\"></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"12.999999999999998px\" COLOR=\"#999999\"></FONT></FONT></P>"
+msgstr ""
+"<P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"19.999999999999993px\" COLOR=\"#ffffff\"><B>Lorem Ipsum:</B></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"12.999999999999998px\" COLOR=\"#ffffff\"><B></B></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"12.999999999999998px\" COLOR=\"#999999\">ULorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent finibus elementum neque ut blandit. Aenean rutrum sem in purus egestas iaculis. Fusce lobortis est fringilla odio suscipit, tincidunt convallis leo dictum. Phasellus aliquam finibus ex, nec tempus lorem bibendum sed. Vestibulum vel turpis in tellus imperdiet consectetur ut eu ligula. In ligula dui, condimentum ac magna ut, malesuada tempor libero. Phasellus nisi libero, laoreet et rhoncus eget, pellentesque at nisi. Fusce bibendum quis lectus viverra congue. Etiam tellus orci, scelerisque sed erat vitae, aliquam lobortis risus. In hac habitasse platea dictumst. Vivamus vel feugiat tellus, sed faucibus risus.</FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"12.999999999999998px\" COLOR=\"#999999\"></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"12.999999999999998px\" COLOR=\"#999999\">Suspendisse tristique enim quis convallis mollis. Suspendisse tempor pretium lacus pellentesque fermentum. Phasellus malesuada ultricies ex, ut mollis tellus. Integer vestibulum urna erat, at laoreet neque sodales ac. Pellentesque nec bibendum lorem. Vestibulum imperdiet, velit nec rutrum malesuada, orci felis rutrum mauris, vitae congue risus tellus id nisi. Integer pulvinar sapien dui, sit amet iaculis justo pharetra ac. Nunc sit amet enim sit amet metus hendrerit egestas. Morbi a nulla lectus. Duis in quam sed sapien sollicitudin cursus vel non leo. Duis id tortor nec quam laoreet faucibus.</FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"12.999999999999998px\" COLOR=\"#999999\"></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"19.999999999999993px\" COLOR=\"#ffffff\"><B>Lorem Ipsum:</B></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"12.999999999999998px\" COLOR=\"#ffffff\"><B></B></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"12.999999999999998px\" COLOR=\"#999999\">ULorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent finibus elementum neque ut blandit. Aenean rutrum sem in purus egestas iaculis. Fusce lobortis est fringilla odio suscipit, tincidunt convallis leo dictum. Phasellus aliquam finibus ex, nec tempus lorem bibendum sed. Vestibulum vel turpis in tellus imperdiet consectetur ut eu ligula. In ligula dui, condimentum ac magna ut, malesuada tempor libero. Phasellus nisi libero, laoreet et rhoncus eget, pellentesque at nisi. Fusce bibendum quis lectus viverra congue. Etiam tellus orci, scelerisque sed erat vitae, aliquam lobortis risus. In hac habitasse platea dictumst. Vivamus vel feugiat tellus, sed faucibus risus.</FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"12.999999999999998px\" COLOR=\"#999999\"></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"12.999999999999998px\" COLOR=\"#999999\">Suspendisse tristique enim quis convallis mollis. Suspendisse tempor pretium lacus pellentesque fermentum. Phasellus malesuada ultricies ex, ut mollis tellus. Integer vestibulum urna erat, at laoreet neque sodales ac. Pellentesque nec bibendum lorem. Vestibulum imperdiet, velit nec rutrum malesuada, orci felis rutrum mauris, vitae congue risus tellus id nisi. Integer pulvinar sapien dui, sit amet iaculis justo pharetra ac. Nunc sit amet enim sit amet metus hendrerit egestas. Morbi a nulla lectus. Duis in quam sed sapien sollicitudin cursus vel non leo. Duis id tortor nec quam laoreet faucibus.</FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"12.999999999999998px\" COLOR=\"#999999\"></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"19.999999999999993px\" COLOR=\"#ffffff\"><B>Lorem Ipsum:</B></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"12.999999999999998px\" COLOR=\"#ffffff\"><B></B></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"12.999999999999998px\" COLOR=\"#999999\">ULorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent finibus elementum neque ut blandit. Aenean rutrum sem in purus egestas iaculis. Fusce lobortis est fringilla odio suscipit, tincidunt convallis leo dictum. Phasellus aliquam finibus ex, nec tempus lorem bibendum sed. Vestibulum vel turpis in tellus imperdiet consectetur ut eu ligula. In ligula dui, condimentum ac magna ut, malesuada tempor libero. Phasellus nisi libero, laoreet et rhoncus eget, pellentesque at nisi. Fusce bibendum quis lectus viverra congue. Etiam tellus orci, scelerisque sed erat vitae, aliquam lobortis risus. In hac habitasse platea dictumst. Vivamus vel feugiat tellus, sed faucibus risus.</FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"12.999999999999998px\" COLOR=\"#999999\"></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"12.999999999999998px\" COLOR=\"#999999\">Suspendisse tristique enim quis convallis mollis. Suspendisse tempor pretium lacus pellentesque fermentum. Phasellus malesuada ultricies ex, ut mollis tellus. Integer vestibulum urna erat, at laoreet neque sodales ac. Pellentesque nec bibendum lorem. Vestibulum imperdiet, velit nec rutrum malesuada, orci felis rutrum mauris, vitae congue risus tellus id nisi. Integer pulvinar sapien dui, sit amet iaculis justo pharetra ac. Nunc sit amet enim sit amet metus hendrerit egestas. Morbi a nulla lectus. Duis in quam sed sapien sollicitudin cursus vel non leo. Duis id tortor nec quam laoreet faucibus.</FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"12.999999999999998px\" COLOR=\"#999999\"></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"12.999999999999998px\" COLOR=\"#999999\"></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"12.999999999999998px\" COLOR=\"#999999\"></FONT></FONT></P>"
+
+#: id=model_9743D2F0_9B35_CF68_41D9_80F4472204AD.label
+msgid "MysonMuseum_warehousephudieu3_final"
+msgstr ""
+
+#: id=model_978DD60A_9B35_F6BB_41CD_5CD9062BDF8A.label
+msgid "20_thanphuonghuong_final"
+msgstr ""
+
+#: id=model_97A9DA1C_9B35_FEDF_41D7_D2838E3480D9.label
+msgid "29_laskmi_final"
+msgstr ""
+
+#: id=Button_471FE8F6_736F_B3BB_41AC_532E9AE3CE80.label
+#: id=Button_C4BD21FA_6C1C_F3A8_41C2_0C4361B6CFAD.label
+msgid "A"
+msgstr ""
+
+#: id=model_974B23BC_9B35_CDD8_41C1_8E2A2DEBCBD7.label
+msgid "MysonMyseum_dinhthapgocbangsathachA1_final"
+msgstr ""
+
+#: id=model_9797B0B2_9B35_CBE8_41E0_7F9D5D83D001.label
+msgid "4_TuongGanesha_final"
+msgstr ""
+
+#: id=HTMLText_910830C2_A27E_D8CD_41D0_073701FCF4A4.html
+#: id=HTMLText_B7872E24_A1EB_6B56_41D5_145105358E60.html
+#: id=HTMLText_8C6C51E5_A19D_58D7_41D7_BCDD5C522823.html
+#: id=HTMLText_8BEBCA05_A1BD_2B57_41D5_5B1AA48ADBD2.html
+msgid ""
+"<P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"30px\" COLOR=\"#ffffff\"><B>Lorem Ipsum</B></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"14px\" COLOR=\"#ffffff\"><B></B></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"14px\" COLOR=\"#999999\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin velit nisi, eu rhoncus nunc finibus id. Phasellus ex lacus, luctus vel tempor sed, interdum at orci. Nulla vitae vehicula lorem, in finibus lorem. Aenean aliquam lacus in tempor semper. Ut vel augue mi. Sed fermentum sodales porta. Donec convallis tincidunt efficitur. Duis pulvinar, nisl in porta sodales, nunc mauris euismod dolor, in euismod est arcu sed risus. Mauris lacus nibh, aliquet ac tortor nec, blandit fermentum magna. Curabitur dolor risus, vestibulum in elementum non, sagittis non odio. Vestibulum ut venenatis nisi. Donec malesuada porttitor odio, dignissim blandit est.</FONT></FONT></P>"
+msgstr ""
+"<P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"30px\" COLOR=\"#ffffff\"><B>Lorem Ipsum</B></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"14px\" COLOR=\"#ffffff\"><B></B></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"14px\" COLOR=\"#999999\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin velit nisi, eu rhoncus nunc finibus id. Phasellus ex lacus, luctus vel tempor sed, interdum at orci. Nulla vitae vehicula lorem, in finibus lorem. Aenean aliquam lacus in tempor semper. Ut vel augue mi. Sed fermentum sodales porta. Donec convallis tincidunt efficitur. Duis pulvinar, nisl in porta sodales, nunc mauris euismod dolor, in euismod est arcu sed risus. Mauris lacus nibh, aliquet ac tortor nec, blandit fermentum magna. Curabitur dolor risus, vestibulum in elementum non, sagittis non odio. Vestibulum ut venenatis nisi. Donec malesuada porttitor odio, dignissim blandit est.</FONT></FONT></P>"
+
+#: id=Button_44B7780B_79F1_4CD8_41D9_9639506FC3F6.label
+msgid "OPEN GOOGLE MAPS"
+msgstr "OPEN GOOGLE MAPS"
+
+#: id=Button_471F08F7_736F_B3B9_41D3_F22EDC22483B.label
+#: id=Button_C6FEFAC4_6C0C_91D8_41D3_3845AD1F6A49.label
+msgid "A'"
+msgstr ""
+
+#: id=HTMLText_10DE7CA7_6947_9275_4197_C61A4C2F537D.html
+msgid ""
+"<P ALIGN=\"justify\" LEADING=\"172%\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"36px\" COLOR=\"#eacc2c\"><B>LINGA -YONI</B></FONT></FONT></P><P ALIGN=\"justify\" LEADING=\"172%\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"6px\" COLOR=\"#999999\"></FONT></FONT></P><P ALIGN=\"justify\" LEADING=\"172%\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"16px\" COLOR=\"#ffffff\">Linga - Yoni ở Mỹ Sơn là một biểu tượng tôn giáo đặc trưng của đạo Hindu (Ấn Độ giáo), thể hiện rõ nét trong văn hóa Chăm Pa cổ.</FONT></FONT></P><P ALIGN=\"justify\" LEADING=\"172%\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"16px\" COLOR=\"#ffffff\"> Linga: Là biểu tượng sinh thực khí nam, đại diện cho thần Shiva – một trong ba vị thần tối cao của Ấn Độ giáo. Thường có dạng trụ tròn, dựng đứng ở giữa Yoni.</FONT></FONT></P><P ALIGN=\"justify\" LEADING=\"172%\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"16px\" COLOR=\"#ffffff\"> Yoni: Là biểu tượng sinh thực khí nữ, thường có hình vuông hoặc chữ nhật với một rãnh thoát nước ở một góc, tượng trưng cho nữ thần Shakti, năng lượng sáng tạo của vũ trụ.</FONT></FONT></P><P ALIGN=\"justify\" LEADING=\"172%\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"16px\" COLOR=\"#ffffff\"> Chất liệu: Đa số được làm bằng sa thạch hoặc đá granit, được chế tác tỉ mỉ, có tỷ lệ cân đối, thường đặt trong thánh điện (Kalan) – nơi linh thiêng nhất của đền tháp.</FONT></FONT></P><P ALIGN=\"justify\" LEADING=\"172%\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"16px\" COLOR=\"#ffffff\"> Cấu trúc: Linga đặt chính giữa Yoni. Yoni có rãnh thoát nước gọi là Soma Sutra, dùng để dẫn dòng nước thánh sau khi được dâng lên Linga.</FONT></FONT></P>"
+msgstr ""
+"<P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"25px\" COLOR=\"#dca937\">Project created by</FONT></FONT></P><P ALIGN=\"left\" LEADING=\"91%\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"55px\" COLOR=\"#ffffff\"><B>Lorem Ipsum</B></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"6px\" COLOR=\"#999999\"></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"14px\" COLOR=\"#999999\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas, libero eu vestibulum pulvinar, felis felis pharetra elit, nec vulputate tellus odio non nisl. Nunc elementum lorem nec purus ullamcorper, eget pretium sapien rutrum. Phasellus tempor condimentum metus eu sagittis.</FONT></FONT></P>"
+
+#: id=Button_CC231E85_6C13_B058_41B9_42546B9D0204.label
+#: id=Button_471F58F8_736F_B3B7_41D8_69C60C93085E.label
+msgid "C"
+msgstr ""
+
+#: id=model_97515E9A_9B35_F7DB_41E0_1C01B590E1F9.label
+msgid "MysonMuseum_gajasimha_final"
+msgstr ""
+
+#: id=model_9751DE56_9B35_F6AB_41BF_F79A72FEBBE4.label
+msgid "MysonMuseum_diemmai3canh_final"
+msgstr ""
+
+#: id=Button_CF6BF0D0_6C14_91F8_41C3_38CDC6E0CB2D.label
+#: id=Button_471C88F8_736F_B3B7_41C5_12922D56E61A.label
+msgid "D"
+msgstr ""
+
+#: id=HTMLText_45F51B16_79D1_CCC8_41DD_2E3791D39DB0.html
+msgid ""
+"<P TEXTSHADOW=\"1px 1px 15px rgba(0,0,0,0.97)\"  ALIGN=\"left\" LEADING=\"75%\"><FONT FACE=\"Arial\" SIZE=\"1.7486338797814245vmin\" COLOR=\"#000000\" LETTERSPACING=\"0vmin\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"3.0601092896174795vmin\" COLOR=\"#dca937\">Lorem Ipsum</FONT></FONT></P><P TEXTSHADOW=\"1px 1px 15px rgba(0,0,0,0.97)\"  ALIGN=\"left\" LEADING=\"75%\"><FONT FACE=\"Arial\" SIZE=\"1.7486338797814245vmin\" COLOR=\"#000000\" LETTERSPACING=\"0vmin\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"10.928961748633888vmin\" COLOR=\"#ffffff\">Dolor Sit</FONT></FONT></P><P TEXTSHADOW=\"1px 1px 15px rgba(0,0,0,0.97)\"  ALIGN=\"left\" LEADING=\"75%\"><FONT FACE=\"Arial\" SIZE=\"1.7486338797814245vmin\" COLOR=\"#000000\" LETTERSPACING=\"0vmin\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"2.295081967213113vmin\" COLOR=\"#ffffff\"></FONT></FONT></P>"
+msgstr ""
+"<P TEXTSHADOW=\"1px 1px 15px rgba(0,0,0,0.97)\"  ALIGN=\"left\" LEADING=\"75%\"><FONT FACE=\"Arial\" SIZE=\"1.7486338797814245vmin\" COLOR=\"#000000\" LETTERSPACING=\"0vmin\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"3.060109289617482vmin\" COLOR=\"#dca937\">Lorem Ipsum</FONT></FONT></P><P TEXTSHADOW=\"1px 1px 15px rgba(0,0,0,0.97)\"  ALIGN=\"left\" LEADING=\"75%\"><FONT FACE=\"Arial\" SIZE=\"1.7486338797814245vmin\" COLOR=\"#000000\" LETTERSPACING=\"0vmin\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"10.928961748633892vmin\" COLOR=\"#ffffff\">Dolor Sit</FONT></FONT></P><P TEXTSHADOW=\"1px 1px 15px rgba(0,0,0,0.97)\"  ALIGN=\"left\" LEADING=\"75%\"><FONT FACE=\"Arial\" SIZE=\"1.7486338797814245vmin\" COLOR=\"#000000\" LETTERSPACING=\"0vmin\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"2.2950819672131137vmin\" COLOR=\"#ffffff\"></FONT></FONT></P>"
+
+#: id=model_9793523E_9B35_CEDB_41DF_44CAC28E75B8.label
+msgid "8_vunhactrieudinh_final"
+msgstr ""
+
+#: id=model_979E8313_9B35_CEA9_41D1_6EA5372E9669.label
+msgid "11_tegiac_final"
+msgstr ""
+
+#: id=Button_C9D8F4FD_6C0C_71A8_41D7_3FA7E97DDD2C.label
+#: id=Button_471F38F7_736F_B3B9_41C9_F6F91371BA14.label
+msgid "B"
+msgstr ""
+
+#: id=Button_F349BC7E_6C17_90AB_41C7_7BCA37AAA7AD.label
+#: id=Button_471CF8F9_736F_B3A9_41C9_202464D86F91.label
+msgid "F"
+msgstr ""
+
+#: id=model_975A60A9_9B35_CBF8_41DB_2ADB26CD06F5.label
+msgid "MysonMuseum_lingavayoni_final"
+msgstr ""
+
+#: id=model_9792C18B_9B35_CDB8_41D7_DC7AA1C50075.label
+msgid "7_nhóm 7 linga_final"
+msgstr ""
+
+#: id=Button_CA417336_6C14_90BB_41D1_8A42BB89786A.label
+#: id=Button_471C18FA_736F_B3AB_41CB_988F5FF0A40F.label
+msgid "G"
+msgstr ""
+
+#: id=model_9749E379_9B35_CD58_41DD_D7DB385F44A4.label
+msgid "MysonMuseum_warehousetuongsutu_final"
+msgstr ""
+
+#: id=HTMLText_FE25A8C8_A725_1C22_4191_5DF7B330C7CC.html
+msgid ""
+"<P TEXTSHADOW=\"0px 0px 4px rgba(0,0,0,0.8)\"  ALIGN=\"left\" LEADING=\"100%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"54px\" COLOR=\"#ffffff\"><B>Mỹ Sơn</B></FONT></FONT></P><P TEXTSHADOW=\"0px 0px 4px rgba(0,0,0,0.8)\"  ALIGN=\"left\" LEADING=\"100%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"24px\" COLOR=\"#dca937\">Thánh địa huyền thoại</FONT></FONT></P>"
+msgstr ""
+"<P TEXTSHADOW=\"0px 0px 4px rgba(0,0,0,0.8)\"  ALIGN=\"left\" LEADING=\"90%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"54px\" COLOR=\"#ffffff\"><B>Lorem Ipsum</B></FONT></FONT></P><P TEXTSHADOW=\"0px 0px 4px rgba(0,0,0,0.8)\"  ALIGN=\"left\" LEADING=\"90%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"24px\" COLOR=\"#dca937\">DOLOR SIT AMET</FONT></FONT></P>"
+
+#: id=Button_CD53E8B4_6C17_B1B8_41D4_482604EC633F.label
+#: id=Button_471CB8F9_736F_B3A9_418F_C9E1EEBA899B.label
+msgid "E"
+msgstr ""
+
+#: id=Button_CE6CBDD5_6C14_73F8_41A4_25688CC4B3E2.label
+#: id=Button_471C58FA_736F_B3AB_41C4_D0F65A60FC36.label
+msgid "H"
+msgstr ""
+
+#: id=model_975C105E_9B35_CB58_41E1_1CE1D04C0FBD.label
+msgid "MysonMuseum_laksmi_final"
+msgstr ""
+
+#: id=model_787AA119_766F_1D03_41DD_513B1EB2AE1C.label
+msgid "Linga Yoni"
+msgstr ""
+
+#: id=model_9757FD2E_9B35_FAFB_41D1_FD91AD414467.label
+msgid "MysonMuseum_biadatheki1203msd316_final"
+msgstr ""
+
+#: id=model_97A38991_9B35_FDA9_41D5_2192F2FB7F70.label
+msgid "28_makara_final"
+msgstr ""
+
+#: id=HTMLText_B46F6C0D_AC64_E8D2_41E3_9B1396566296.html
+msgid ""
+"<P TEXTSHADOW=\"0px 2px 8px rgba(0,0,0,0.6)\"  ALIGN=\"center\" LEADING=\"80%\"><FONT FACE=\"Arial\" SIZE=\"1.7640573318632833vmin\" COLOR=\"#000000\" LETTERSPACING=\"0vmin\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"5.292171995589858vmin\" COLOR=\"#dca937\">Risus ornare</FONT></FONT></P><P TEXTSHADOW=\"0px 2px 8px rgba(0,0,0,0.6)\"  ALIGN=\"center\" LEADING=\"80%\"><FONT FACE=\"Arial\" SIZE=\"1.7640573318632833vmin\" COLOR=\"#000000\" LETTERSPACING=\"0vmin\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"13.671444321940465vmin\" COLOR=\"#ffffff\">Tempor ligula</FONT></FONT></P>"
+msgstr ""
+"<P TEXTSHADOW=\"0px 2px 8px rgba(0,0,0,0.6)\"  ALIGN=\"center\" LEADING=\"80%\"><FONT FACE=\"Arial\" SIZE=\"1.7640573318632855vmin\" COLOR=\"#000000\" LETTERSPACING=\"0vmin\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"5.2921719955898565vmin\" COLOR=\"#dca937\">Risus ornare</FONT></FONT></P><P TEXTSHADOW=\"0px 2px 8px rgba(0,0,0,0.6)\"  ALIGN=\"center\" LEADING=\"80%\"><FONT FACE=\"Arial\" SIZE=\"1.7640573318632855vmin\" COLOR=\"#000000\" LETTERSPACING=\"0vmin\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"13.67144432194047vmin\" COLOR=\"#ffffff\">Tempor ligula</FONT></FONT></P>"
+
+#: id=Button_C4DC35AE_6C15_93AB_41D0_9FCF09568348.label
+#: id=Button_471C78FB_736F_B3A9_41AF_AC0239F92091.label
+msgid "K"
+msgstr ""
+
+#: id=Button_069A8955_6C14_B0F8_41D6_DD70642BC2BE.label
+msgid "Giới thiệu"
+msgstr ""
+
+#: id=Button_87707436_9B15_B643_41DC_5BBDE40B0DBB.label
+msgid "Toàn cảnh"
+msgstr ""
+
+#: id=HTMLText_BB9CB942_AC64_EB51_41E3_18B90F48B80B.html
+msgid ""
+"<P TEXTSHADOW=\"0px 2px 8px rgba(0,0,0,0.6)\"  ALIGN=\"center\" LEADING=\"80%\"><FONT FACE=\"Arial\" SIZE=\"1.7640573318632833vmin\" COLOR=\"#000000\" LETTERSPACING=\"0vmin\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"5.292171995589858vmin\" COLOR=\"#dca937\">Fringilla eros</FONT></FONT></P><P TEXTSHADOW=\"0px 2px 8px rgba(0,0,0,0.6)\"  ALIGN=\"center\" LEADING=\"80%\"><FONT FACE=\"Arial\" SIZE=\"1.7640573318632833vmin\" COLOR=\"#000000\" LETTERSPACING=\"0vmin\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"13.671444321940465vmin\" COLOR=\"#ffffff\">Pellentesque</FONT></FONT></P>"
+msgstr ""
+"<P TEXTSHADOW=\"0px 2px 8px rgba(0,0,0,0.6)\"  ALIGN=\"center\" LEADING=\"80%\"><FONT FACE=\"Arial\" SIZE=\"1.7640573318632855vmin\" COLOR=\"#000000\" LETTERSPACING=\"0vmin\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"5.2921719955898565vmin\" COLOR=\"#dca937\">Fringilla eros</FONT></FONT></P><P TEXTSHADOW=\"0px 2px 8px rgba(0,0,0,0.6)\"  ALIGN=\"center\" LEADING=\"80%\"><FONT FACE=\"Arial\" SIZE=\"1.7640573318632855vmin\" COLOR=\"#000000\" LETTERSPACING=\"0vmin\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"13.67144432194047vmin\" COLOR=\"#ffffff\">Pellentesque</FONT></FONT></P>"
+
+#: id=Button_BFE2F71F_A570_3B61_41D5_D426321674F7.label
+msgid "Vi"
+msgstr ""
+
+#: id=Button_8FD2DE9D_9B14_D241_41E2_12246FC50B91.label
+msgid "Đá khắc"
+msgstr ""
+
+#: id=model_9789C69E_9B35_F7DB_41B0_C882C4AD2796.label
+msgid "22_skanda_final"
+msgstr ""
+
+#: id=HTMLText_64D4F284_5F47_7369_41D6_83FE2F4DD3CE.html
+msgid ""
+"<P TEXTSHADOW=\"0px 0px 10px rgba(0,0,0,0.65)\"  ALIGN=\"left\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"12.999999999999998px\" COLOR=\"#cccccc\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu nisl facilisis, luctus ligula aliquet.</FONT></FONT></P>"
+msgstr ""
+"<P TEXTSHADOW=\"0px 0px 10px rgba(0,0,0,0.65)\"  ALIGN=\"left\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans\" SIZE=\"12.999999999999998px\" COLOR=\"#cccccc\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu nisl facilisis, luctus ligula aliquet.</FONT></FONT></P>"
+
+#: id=model_97DB7C3D_9B35_FAD9_41D6_357652B8CF6D.label
+msgid "Museum_warehousetuongbothan_final"
+msgstr ""
+
+#: id=HTMLText_33FABB70_68C0_96EB_41D2_A57D20856584.html
+msgid ""
+"<P ALIGN=\"justify\" LEADING=\"155%\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"48px\" COLOR=\"#eacc2c\"><B>THÁP G</B></FONT></FONT></P><P ALIGN=\"justify\" LEADING=\"155%\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"6px\" COLOR=\"#ffffff\"></FONT></FONT></P><P ALIGN=\"justify\" LEADING=\"155%\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"14px\" COLOR=\"#ffffff\">Tháp G tại Thánh địa Mỹ Sơn là một trong những công trình kiến trúc Chăm Pa tiêu biểu có niên đại vào khoảng thế kỷ 12–13, thuộc giai đoạn muộn của nền văn hóa Chăm. Tháp được xây dựng bằng gạch nung với kỹ thuật ghép gạch không dùng vữa. Kiến trúc tháp mang phong cách Bình Định, thể hiện qua hình khối vuông vức, mái vút cao và các chi tiết trang trí tối giản hơn so với thời kỳ trước. Tháp G từng là nơi thờ thần Siva, với bệ thờ linga–yoni ở gian chính. Mặc dù bị hư hại khá nhiều, tháp G vẫn giữ được phần nền và tường thấp, là tư liệu quan trọng cho việc nghiên cứu nghệ thuật và tôn giáo Chăm Pa cuối kỳ.</FONT></FONT></P>"
+msgstr ""
+"<P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"25px\" COLOR=\"#dca937\">Project created by</FONT></FONT></P><P ALIGN=\"left\" LEADING=\"91%\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"55px\" COLOR=\"#ffffff\"><B>Lorem Ipsum</B></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"6px\" COLOR=\"#999999\"></FONT></FONT></P><P ALIGN=\"left\" LEADING=\"140%\"><FONT FACE=\"Arial\" SIZE=\"16.000000000000004px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"14px\" COLOR=\"#999999\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas, libero eu vestibulum pulvinar, felis felis pharetra elit, nec vulputate tellus odio non nisl. Nunc elementum lorem nec purus ullamcorper, eget pretium sapien rutrum. Phasellus tempor condimentum metus eu sagittis.</FONT></FONT></P>"
+
+#: id=HTMLText_752F8494_6029_E873_41A3_CEFFBA405184.html
+msgid ""
+"<P TEXTSHADOW=\"1px 1px 15px rgba(0,0,0,0.97)\"  ALIGN=\"left\" LEADING=\"75%\"><FONT FACE=\"Arial\" SIZE=\"1.7486338797814245vmin\" COLOR=\"#000000\" LETTERSPACING=\"0vmin\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"2.1857923497267753vmin\" COLOR=\"#ffffff\">Coordinates: N41 58 E44 12</FONT></FONT></P>"
+msgstr ""
+"<P TEXTSHADOW=\"1px 1px 15px rgba(0,0,0,0.97)\"  ALIGN=\"left\" LEADING=\"75%\"><FONT FACE=\"Arial\" SIZE=\"1.7486338797814245vmin\" COLOR=\"#000000\" LETTERSPACING=\"0vmin\" KERNING=\"1\"><FONT FACE=\"Noticia Text\" SIZE=\"2.1857923497267766vmin\" COLOR=\"#ffffff\">Coordinates: N41 58 E44 12</FONT></FONT></P>"
+
+#: id=model_9758D170_9B35_CD68_41C0_4EEEB525E3AB.label
+msgid "MysonMuseum_trucuaD2_final"
+msgstr ""
+
+#: id=model_974D9332_9B35_CEE8_41D3_157E026C2EA2.label
+msgid "MysonMuseum_warehousetuonglinga_final"
+msgstr ""
+
+#: id=Button_A2721F8F_EF20_054E_41E5_0CA24A0455BE.label
+msgid "Click to Start"
+msgstr "Click to Start"
+
+#: id=model_97529EDD_9B35_F759_41A0_89B7C6D25A6F.label
+msgid "MysonMuseum_gazelle_final"
+msgstr ""
+
+#: id=model_97B4F6EB_9B35_F779_41B4_CB203258A3B6.label
+msgid "23_khi_final"
+msgstr ""
+
+#: id=HTMLText_FCD7BBAC_9D3C_D247_41E1_09783BF76B6D.html
+msgid ""
+"<P ALIGN=\"justify\" LEADING=\"166%\"><FONT FACE=\"Arial\" SIZE=\"12px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Arial Greek\" SIZE=\"24px\" COLOR=\"#ffffff\"><B>DI SẢN VĂN HÓA MỸ SƠN</B></FONT></FONT></P><P ALIGN=\"justify\" LEADING=\"166%\"><FONT FACE=\"Arial\" SIZE=\"12px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Arial Greek\" SIZE=\"14px\" COLOR=\"#ffffff\"><B>Địa chỉ: Duy Phú, Duy Xuyên, Quảng Nam</B></FONT></FONT></P><P ALIGN=\"justify\" LEADING=\"166%\"><FONT FACE=\"Arial\" SIZE=\"12px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Arial Greek\" SIZE=\"14px\" COLOR=\"#ffffff\"><B>Điện thoại : 0235.3731.309</B></FONT></FONT></P><P ALIGN=\"justify\" LEADING=\"166%\"><FONT FACE=\"Arial\" SIZE=\"12px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Arial Greek\" SIZE=\"14px\" COLOR=\"#ffffff\"><B>Fax: : 0235.3731.361</B></FONT></FONT></P><P ALIGN=\"justify\" LEADING=\"166%\"><FONT FACE=\"Arial\" SIZE=\"12px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Arial Greek\" SIZE=\"14px\" COLOR=\"#ffffff\"><B>Email: mysonstr@gmail.com</B></FONT></FONT></P><P ALIGN=\"justify\" LEADING=\"166%\"><FONT FACE=\"Arial\" SIZE=\"12px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Arial Greek\" SIZE=\"14px\" COLOR=\"#ffffff\"><B>Website: www.disanvanhoamyson.vn</B></FONT></FONT></P>"
+msgstr ""
+
+#: id=HTMLText_4A4DBCC2_5202_956B_41D0_A913F0367946.html
+msgid ""
+"<P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans Light\" SIZE=\"13px\" COLOR=\"#ffffff\">Click on the model to start measuring.</FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans Light\" SIZE=\"13px\" COLOR=\"#ffffff\">Double click or Esc key to finish measure.</FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans Light\" SIZE=\"13px\" COLOR=\"#ffffff\">Click on the Measure button to finish.</FONT></FONT></P>"
+msgstr ""
+"<P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans Light\" SIZE=\"13px\" COLOR=\"#ffffff\">Click on the model to start measuring.</FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans Light\" SIZE=\"13px\" COLOR=\"#ffffff\">Double click or Esc key to finish measure.</FONT></FONT></P><P ALIGN=\"left\" LEADING=\"130%\"><FONT FACE=\"Arial\" SIZE=\"16px\" COLOR=\"#000000\" LETTERSPACING=\"0px\" KERNING=\"1\"><FONT FACE=\"Open Sans Light\" SIZE=\"13px\" COLOR=\"#ffffff\">Click on the Measure button to finish.</FONT></FONT></P>"
+
+#: id=model_97BDB82D_9B35_FAF9_41D7_C47B22B275CA.label
+msgid "25_vattrangtri_final"
+msgstr ""
+
+#: id=model_97B7F731_9B35_F6E9_41E2_81C1B707A9BA.label
+msgid "24_MysonSanctuaryB_Trucot_final"
+msgstr ""
+
+#: id=Button_024739FC_6C3D_93A8_41C4_3B26B7C3F41A.label
+#: id=Label_CE21A174_6C1C_B0B8_41D6_DD4EA6C2CDE8.text
+msgid "Nhóm tháp"
+msgstr ""
