@@ -11,6 +11,7 @@
 	
 - Link hình ảnh 2D của hiện vật
 	https://docs.google.com/spreadsheets/d/1IcMS6w3wo-AE-kRwB5F-1QbwhmseDDG2oBpH7FVmbJM/edit?gid=1818066066#gid=1818066066
+	Convert to webp (75%, 1024 width)
 	
 	
 - Link feedback
