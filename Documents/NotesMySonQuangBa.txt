@@ -34,3 +34,16 @@
 	<script src="popups/contact.js"></script>
 	<script src="popups/about.js"></script>
 	<script src="js/index.js"></script>
+	
+- Colors
+	+ background: 422118, opacity: 0.32
+	+ highlight: eacb32, opacity: 100
+	
+- Font:
+	+ Arial
+	
+	
+- Load đúng asset theo tên trong tour
+	+ ?media=<name>
+	+ ví dụ: https://127.0.0.1:5500/index.html?media=asset135
+	+ https://www.3dvista.com/en/blog/the-url-of-a-virtual-tour/

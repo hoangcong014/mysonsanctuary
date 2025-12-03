@@ -17,6 +17,11 @@ function waitFor3DVistaTour(timeout = 10000) {
   });
 }
 
+// Hàm lấy pano hiện tại
+function getCurrentPano() {
+  return window.tour ? window.tour.getCurrentMediaName() : null;
+}
+
 // Hàm chuyển pano
 async function goToPano(panoName) {
   try {
