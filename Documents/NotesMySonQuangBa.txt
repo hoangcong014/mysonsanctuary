@@ -35,6 +35,7 @@
 	<script src="js/index.js"></script>
 	<script src="popups/contact.js"></script>
 	<script src="popups/about.js"></script>
+	<script src="js/artifacts.js"></script>
 	
 	
 - Load đúng asset theo tên trong tour
