@@ -28,3 +28,9 @@
 		
 - Link danh sách tháp
 	https://docs.google.com/spreadsheets/d/1IcMS6w3wo-AE-kRwB5F-1QbwhmseDDG2oBpH7FVmbJM/edit?gid=1818066066#gid=1818066066
+	
+	
+- Thêm các file js vào thẻ body của file index.html
+	<script src="popups/contact.js"></script>
+	<script src="popups/about.js"></script>
+	<script src="js/index.js"></script>
