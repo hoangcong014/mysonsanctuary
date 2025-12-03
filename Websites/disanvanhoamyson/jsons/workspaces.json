@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "name": "Phục dựng 1",
+    "name_en": "Reconstruction 1",
+    "tower_id": 5,
+    "image": "/images/reconstruction/recon_1.jpg",
+    "model_3d": "/models/reconstruction/recon_1.glb",
+    "description": "Mô tả phục dựng 1",
+    "description_en": "Reconstruction description 1"
+  },
+  {
+    "id": 2,
+    "name": "Phục dựng 2",
+    "name_en": "Reconstruction 2",
+    "tower_id": 10,
+    "image": "/images/reconstruction/recon_2.jpg",
+    "model_3d": "/models/reconstruction/recon_2.glb",
+    "description": "Mô tả phục dựng 2",
+    "description_en": "Reconstruction description 2"
+  },
+  {
+    "id": 3,
+    "name": "Phục dựng 3",
+    "name_en": "Reconstruction 3",
+    "tower_id": 3,
+    "image": "/images/reconstruction/recon_3.jpg",
+    "model_3d": "/models/reconstruction/recon_3.glb",
+    "description": "Mô tả phục dựng 3",
+    "description_en": "Reconstruction description 3"
+  },
+  {
+    "id": 4,
+    "name": "Phục dựng 4",
+    "name_en": "Reconstruction 4",
+    "tower_id": 9,
+    "image": "/images/reconstruction/recon_4.jpg",
+    "model_3d": "/models/reconstruction/recon_4.glb",
+    "description": "Mô tả phục dựng 4",
+    "description_en": "Reconstruction description 4"
+  },
+  {
+    "id": 5,
+    "name": "Phục dựng 5",
+    "name_en": "Reconstruction 5",
+    "tower_id": 9,
+    "image": "/images/reconstruction/recon_5.jpg",
+    "model_3d": "/models/reconstruction/recon_5.glb",
+    "description": "Mô tả phục dựng 5",
+    "description_en": "Reconstruction description 5"
+  },
+  {
+    "id": 6,
+    "name": "Phục dựng 6",
+    "name_en": "Reconstruction 6",
+    "tower_id": 14,
+    "image": "/images/reconstruction/recon_6.jpg",
+    "model_3d": "/models/reconstruction/recon_6.glb",
+    "description": "Mô tả phục dựng 6",
+    "description_en": "Reconstruction description 6"
+  },
+  {
+    "id": 7,
+    "name": "Phục dựng 7",
+    "name_en": "Reconstruction 7",
+    "tower_id": 9,
+    "image": "/images/reconstruction/recon_7.jpg",
+    "model_3d": "/models/reconstruction/recon_7.glb",
+    "description": "Mô tả phục dựng 7",
+    "description_en": "Reconstruction description 7"
+  },
+  {
+    "id": 8,
+    "name": "Phục dựng 8",
+    "name_en": "Reconstruction 8",
+    "tower_id": 8,
+    "image": "/images/reconstruction/recon_8.jpg",
+    "model_3d": "/models/reconstruction/recon_8.glb",
+    "description": "Mô tả phục dựng 8",
+    "description_en": "Reconstruction description 8"
+  },
+  {
+    "id": 9,
+    "name": "Phục dựng 9",
+    "name_en": "Reconstruction 9",
+    "tower_id": 11,
+    "image": "/images/reconstruction/recon_9.jpg",
+    "model_3d": "/models/reconstruction/recon_9.glb",
+    "description": "Mô tả phục dựng 9",
+    "description_en": "Reconstruction description 9"
+  },
+  {
+    "id": 10,
+    "name": "Phục dựng 10",
+    "name_en": "Reconstruction 10",
+    "tower_id": 5,
+    "image": "/images/reconstruction/recon_10.jpg",
+    "model_3d": "/models/reconstruction/recon_10.glb",
+    "description": "Mô tả phục dựng 10",
+    "description_en": "Reconstruction description 10"
+  }
+]
