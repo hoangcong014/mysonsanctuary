@@ -556,9 +556,16 @@ ${artifact.photo ? `📸 ${artifact.photo.length} ảnh` : ''}
       /* Tìm container bằng data attribute hoặc class */
       [data-name="Container Artifacts"],
       .artifacts-container-wrapper {
-        position: relative !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
         z-index: 999 !important;
-        background: white;
+        background: white !important; /* Background trắng */
+        overflow: hidden !important;
       }
       
       /* ============================================ */
@@ -567,8 +574,10 @@ ${artifact.photo ? `📸 ${artifact.photo.length} ảnh` : ''}
       
       .artifacts-wrapper {
         padding: 15px;
-        max-height: calc(100vh - 100px);
+        height: 100%;
+        width: 100%;
         overflow-y: auto;
+        background: white; /* Background trắng */
       }
       
       /* Grid - Nhiều cột hơn */
@@ -598,7 +607,7 @@ ${artifact.photo ? `📸 ${artifact.photo.length} ảnh` : ''}
       
       /* Card - Simple & Clean */
       .artifact-card {
-        background: #fff;
+        background: rgba(66, 33, 24, 0.5);
         border-radius: 10px;
         overflow: hidden;
         cursor: pointer;
@@ -657,7 +666,7 @@ ${artifact.photo ? `📸 ${artifact.photo.length} ảnh` : ''}
         margin: 0;
         font-size: 14px;
         font-weight: 600;
-        color: #333;
+        color: #FFFFFF; /* Màu text tối */
         line-height: 1.4;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -667,16 +676,21 @@ ${artifact.photo ? `📸 ${artifact.photo.length} ảnh` : ''}
         min-height: 38px; /* Giữ chiều cao ổn định */
       }
       
+      .artifact-card:hover .artifact-name h4 {
+        color: #EACB32; /* Vàng khi hover */
+      }
+      
       /* ============================================ */
       /* PAGINATION STYLES */
       /* ============================================ */
       
       .pagination-container {
-        background: #fff;
+        background: rgba(255, 255, 255, 0.95);
         border-radius: 10px;
         padding: 12px 15px;
         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         margin-bottom: 15px;
+        backdrop-filter: blur(10px);
       }
       
       .pagination-top {
@@ -684,7 +698,7 @@ ${artifact.photo ? `📸 ${artifact.photo.length} ảnh` : ''}
         top: 0;
         z-index: 100;
         margin-bottom: 15px;
-        border-bottom: 2px solid #e0e0e0;
+        border-bottom: 2px solid rgba(66, 33, 24, 0.32);
       }
       
       .pagination-controls {
@@ -698,9 +712,9 @@ ${artifact.photo ? `📸 ${artifact.photo.length} ảnh` : ''}
       .pagination-btn {
         width: 40px;
         height: 40px;
-        border: 2px solid #667eea;
+        border: 2px solid rgba(234, 203, 50, 0.8);
         background: white;
-        color: #667eea;
+        color: #422118;
         border-radius: 8px;
         font-size: 18px;
         font-weight: bold;
@@ -712,8 +726,8 @@ ${artifact.photo ? `📸 ${artifact.photo.length} ảnh` : ''}
       }
       
       .pagination-btn:hover:not(:disabled) {
-        background: #667eea;
-        color: white;
+        background: rgba(234, 203, 50, 1);
+        color: #422118;
         transform: translateY(-2px);
       }
       
@@ -734,9 +748,9 @@ ${artifact.photo ? `📸 ${artifact.photo.length} ảnh` : ''}
       .page-btn {
         width: 40px;
         height: 40px;
-        border: 2px solid #e0e0e0;
+        border: 2px solid rgba(66, 33, 24, 0.3);
         background: white;
-        color: #666;
+        color: #422118;
         border-radius: 8px;
         font-size: 14px;
         font-weight: 600;
@@ -745,15 +759,17 @@ ${artifact.photo ? `📸 ${artifact.photo.length} ảnh` : ''}
       }
       
       .page-btn:hover {
-        border-color: #667eea;
-        color: #667eea;
+        border-color: rgba(234, 203, 50, 1);
+        background: rgba(234, 203, 50, 0.2);
+        color: #422118;
         transform: scale(1.1);
       }
       
       .page-btn.active {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        border-color: #667eea;
+        background: rgba(234, 203, 50, 1);
+        color: #422118;
+        border-color: rgba(234, 203, 50, 1);
+        font-weight: bold;
       }
       
       .page-dots {
