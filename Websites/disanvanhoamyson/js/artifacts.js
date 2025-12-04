@@ -1,7 +1,7 @@
 /**
  * artifacts.js
- * Module quản lý hiển thị artifacts - Simple & Compact Layout
- * Chỉ hiển thị: Ảnh thumb + Tên
+ * Module quản lý hiển thị artifacts với Category Filter
+ * Mobile Touch Support + Category Filtering
  */
 
 (function() {
@@ -12,10 +12,11 @@
   // ============================================
   const CONFIG = {
     jsonPath: './jsons/assets.json',
+    categoryJsonPath: './jsons/asset_category.json',
     containerName: 'Container Artifacts',
     autoInit: true,
     showAnimation: true,
-    itemsPerPage: 20, // Tăng lên vì card nhỏ hơn
+    itemsPerPage: 20,
     maxPageButtons: 5,
     debug: true
   };
@@ -26,11 +27,14 @@
   const state = {
     artifacts: [],
     filteredArtifacts: [],
+    categories: [],
+    selectedCategoryId: null, // null = "Tất cả"
+    searchKeyword: '', // Từ khóa tìm kiếm
     container: null,
     isLoaded: false,
     currentFilter: null,
-    currentLanguage: 'vi', // Track ngôn ngữ hiện tại
-    languageCheckInterval: null, // Interval để check ngôn ngữ
+    currentLanguage: 'vi',
+    languageCheckInterval: null,
     
     pagination: {
       currentPage: 1,
@@ -54,7 +58,6 @@
     console.error('[Artifacts Error]', message, error);
   }
 
-  // Lấy ngôn ngữ hiện tại
   function getCurrentLanguage() {
     try {
       if (typeof TourHelpers !== 'undefined' && TourHelpers.getCurrentLanguage) {
@@ -63,7 +66,7 @@
     } catch (e) {
       log('Không lấy được ngôn ngữ tour, dùng mặc định: vi');
     }
-    return 'vi'; // Mặc định
+    return 'vi';
   }
 
   // ============================================
@@ -71,19 +74,15 @@
   // ============================================
   
   function startLanguageMonitoring() {
-    // Lưu ngôn ngữ ban đầu
     state.currentLanguage = getCurrentLanguage();
     log('Bắt đầu theo dõi thay đổi ngôn ngữ. Ngôn ngữ hiện tại:', state.currentLanguage);
     
-    // Check ngôn ngữ mỗi 500ms
     state.languageCheckInterval = setInterval(() => {
       const newLanguage = getCurrentLanguage();
       
       if (newLanguage !== state.currentLanguage) {
         log(`Phát hiện đổi ngôn ngữ: ${state.currentLanguage} → ${newLanguage}`);
         state.currentLanguage = newLanguage;
-        
-        // Re-render artifacts với ngôn ngữ mới
         onLanguageChange();
       }
     }, 500);
@@ -99,10 +98,7 @@
 
   function onLanguageChange() {
     log('Đang cập nhật artifacts theo ngôn ngữ mới...');
-    
-    // Re-render với dữ liệu hiện tại
     renderArtifacts(state.filteredArtifacts);
-    
     log('✓ Đã cập nhật artifacts theo ngôn ngữ:', state.currentLanguage);
   }
 
@@ -153,7 +149,16 @@
 
   function scrollToTop() {
     if (state.container) {
+      // Scroll wrapper về top
+      const wrapper = state.container.querySelector('.artifacts-wrapper');
+      if (wrapper) {
+        wrapper.scrollTop = 0;
+      }
+      
+      // Scroll container về top
       state.container.scrollTop = 0;
+      
+      // Scroll vào view nếu cần
       state.container.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
@@ -164,7 +169,7 @@
   
   async function loadArtifactsData() {
     try {
-      log('Đang load dữ liệu từ', CONFIG.jsonPath);
+      log('Đang load dữ liệu artifacts từ', CONFIG.jsonPath);
       
       const response = await fetch(CONFIG.jsonPath);
       
@@ -192,6 +197,85 @@
       logError('Lỗi khi load dữ liệu artifacts', error);
       throw error;
     }
+  }
+
+  async function loadCategoriesData() {
+    try {
+      log('Đang load dữ liệu categories từ', CONFIG.categoryJsonPath);
+      
+      const response = await fetch(CONFIG.categoryJsonPath);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const jsonData = await response.json();
+      
+      if (!jsonData.success || !jsonData.data) {
+        throw new Error('Dữ liệu categories JSON không hợp lệ');
+      }
+      
+      state.categories = jsonData.data;
+      
+      log(`Đã load thành công ${state.categories.length} categories`);
+      
+      return state.categories;
+      
+    } catch (error) {
+      logError('Lỗi khi load dữ liệu categories', error);
+      throw error;
+    }
+  }
+
+  // ============================================
+  // CATEGORY & SEARCH FILTER
+  // ============================================
+  
+  function applyFilters() {
+    let filtered = state.artifacts;
+    
+    // Filter by category
+    if (state.selectedCategoryId !== null) {
+      filtered = filtered.filter(artifact => 
+        artifact.cate_id === state.selectedCategoryId
+      );
+    }
+    
+    // Filter by search keyword
+    if (state.searchKeyword && state.searchKeyword.trim() !== '') {
+      const keyword = state.searchKeyword.toLowerCase().trim();
+      filtered = filtered.filter(artifact => {
+        const nameMatch = artifact.name && artifact.name.toLowerCase().includes(keyword);
+        const nameEnMatch = artifact.name_en && artifact.name_en.toLowerCase().includes(keyword);
+        const codeMatch = artifact.code && artifact.code.toLowerCase().includes(keyword);
+        return nameMatch || nameEnMatch || codeMatch;
+      });
+    }
+    
+    state.pagination.currentPage = 1;
+    state.filteredArtifacts = filtered;
+    
+    log(`Filters applied: Category=${state.selectedCategoryId}, Search="${state.searchKeyword}", Results=${filtered.length}`);
+    
+    renderArtifacts(filtered);
+  }
+  
+  function filterByCategory(categoryId) {
+    state.selectedCategoryId = categoryId;
+    applyFilters();
+  }
+  
+  function searchArtifacts(keyword) {
+    state.searchKeyword = keyword;
+    applyFilters();
+  }
+
+  function getCategoryName(category) {
+    const currentLang = state.currentLanguage;
+    if (currentLang === 'en' || currentLang === 'en-US') {
+      return category.nameEn || category.name;
+    }
+    return category.name;
   }
 
   // ============================================
@@ -222,7 +306,64 @@
   }
 
   // ============================================
-  // CREATE SIMPLE ARTIFACT CARD
+  // CREATE CATEGORY FILTER UI - DROPDOWN WITH SEARCH
+  // ============================================
+  
+  function createCategoryFilter() {
+    const filterDiv = document.createElement('div');
+    filterDiv.className = 'category-filter';
+    
+    const currentLang = state.currentLanguage;
+    const allText = currentLang === 'en' || currentLang === 'en-US' ? 'All Categories' : 'Tất cả danh mục';
+    const labelText = currentLang === 'en' || currentLang === 'en-US' ? 'Category:' : 'Danh mục:';
+    const searchPlaceholder = currentLang === 'en' || currentLang === 'en-US' ? 'Search artifacts...' : 'Tìm kiếm hiện vật...';
+    
+    // Create options HTML
+    let optionsHTML = `<option value="null">${allText}</option>`;
+    
+    state.categories.forEach(category => {
+      const categoryName = getCategoryName(category);
+      const selected = state.selectedCategoryId === category.id ? 'selected' : '';
+      
+      optionsHTML += `
+        <option value="${category.id}" ${selected}>
+          ${categoryName}
+        </option>
+      `;
+    });
+    
+    filterDiv.innerHTML = `
+      <div class="category-filter-wrapper">
+        <div class="search-box">
+          <input 
+            type="text" 
+            id="artifact-search" 
+            class="search-input" 
+            placeholder="${searchPlaceholder}"
+            value="${state.searchKeyword}"
+            autocomplete="off"
+            autocapitalize="off"
+            autocorrect="off"
+            spellcheck="false">
+          <button class="search-clear-btn" id="search-clear-btn" style="display: ${state.searchKeyword ? 'flex' : 'none'}">
+            ✕
+          </button>
+        </div>
+        
+        <div class="category-select-wrapper">
+          <label for="category-select" class="category-label">${labelText}</label>
+          <select id="category-select" class="category-select">
+            ${optionsHTML}
+          </select>
+        </div>
+      </div>
+    `;
+    
+    return filterDiv;
+  }
+
+  // ============================================
+  // CREATE ARTIFACT CARD
   // ============================================
   
   function createArtifactCard(artifact, index) {
@@ -236,17 +377,15 @@
       card.style.animationDelay = `${index * 0.03}s`;
     }
     
-    // Lấy ảnh thumb đầu tiên
     const thumbImage = artifact.photo && artifact.photo.length > 0 
       ? artifact.photo[0].thumb || artifact.photo[0].original
       : 'images/no-image.png';
     
-    // Hiển thị tên theo ngôn ngữ hiện tại
     const currentLang = state.currentLanguage;
-    let displayName = artifact.name; // Mặc định tiếng Việt
+    let displayName = artifact.name;
     
     if (currentLang === 'en' || currentLang === 'en-US') {
-      displayName = artifact.name_en || artifact.name; // Fallback về tiếng Việt nếu không có
+      displayName = artifact.name_en || artifact.name;
     }
     
     card.innerHTML = `
@@ -362,27 +501,32 @@
     updatePaginationState(artifacts);
     state.container.innerHTML = '';
     
+    const wrapper = document.createElement('div');
+    wrapper.className = 'artifacts-wrapper';
+    
+    // Category Filter
+    const categoryFilter = createCategoryFilter();
+    wrapper.appendChild(categoryFilter);
+    
     if (!artifacts || artifacts.length === 0) {
-      state.container.innerHTML = `
+      const currentLang = state.currentLanguage;
+      const noDataText = currentLang === 'en' || currentLang === 'en-US' 
+        ? 'No artifacts found' 
+        : 'Không có hiện vật';
+      
+      wrapper.innerHTML += `
         <div class="no-data">
-          <p>Không có hiện vật</p>
+          <p>${noDataText}</p>
         </div>
       `;
+      state.container.appendChild(wrapper);
+      attachCategoryListeners();
+      attachSearchListeners();
       return;
     }
     
     const pageItems = getCurrentPageItems(artifacts);
     log(`Rendering page ${state.pagination.currentPage}/${state.pagination.totalPages} (${pageItems.length} items)`);
-    
-    const wrapper = document.createElement('div');
-    wrapper.className = 'artifacts-wrapper';
-    
-    // Pagination ở trên
-    const paginationTop = createPaginationUI();
-    if (paginationTop) {
-      paginationTop.classList.add('pagination-top');
-      wrapper.appendChild(paginationTop);
-    }
     
     // Grid
     const grid = document.createElement('div');
@@ -394,47 +538,195 @@
     });
     
     wrapper.appendChild(grid);
+    
+    // Pagination ở cuối
+    const paginationBottom = createPaginationUI();
+    if (paginationBottom) {
+      paginationBottom.classList.add('pagination-bottom');
+      wrapper.appendChild(paginationBottom);
+    }
+    
     state.container.appendChild(wrapper);
     
     attachEventListeners();
     attachPaginationListeners();
+    attachCategoryListeners();
+    attachSearchListeners();
     
     log('Render hoàn tất!');
   }
 
   // ============================================
-  // EVENT HANDLERS
+  // EVENT HANDLERS - SEARCH
+  // ============================================
+  
+  let searchTimeout = null;
+  
+  function attachSearchListeners() {
+    const searchInput = state.container.querySelector('#artifact-search');
+    const clearBtn = state.container.querySelector('#search-clear-btn');
+    
+    if (searchInput) {
+      // Input event với debounce
+      searchInput.addEventListener('input', (e) => {
+        const value = e.target.value;
+        
+        // Show/hide clear button
+        if (clearBtn) {
+          clearBtn.style.display = value ? 'flex' : 'none';
+        }
+        
+        // Debounce search
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+          searchArtifacts(value);
+        }, 300);
+      });
+      
+      // Enter key
+      searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          clearTimeout(searchTimeout);
+          searchArtifacts(e.target.value);
+        }
+      });
+      
+      // Touch support - focus khi touch
+      searchInput.addEventListener('touchstart', (e) => {
+        // Không preventDefault để keyboard xuất hiện
+        e.currentTarget.focus();
+      }, { passive: true });
+      
+      // Click support
+      searchInput.addEventListener('click', (e) => {
+        e.currentTarget.focus();
+      });
+    }
+    
+    // Clear button
+    if (clearBtn) {
+      clearBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (searchInput) {
+          searchInput.value = '';
+          clearBtn.style.display = 'none';
+          searchArtifacts('');
+          searchInput.focus();
+        }
+      });
+      
+      clearBtn.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (searchInput) {
+          searchInput.value = '';
+          clearBtn.style.display = 'none';
+          searchArtifacts('');
+        }
+      }, { passive: false });
+    }
+  }
+
+  // ============================================
+  // EVENT HANDLERS - CATEGORY FILTER
+  // ============================================
+  
+  function attachCategoryListeners() {
+    const categorySelect = state.container.querySelector('#category-select');
+    if (categorySelect) {
+      // Change event cho cả desktop và mobile
+      categorySelect.addEventListener('change', handleCategoryChange);
+      
+      // Thêm click event để đảm bảo dropdown mở được
+      categorySelect.addEventListener('click', (e) => {
+        // Force focus để mở dropdown
+        e.currentTarget.focus();
+      });
+      
+      // Touch event để đảm bảo hoạt động trên mobile
+      categorySelect.addEventListener('touchstart', (e) => {
+        // Không preventDefault để native select vẫn hoạt động
+        e.currentTarget.focus();
+      }, { passive: true });
+    }
+  }
+
+  function handleCategoryChange(event) {
+    const categoryId = event.target.value;
+    const actualCategoryId = categoryId === 'null' ? null : categoryId;
+    
+    log('Category selected:', actualCategoryId);
+    filterByCategory(actualCategoryId);
+  }
+
+  // ============================================
+  // EVENT HANDLERS - MOBILE TOUCH SUPPORT
   // ============================================
   
   function attachEventListeners() {
-    // Click vào card để mở asset trong tour
     const cards = state.container.querySelectorAll('.artifact-card');
     cards.forEach(card => {
       card.addEventListener('click', handleCardClick);
+      card.addEventListener('touchstart', handleTouchStart, { passive: false });
+      card.addEventListener('touchend', handleTouchEnd, { passive: false });
     });
   }
 
   function attachPaginationListeners() {
-    // Previous button
     const btnPrev = state.container.querySelector('.btn-prev');
     if (btnPrev) {
       btnPrev.addEventListener('click', prevPage);
+      btnPrev.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        prevPage();
+      }, { passive: false });
     }
     
-    // Next button
     const btnNext = state.container.querySelector('.btn-next');
     if (btnNext) {
       btnNext.addEventListener('click', nextPage);
+      btnNext.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        nextPage();
+      }, { passive: false });
     }
     
-    // Page buttons
     const pageButtons = state.container.querySelectorAll('.page-btn');
     pageButtons.forEach(btn => {
       btn.addEventListener('click', function() {
         const page = parseInt(this.dataset.page);
         goToPage(page);
       });
+      
+      btn.addEventListener('touchend', function(e) {
+        e.preventDefault();
+        const page = parseInt(this.dataset.page);
+        goToPage(page);
+      }, { passive: false });
     });
+  }
+
+  let touchStartTime = 0;
+  let touchStartTarget = null;
+
+  function handleTouchStart(event) {
+    touchStartTime = Date.now();
+    touchStartTarget = event.currentTarget;
+    event.currentTarget.classList.add('touch-active');
+  }
+
+  function handleTouchEnd(event) {
+    event.preventDefault();
+    event.currentTarget.classList.remove('touch-active');
+    
+    const touchDuration = Date.now() - touchStartTime;
+    
+    if (touchDuration < 500 && touchStartTarget === event.currentTarget) {
+      handleCardClick({ currentTarget: event.currentTarget });
+    }
+    
+    touchStartTarget = null;
   }
 
   function handleCardClick(event) {
@@ -445,19 +737,13 @@
       return;
     }
     
-    // Tạo tên media theo format: asset + id
     const mediaName = 'asset' + artifactId;
-    
     log('Opening asset:', mediaName);
     
-    // Gọi tour để mở media
     if (typeof window.tour !== 'undefined' && window.tour.setMediaByName) {
       try {
         window.tour.setMediaByName(mediaName);
-        
-        // Đóng container
         closeContainer();
-        
         log('✓ Đã mở asset:', mediaName);
       } catch (error) {
         logError('Lỗi khi mở asset:', error);
@@ -468,20 +754,12 @@
   }
 
   // ============================================
-  // CLOSE CONTAINER
+  // CONTAINER CONTROL
   // ============================================
   
   function closeContainer() {
     if (state.container) {
-      // Ẩn container
       state.container.style.display = 'none';
-      
-      // Hoặc có thể làm mờ dần
-      // state.container.style.opacity = '0';
-      // setTimeout(() => {
-      //   state.container.style.display = 'none';
-      // }, 300);
-      
       log('Container đã đóng');
     }
   }
@@ -490,48 +768,12 @@
     if (state.container) {
       state.container.style.display = 'block';
       state.container.style.opacity = '1';
+      state.container.style.pointerEvents = 'auto';
+      state.container.style.touchAction = 'auto';
+      scrollToTop();
       log('Container đã mở');
     } else {
       logError('Container chưa được khởi tạo. Gọi init() trước.');
-    }
-  }
-
-  // ============================================
-  // SHOW DETAIL
-  // ============================================
-  
-  function showArtifactDetail(artifact) {
-    // TODO: Implement modal/popup
-    console.log('Artifact Detail:', artifact);
-    
-    // Tạm thời show alert với thông tin đầy đủ
-    const info = `
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-${artifact.name}
-${artifact.name_en || ''}
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-📋 Mã: ${artifact.code || 'N/A'}
-📅 Thời kỳ: ${artifact.era || 'N/A'}
-💎 Chất liệu: ${artifact.material || 'N/A'}
-📏 Kích thước: ${artifact.area || 'N/A'}
-🏛️ Danh mục: ${artifact.category_name || 'N/A'}
-
-Mô tả:
-${artifact.description || 'Chưa có mô tả'}
-
-${artifact.link_3d ? '🔗 Có link xem 3D' : ''}
-${artifact.photo ? `📸 ${artifact.photo.length} ảnh` : ''}
-    `.trim();
-    
-    alert(info);
-    
-    // Mở 3D nếu có
-    if (artifact.link_3d) {
-      const open3D = confirm('Bạn có muốn xem 3D không?');
-      if (open3D) {
-        window.open(artifact.link_3d, '_blank', 'noopener,noreferrer');
-      }
     }
   }
 
@@ -550,10 +792,9 @@ ${artifact.photo ? `📸 ${artifact.photo.length} ảnh` : ''}
     style.id = styleId;
     style.textContent = `
       /* ============================================ */
-      /* CONTAINER Z-INDEX - Nằm trên các element khác */
+      /* CONTAINER */
       /* ============================================ */
       
-      /* Tìm container bằng data attribute hoặc class */
       [data-name="Container Artifacts"],
       .artifacts-container-wrapper {
         position: fixed !important;
@@ -563,35 +804,211 @@ ${artifact.photo ? `📸 ${artifact.photo.length} ảnh` : ''}
         bottom: 0 !important;
         width: 100vw !important;
         height: 100vh !important;
-        z-index: 999 !important;
-        background: white !important; /* Background trắng */
+        z-index: 10000 !important;
+        background: white !important;
         overflow: hidden !important;
+        pointer-events: auto !important;
+        touch-action: auto !important;
       }
-      
-      /* ============================================ */
-      /* SIMPLE COMPACT LAYOUT */
-      /* ============================================ */
       
       .artifacts-wrapper {
         padding: 15px;
         height: 100%;
         width: 100%;
         overflow-y: auto;
-        background: white; /* Background trắng */
+        background: white;
+        -webkit-overflow-scrolling: touch;
+        pointer-events: auto !important;
+        padding-bottom: max(80px, calc(env(safe-area-inset-bottom, 0px) + 80px));
       }
       
-      /* Grid - Nhiều cột hơn */
+      /* ============================================ */
+      /* CATEGORY FILTER - DROPDOWN WITH SEARCH */
+      /* ============================================ */
+      
+      .category-filter {
+        position: sticky;
+        top: 0;
+        z-index: 200;
+        background: white;
+        padding: 10px 0 15px 0;
+        margin-bottom: 15px;
+        border-bottom: 2px solid rgba(234, 203, 50, 0.3);
+        pointer-events: auto !important;
+      }
+      
+      .category-filter-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+        padding-right: 20px;
+        pointer-events: auto !important;
+      }
+      
+      /* Search Box */
+      .search-box {
+        position: relative;
+        flex: 1;
+        max-width: 400px;
+        min-width: 200px;
+        pointer-events: auto !important;
+      }
+      
+      .search-input {
+        width: 100%;
+        padding: 10px 40px 10px 15px;
+        font-size: 14px;
+        color: #422118;
+        background: white;
+        border: 2px solid rgba(66, 33, 24, 0.3);
+        border-radius: 8px;
+        outline: none;
+        transition: all 0.3s ease;
+        pointer-events: auto !important;
+        touch-action: manipulation !important;
+        position: relative;
+        z-index: 201;
+        -webkit-tap-highlight-color: rgba(234, 203, 50, 0.2);
+        -webkit-user-select: text;
+        user-select: text;
+      }
+      
+      .search-input:hover {
+        border-color: rgba(234, 203, 50, 1);
+        background-color: rgba(234, 203, 50, 0.05);
+      }
+      
+      .search-input:focus {
+        border-color: rgba(234, 203, 50, 1);
+        box-shadow: 0 0 0 3px rgba(234, 203, 50, 0.2);
+      }
+      
+      .search-input::placeholder {
+        color: rgba(66, 33, 24, 0.5);
+      }
+      
+      .search-clear-btn {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 24px;
+        height: 24px;
+        border: none;
+        background: rgba(66, 33, 24, 0.2);
+        color: #422118;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        transition: all 0.2s ease;
+        pointer-events: auto !important;
+        touch-action: manipulation !important;
+        z-index: 202;
+      }
+      
+      .search-clear-btn:hover {
+        background: rgba(234, 203, 50, 1);
+        transform: translateY(-50%) scale(1.1);
+      }
+      
+      .search-clear-btn:active {
+        transform: translateY(-50%) scale(0.9);
+      }
+      
+      /* Category Select Wrapper */
+      .category-select-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+      }
+      
+      .category-label {
+        font-size: 14px;
+        font-weight: 600;
+        color: #422118;
+        white-space: nowrap;
+        pointer-events: none;
+      }
+      
+      .category-select {
+        min-width: 200px;
+        max-width: 300px;
+        padding: 10px 40px 10px 15px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #422118;
+        background: white;
+        border: 2px solid rgba(66, 33, 24, 0.3);
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        outline: none;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23422118' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 20px;
+        pointer-events: auto !important;
+        touch-action: manipulation !important;
+        user-select: none;
+        position: relative;
+        z-index: 201;
+      }
+      
+      .category-select:hover {
+        border-color: rgba(234, 203, 50, 1);
+        background-color: rgba(234, 203, 50, 0.05);
+      }
+      
+      .category-select:focus {
+        border-color: rgba(234, 203, 50, 1);
+        box-shadow: 0 0 0 3px rgba(234, 203, 50, 0.2);
+      }
+      
+      .category-select:active {
+        transform: scale(0.98);
+      }
+      
+      .category-select option {
+        padding: 10px;
+        font-size: 14px;
+        color: #422118;
+        background: white;
+      }
+      
+      .category-select option:hover {
+        background: rgba(234, 203, 50, 0.2);
+      }
+      
+      .category-select option:checked {
+        background: rgba(234, 203, 50, 0.3);
+        font-weight: 600;
+      }
+      
+      /* ============================================ */
+      /* GRID */
+      /* ============================================ */
+      
       .artifacts-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
         gap: 15px;
-        margin-bottom: 20px;
+        margin-bottom: 0px;
+        margin-right: 20px;
+        pointer-events: auto !important;
       }
       
-      /* Artifact Item */
       .artifact-item {
         opacity: 0;
         animation: fadeInUp 0.4s ease forwards;
+        pointer-events: auto !important;
       }
       
       @keyframes fadeInUp {
@@ -605,7 +1022,10 @@ ${artifact.photo ? `📸 ${artifact.photo.length} ảnh` : ''}
         }
       }
       
-      /* Card - Simple & Clean */
+      /* ============================================ */
+      /* CARD */
+      /* ============================================ */
+      
       .artifact-card {
         background: rgba(66, 33, 24, 0.5);
         border-radius: 10px;
@@ -613,6 +1033,10 @@ ${artifact.photo ? `📸 ${artifact.photo.length} ảnh` : ''}
         cursor: pointer;
         transition: all 0.3s ease;
         box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        pointer-events: auto !important;
+        touch-action: manipulation !important;
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
       }
       
       .artifact-card:hover {
@@ -620,11 +1044,20 @@ ${artifact.photo ? `📸 ${artifact.photo.length} ảnh` : ''}
         box-shadow: 0 6px 20px rgba(0,0,0,0.15);
       }
       
-      /* Thumbnail */
+      .artifact-card.touch-active {
+        transform: scale(0.95);
+        background: rgba(66, 33, 24, 0.7);
+      }
+      
+      .artifact-card:active {
+        transform: scale(0.95);
+        background: rgba(66, 33, 24, 0.7);
+      }
+      
       .artifact-thumb {
         position: relative;
         width: 100%;
-        padding-top: 100%; /* Square ratio */
+        padding-top: 100%;
         background: #f5f5f5;
         overflow: hidden;
       }
@@ -643,21 +1076,6 @@ ${artifact.photo ? `📸 ${artifact.photo.length} ảnh` : ''}
         transform: scale(1.1);
       }
       
-      /* 3D Badge */
-      .badge-3d {
-        position: absolute;
-        top: 8px;
-        right: 8px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        padding: 4px 10px;
-        border-radius: 12px;
-        font-size: 10px;
-        font-weight: bold;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-      }
-      
-      /* Name */
       .artifact-name {
         padding: 12px;
       }
@@ -666,39 +1084,48 @@ ${artifact.photo ? `📸 ${artifact.photo.length} ảnh` : ''}
         margin: 0;
         font-size: 14px;
         font-weight: 600;
-        color: #FFFFFF; /* Màu text tối */
+        color: #FFFFFF;
         line-height: 1.4;
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
-        min-height: 38px; /* Giữ chiều cao ổn định */
+        min-height: 38px;
       }
       
       .artifact-card:hover .artifact-name h4 {
-        color: #EACB32; /* Vàng khi hover */
+        color: #EACB32;
       }
       
       /* ============================================ */
-      /* PAGINATION STYLES */
+      /* PAGINATION */
       /* ============================================ */
       
       .pagination-container {
-        background: rgba(255, 255, 255, 0.95);
-        border-radius: 10px;
-        padding: 12px 15px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        margin-bottom: 15px;
-        backdrop-filter: blur(10px);
+        background: transparent;
+        border-radius: 0;
+        padding: 20px 15px;
+        box-shadow: none;
+        margin-bottom: 0;
+        margin-top: 20px;
+        pointer-events: auto !important;
       }
       
       .pagination-top {
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        margin-bottom: 15px;
-        border-bottom: 2px solid rgba(66, 33, 24, 0.32);
+        position: relative;
+        top: auto;
+        z-index: 1;
+        margin-bottom: 0;
+        margin-top: 20px;
+      }
+      
+      .pagination-bottom {
+        position: relative;
+        z-index: 1;
+        margin-top: -15px;
+        margin-bottom: 20px;
+        padding-bottom: max(60px, env(safe-area-inset-bottom, 60px));
       }
       
       .pagination-controls {
@@ -707,6 +1134,7 @@ ${artifact.photo ? `📸 ${artifact.photo.length} ảnh` : ''}
         align-items: center;
         gap: 8px;
         flex-wrap: wrap;
+        pointer-events: auto !important;
       }
       
       .pagination-btn {
@@ -723,12 +1151,21 @@ ${artifact.photo ? `📸 ${artifact.photo.length} ảnh` : ''}
         display: flex;
         align-items: center;
         justify-content: center;
+        pointer-events: auto !important;
+        touch-action: manipulation !important;
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
       }
       
       .pagination-btn:hover:not(:disabled) {
         background: rgba(234, 203, 50, 1);
         color: #422118;
         transform: translateY(-2px);
+      }
+      
+      .pagination-btn:active:not(:disabled) {
+        transform: scale(0.9);
+        background: rgba(234, 203, 50, 1);
       }
       
       .pagination-btn:disabled {
@@ -743,6 +1180,7 @@ ${artifact.photo ? `📸 ${artifact.photo.length} ảnh` : ''}
         gap: 5px;
         flex-wrap: wrap;
         justify-content: center;
+        pointer-events: auto !important;
       }
       
       .page-btn {
@@ -756,6 +1194,10 @@ ${artifact.photo ? `📸 ${artifact.photo.length} ảnh` : ''}
         font-weight: 600;
         cursor: pointer;
         transition: all 0.3s ease;
+        pointer-events: auto !important;
+        touch-action: manipulation !important;
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
       }
       
       .page-btn:hover {
@@ -763,6 +1205,11 @@ ${artifact.photo ? `📸 ${artifact.photo.length} ảnh` : ''}
         background: rgba(234, 203, 50, 0.2);
         color: #422118;
         transform: scale(1.1);
+      }
+      
+      .page-btn:active {
+        transform: scale(0.9);
+        background: rgba(234, 203, 50, 0.5);
       }
       
       .page-btn.active {
@@ -780,7 +1227,6 @@ ${artifact.photo ? `📸 ${artifact.photo.length} ảnh` : ''}
         font-weight: bold;
       }
       
-      /* No Data */
       .no-data {
         text-align: center;
         padding: 60px 20px;
@@ -799,17 +1245,58 @@ ${artifact.photo ? `📸 ${artifact.photo.length} ảnh` : ''}
       @media (max-width: 1200px) {
         .artifacts-grid {
           grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+          margin-right: 15px;
         }
       }
       
       @media (max-width: 768px) {
         .artifacts-wrapper {
           padding: 10px;
+          padding-bottom: max(100px, calc(env(safe-area-inset-bottom, 0px) + 100px));
+        }
+        
+        .category-filter {
+          padding: 8px 0 12px 0;
+          pointer-events: auto !important;
+        }
+        
+        .category-filter-wrapper {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 8px;
+          padding-right: 0;
+          pointer-events: auto !important;
+        }
+        
+        .category-label {
+          font-size: 13px;
+          text-align: left;
+        }
+        
+        .category-select {
+          min-width: 100%;
+          max-width: 100%;
+          font-size: 13px;
+          padding: 10px 35px 10px 12px;
+          background-size: 18px;
+          pointer-events: auto !important;
+          -webkit-tap-highlight-color: rgba(234, 203, 50, 0.2);
+          z-index: 201;
+          /* Ensure iOS Safari renders select properly */
+          -webkit-appearance: menulist-button;
+          min-height: 44px;
+        }
+        
+        .category-select:focus {
+          outline: none;
+          border-color: rgba(234, 203, 50, 1);
+          box-shadow: 0 0 0 3px rgba(234, 203, 50, 0.2);
         }
         
         .artifacts-grid {
           grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
           gap: 10px;
+          margin-right: 0;
         }
         
         .artifact-name h4 {
@@ -818,25 +1305,120 @@ ${artifact.photo ? `📸 ${artifact.photo.length} ảnh` : ''}
         }
         
         .pagination-container {
-          padding: 10px;
+          padding: 15px 10px;
+          padding-bottom: max(80px, calc(env(safe-area-inset-bottom, 0px) + 80px));
         }
         
         .pagination-btn {
           width: 35px;
           height: 35px;
           font-size: 16px;
+          min-width: 44px;
+          min-height: 44px;
         }
         
         .page-btn {
           width: 35px;
           height: 35px;
           font-size: 13px;
+          min-width: 44px;
+          min-height: 44px;
+        }
+        
+        .pagination-controls {
+          gap: 12px;
+        }
+        
+        .pagination-pages {
+          gap: 8px;
+        }
+        
+        .pagination-bottom {
+          padding-bottom: max(80px, calc(env(safe-area-inset-bottom, 0px) + 80px));
+        }
+        
+        @media (hover: none) {
+          .artifact-card:hover {
+            transform: none;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+          }
+          
+          .pagination-btn:hover:not(:disabled) {
+            transform: none;
+          }
+          
+          .page-btn:hover {
+            transform: none;
+          }
+          
+          .category-select:hover {
+            border-color: rgba(66, 33, 24, 0.3);
+            background-color: white;
+          }
         }
       }
       
       @media (max-width: 480px) {
+        .artifacts-wrapper {
+          padding-bottom: max(120px, calc(env(safe-area-inset-bottom, 0px) + 120px));
+        }
+        
+        .category-filter-wrapper {
+          gap: 8px;
+          padding-right: 0;
+        }
+        
+        .search-input {
+          font-size: 16px;
+          padding: 8px 30px 8px 10px;
+          min-height: 44px;
+          pointer-events: auto !important;
+          z-index: 201;
+          -webkit-tap-highlight-color: rgba(234, 203, 50, 0.2);
+          -webkit-user-select: text;
+          user-select: text;
+        }
+        
+        .search-clear-btn {
+          width: 24px;
+          height: 24px;
+          font-size: 10px;
+          z-index: 202;
+        }
+        
+        .category-label {
+          font-size: 12px;
+        }
+        
+        .category-select {
+          font-size: 12px;
+          padding: 8px 30px 8px 10px;
+          background-size: 16px;
+          min-height: 44px;
+          -webkit-appearance: menulist-button;
+          pointer-events: auto !important;
+          z-index: 201;
+        }
+        
         .artifacts-grid {
           grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+          margin-right: 0;
+        }
+        
+        .artifact-card,
+        .pagination-btn,
+        .page-btn {
+          min-width: 44px !important;
+          min-height: 44px !important;
+        }
+        
+        .pagination-container {
+          padding: 10px;
+          padding-bottom: max(100px, calc(env(safe-area-inset-bottom, 0px) + 100px));
+        }
+        
+        .pagination-bottom {
+          padding-bottom: max(100px, calc(env(safe-area-inset-bottom, 0px) + 100px));
         }
       }
     `;
@@ -854,16 +1436,14 @@ ${artifact.photo ? `📸 ${artifact.photo.length} ảnh` : ''}
       log('Initializing Artifacts module...');
       
       injectStyles();
+      await loadCategoriesData();
       await loadArtifactsData();
       getContainer();
       
-      // Lưu ngôn ngữ ban đầu
       state.currentLanguage = getCurrentLanguage();
       log('Ngôn ngữ khởi tạo:', state.currentLanguage);
       
       renderArtifacts();
-      
-      // Bắt đầu theo dõi thay đổi ngôn ngữ
       startLanguageMonitoring();
       
       log('✓ Artifacts module initialized successfully!');
@@ -908,26 +1488,24 @@ ${artifact.photo ? `📸 ${artifact.photo.length} ảnh` : ''}
     reload: function() {
       log('Reloading artifacts...');
       state.pagination.currentPage = 1;
+      state.searchKeyword = '';
+      state.selectedCategoryId = null;
       return init();
     },
+    filterByCategory: filterByCategory,
+    search: searchArtifacts,
     filter: function(filterFn) {
       const filtered = state.artifacts.filter(filterFn);
       log(`Filtered: ${filtered.length}/${state.artifacts.length} artifacts`);
       state.pagination.currentPage = 1;
       renderArtifacts(filtered);
     },
-    search: function(keyword) {
-      const searched = state.artifacts.filter(artifact => 
-        artifact.name.toLowerCase().includes(keyword.toLowerCase()) ||
-        (artifact.name_en && artifact.name_en.toLowerCase().includes(keyword.toLowerCase()))
-      );
-      log(`Search results: ${searched.length} artifacts`);
-      state.pagination.currentPage = 1;
-      renderArtifacts(searched);
-    },
     reset: function() {
       log('Resetting to all artifacts');
+      state.selectedCategoryId = null;
+      state.searchKeyword = '';
       state.pagination.currentPage = 1;
+      state.filteredArtifacts = state.artifacts;
       renderArtifacts(state.artifacts);
     },
     goToPage: goToPage,
@@ -940,7 +1518,6 @@ ${artifact.photo ? `📸 ${artifact.photo.length} ảnh` : ''}
       log('Items per page changed to:', items);
       renderArtifacts(state.filteredArtifacts);
     },
-    // Language functions
     getCurrentLanguage: function() {
       return state.currentLanguage;
     },
@@ -960,6 +1537,50 @@ ${artifact.photo ? `📸 ${artifact.photo.length} ảnh` : ''}
   };
 
   // ============================================
+  // GLOBAL FUNCTIONS
+  // ============================================
+  
+  window.showArtifactContainer = function() {
+    log('showArtifactContainer() called from tour');
+    
+    if (state.container) {
+      state.container.style.display = 'block';
+      state.container.style.opacity = '1';
+      state.container.style.pointerEvents = 'auto';
+      state.container.style.touchAction = 'auto';
+      
+      const wrapper = state.container.querySelector('.artifacts-wrapper');
+      if (wrapper) {
+        wrapper.style.pointerEvents = 'auto';
+      }
+      
+      log('Container đã mở');
+    } else if (window.ArtifactsManager) {
+      logError('Container chưa sẵn sàng, đang khởi tạo...');
+      window.ArtifactsManager.init().then(() => {
+        if (state.container) {
+          state.container.style.display = 'block';
+          state.container.style.opacity = '1';
+          state.container.style.pointerEvents = 'auto';
+          state.container.style.touchAction = 'auto';
+          
+          const wrapper = state.container.querySelector('.artifacts-wrapper');
+          if (wrapper) {
+            wrapper.style.pointerEvents = 'auto';
+          }
+          
+          log('Container đã mở sau khi init');
+        }
+      });
+    } else {
+      logError('ArtifactsManager chưa được khởi tạo');
+    }
+  };
+
+  window.openArtifacts = window.showArtifactContainer;
+  window.showArtifacts = window.showArtifactContainer;
+
+  // ============================================
   // START
   // ============================================
   
@@ -970,37 +1591,5 @@ ${artifact.photo ? `📸 ${artifact.photo.length} ảnh` : ''}
       waitForTourReady();
     }
   }
-
-  // ============================================
-  // GLOBAL FUNCTION FOR TOUR ACTIONS
-  // ============================================
-  
-  // Function để tour có thể gọi từ button/hotspot
-  window.showArtifactContainer = function() {
-    log('showArtifactContainer() called from tour');
-    
-    // Gọi trực tiếp function openContainer
-    if (state.container) {
-      state.container.style.display = 'block';
-      state.container.style.opacity = '1';
-      log('Container đã mở');
-    } else if (window.ArtifactsManager) {
-      // Nếu chưa init, thử init lại
-      logError('Container chưa sẵn sàng, đang khởi tạo...');
-      window.ArtifactsManager.init().then(() => {
-        if (state.container) {
-          state.container.style.display = 'block';
-          state.container.style.opacity = '1';
-          log('Container đã mở sau khi init');
-        }
-      });
-    } else {
-      logError('ArtifactsManager chưa được khởi tạo');
-    }
-  };
-
-  // Alias - cũng có thể gọi bằng tên khác
-  window.openArtifacts = window.showArtifactContainer;
-  window.showArtifacts = window.showArtifactContainer;
 
 })();
