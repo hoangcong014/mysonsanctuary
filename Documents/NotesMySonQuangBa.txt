@@ -1,11 +1,4 @@
 
-- 03/11/2025: info có nhiều hình thì hiển thị 1 hình và có nút qua trái qua phải
-
-- 11/11/2025: thêm tên hiện vật dưới hình trong trang hiện vật
-
-- 20/11/2025: danh mục là list xổ xuống
-
-
 - Link mô tả
 	https://docs.google.com/document/d/1Ik_ZmE4-I03OXPYQL-B1doUKoOAOld6G/edit
 	
@@ -24,6 +17,8 @@
 	
 	+ Tháp E:
 		https://nextcloud.dfm-groupe.com/s/CQcB6aRYL6nJGrd?path=%2Fthape7
+		
+	+ Compress: texture 85%; mesh 0.7
 		
 		
 - Link danh sách tháp
