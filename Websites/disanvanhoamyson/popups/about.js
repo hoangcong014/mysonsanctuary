@@ -151,7 +151,7 @@
         <h2>VỀ CHÚNG TÔI</h2>
         <hr class="title-divider">
 
-        <p><strong>Di sản Văn hóa Thế giới Khu đền tháp Chăm Mỹ Sơn</strong> thuộc xã Duy Phú huyện Duy Xuyên, tỉnh Quảng Nam có vị trí tọa độ địa lý:</p>
+        <p><strong>Di sản Văn hóa Thế giới Khu đền tháp Chăm Mỹ Sơn</strong> thuộc thôn Mỹ Sơn, xã Thu Bồn, thành phố Đà Nẵng có vị trí tọa độ địa lý:</p>
         <ul>
           <li>Vĩ độ Bắc: 15° 46′ 26.02″</li>
           <li>Kinh độ Đông: 108° 6′ 32.71″</li>

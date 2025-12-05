@@ -33,7 +33,7 @@
       border-radius: 0px;
       box-shadow: 0 0 20px rgba(0,0,0,0.5);
       z-index: 9999;
-      font-family: "Arial Greek", Arial, sans-serif;
+      font-family: "Arial", Arial, sans-serif;
       overflow: hidden;
       backdrop-filter: blur(1px); /* Làm mờ nền phía sau */
     `;
@@ -132,10 +132,10 @@
 
           <div style="margin-top:30px;">
             <h3>THÔNG TIN LIÊN HỆ</h3>
-            <p><strong>Ban quản lý Di sản văn hóa Mỹ Sơn</strong></p>
-            <p>Địa chỉ: xã Duy Phú, huyện Duy Xuyên, tỉnh Quảng Nam</p>
-            <p>Điện thoại: 0235 3731 309</p>
-            <p>Email: bqlmyson@quangnam.gov.vn</p>
+            <p><strong>DI SẢN VĂN HÓA THẾ GIỚI MỸ SƠN</strong></p>
+            <p>Địa chỉ: thôn Mỹ Sơn, xã Thu Bồn, thành phố Đà Nẵng</p>
+            <p>Điện thoại: 0963.412.068</p>
+            <p>Email: mysonstr@gmail.com</p>
           </div>
         </div>
 

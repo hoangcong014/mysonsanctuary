@@ -262,6 +262,20 @@
   
   function filterByCategory(categoryId) {
     state.selectedCategoryId = categoryId;
+    state.searchKeyword = ''; // Xóa từ khóa tìm kiếm
+    
+    // Cập nhật UI - xóa giá trị trong ô search
+    const searchInput = state.container?.querySelector('#artifact-search');
+    if (searchInput) {
+        searchInput.value = '';
+    }
+    
+    // Ẩn nút clear search
+    const clearBtn = state.container?.querySelector('#search-clear-btn');
+    if (clearBtn) {
+        clearBtn.style.display = 'none';
+    }
+    
     applyFilters();
   }
   
@@ -766,6 +780,26 @@
 
   function openContainer() {
     if (state.container) {
+      // Xóa search khi mở container
+      state.searchKeyword = '';
+      const searchInput = state.container.querySelector('#artifact-search');
+      if (searchInput) {
+        searchInput.value = '';
+      }
+      const clearBtn = state.container.querySelector('#search-clear-btn');
+      if (clearBtn) {
+        clearBtn.style.display = 'none';
+      }
+
+      // Reset dropdown về "Tất cả"
+      const categorySelect = state.container.querySelector('#category-select');
+      if (categorySelect) {
+        categorySelect.value = 'null';
+      }
+
+      // Áp dụng filter để cập nhật danh sách
+      applyFilters();
+      
       state.container.style.display = 'block';
       state.container.style.opacity = '1';
       state.container.style.pointerEvents = 'auto';
@@ -1549,6 +1583,26 @@
     log('showArtifactContainer() called from tour');
     
     if (state.container) {
+      // Xóa search khi mở container
+      state.searchKeyword = '';
+      const searchInput = state.container.querySelector('#artifact-search');
+      if (searchInput) {
+        searchInput.value = '';
+      }
+      const clearBtn = state.container.querySelector('#search-clear-btn');
+      if (clearBtn) {
+        clearBtn.style.display = 'none';
+      }
+
+      // Reset dropdown về "Tất cả"
+      const categorySelect = state.container.querySelector('#category-select');
+      if (categorySelect) {
+        categorySelect.value = 'null';
+      }
+
+      // Áp dụng filter để cập nhật danh sách
+      applyFilters();
+      
       state.container.style.display = 'block';
       state.container.style.opacity = '1';
       state.container.style.pointerEvents = 'auto';
@@ -1564,6 +1618,26 @@
       logError('Container chưa sẵn sàng, đang khởi tạo...');
       window.ArtifactsManager.init().then(() => {
         if (state.container) {
+          // Xóa search sau khi init
+          state.searchKeyword = '';
+          const searchInput = state.container.querySelector('#artifact-search');
+          if (searchInput) {
+            searchInput.value = '';
+          }
+          const clearBtn = state.container.querySelector('#search-clear-btn');
+          if (clearBtn) {
+            clearBtn.style.display = 'none';
+          }
+
+          // Reset dropdown về "Tất cả"
+          const categorySelect = state.container.querySelector('#category-select');
+          if (categorySelect) {
+            categorySelect.value = 'null';
+          }
+
+          // Áp dụng filter để cập nhật danh sách
+          applyFilters();
+          
           state.container.style.display = 'block';
           state.container.style.opacity = '1';
           state.container.style.pointerEvents = 'auto';
