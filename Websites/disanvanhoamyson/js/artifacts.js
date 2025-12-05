@@ -16,7 +16,7 @@
     containerName: 'Container Artifacts',
     autoInit: true,
     showAnimation: true,
-    itemsPerPage: 20,
+    itemsPerPage: 27,
     maxPageButtons: 5,
     debug: true
   };
