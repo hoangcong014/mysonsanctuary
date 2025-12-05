@@ -850,8 +850,9 @@
       .search-box {
         position: relative;
         flex: 1;
-        max-width: 400px;
-        min-width: 200px;
+        max-width: 200px;
+        min-width: 100px;
+        margin-left: 100px;
         pointer-events: auto !important;
       }
       
@@ -890,7 +891,7 @@
       
       .search-clear-btn {
         position: absolute;
-        right: 10px;
+        right: -90px;
         top: 50%;
         transform: translateY(-50%);
         width: 24px;
@@ -1123,7 +1124,7 @@
       .pagination-bottom {
         position: relative;
         z-index: 1;
-        margin-top: -15px;
+        margin-top: -25px;
         margin-bottom: 20px;
         padding-bottom: max(60px, env(safe-area-inset-bottom, 60px));
       }
@@ -1366,6 +1367,10 @@
         .category-filter-wrapper {
           gap: 8px;
           padding-right: 0;
+        }
+        
+        .search-box {
+          margin-left: 100px;
         }
         
         .search-input {
