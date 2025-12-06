@@ -141,7 +141,14 @@
 
         <!-- Map -->
         <div class="map-container" style="flex: 1; padding: 10px 40px 40px 40px; border-left: 1px solid #444; overflow: hidden;">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d61435.45181688792!2d108.100787!3d15.76617!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314200815555551f%3A0x8baa2869b9f687b!2sMy%20Son!5e0!3m2!1sen!2sus!4v1750676910555!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe 
+            src="https://maps.google.com/maps?hl=vi&ie=UTF8&ll=15.775684055937122,108.10899282586176&z=16&output=embed"
+            width="600"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy">
+          </iframe>
         </div>
       </div>
     `;
