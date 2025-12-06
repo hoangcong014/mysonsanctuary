@@ -206,6 +206,7 @@
 
 .artifacts-grid-container {
   flex: 1;
+  min-height: 0;
   overflow-y: auto;
   overflow-x: hidden;
   padding: 15px;
@@ -215,6 +216,8 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   cursor: default;
+  position: relative;
+  touch-action: pan-y;
 }
 
 /* CUSTOM SCROLLBAR cho grid container */
@@ -250,12 +253,12 @@
 }
 
 /* ============================================ */
-/* GRID */
+/* GRID - MAX 8 ITEMS PER ROW */
 /* ============================================ */
 
 .artifacts-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 15px;
   margin-bottom: 0px;
   pointer-events: auto !important;
@@ -483,9 +486,19 @@
 /* RESPONSIVE */
 /* ============================================ */
 
-@media (max-width: 1200px) {
+/* Large Desktop - 1600px+ */
+@media (min-width: 1600px) {
   .artifacts-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    /* Max 8-9 items trên màn lớn */
+  }
+}
+
+/* Desktop - 1200px to 1600px */
+@media (max-width: 1600px) {
+  .artifacts-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* Max 7-8 items */
   }
   
   .artifacts-grid-container {
@@ -493,6 +506,27 @@
   }
 }
 
+/* Laptop - 1024px to 1200px */
+@media (max-width: 1200px) {
+  .artifacts-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    /* Max 6-7 items */
+  }
+  
+  .artifacts-grid-container {
+    padding-right: 15px;
+  }
+}
+
+/* Tablet - 768px to 1024px */
+@media (max-width: 1024px) {
+  .artifacts-grid {
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    /* Max 5-6 items */
+  }
+}
+
+/* Tablet Portrait - 768px */
 @media (max-width: 768px) {
   /* Scrollbar nhỏ hơn trên tablet/mobile */
   .artifacts-grid-container::-webkit-scrollbar {
@@ -551,8 +585,9 @@
   }
   
   .artifacts-grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     gap: 10px;
+    /* Max 4-5 items */
   }
   
   .artifact-name h4 {
@@ -611,6 +646,7 @@
   }
 }
 
+/* Mobile - 480px */
 @media (max-width: 480px) {
   /* Scrollbar rất nhỏ trên mobile nhỏ */
   .artifacts-grid-container::-webkit-scrollbar {
@@ -666,7 +702,8 @@
   }
   
   .artifacts-grid {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    /* Max 2-3 items */
   }
   
   .artifact-card,

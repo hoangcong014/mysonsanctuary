@@ -1,8 +1,8 @@
 /**
  * artifacts.js
  * Module quản lý hiển thị artifacts với Category Filter
- * Mobile Touch Support + Category Filtering + Mouse Wheel Scroll
- * Version: 3.0 - Grid Only Scroll
+ * Auto Items Per Page + Auto Adjust Image Height + Min Rows
+ * Version: 6.0 - With Min Rows Support
  */
 
 (function() {
@@ -19,7 +19,10 @@
     showAnimation: true,
     itemsPerPage: 27,
     maxPageButtons: 5,
-    debug: true
+    debug: true,
+    autoCalculateItems: true,
+    autoAdjustImageHeight: true,
+    minRows: 2 // Đảm bảo ít nhất 2 hàng
   };
 
   // ============================================
@@ -36,6 +39,7 @@
     currentFilter: null,
     currentLanguage: 'vi',
     languageCheckInterval: null,
+    resizeTimeout: null,
     
     pagination: {
       currentPage: 1,
@@ -68,6 +72,178 @@
       log('Không lấy được ngôn ngữ tour, dùng mặc định: vi');
     }
     return 'vi';
+  }
+
+  // ============================================
+  // AUTO CALCULATE ITEMS PER PAGE
+  // ============================================
+
+  function calculateItemsPerPage() {
+    const gridContainer = state.container?.querySelector('.artifacts-grid-container');
+    if (!gridContainer) {
+      log('Cannot calculate - grid container not found');
+      return CONFIG.itemsPerPage;
+    }
+    
+    const containerHeight = gridContainer.clientHeight;
+    const grid = gridContainer.querySelector('.artifacts-grid');
+    if (!grid) {
+      return CONFIG.itemsPerPage;
+    }
+    
+    const gridStyles = window.getComputedStyle(grid);
+    const gap = parseInt(gridStyles.gap) || 15;
+    const gridCols = gridStyles.gridTemplateColumns.split(' ').length;
+    
+    const firstCard = grid.querySelector('.artifact-item');
+    if (!firstCard) {
+      return CONFIG.itemsPerPage;
+    }
+    
+    const cardHeight = firstCard.offsetHeight;
+    const containerPaddingTop = parseInt(window.getComputedStyle(gridContainer).paddingTop) || 0;
+    const containerPaddingBottom = parseInt(window.getComputedStyle(gridContainer).paddingBottom) || 0;
+    
+    const availableHeight = containerHeight - containerPaddingTop - containerPaddingBottom;
+    let rows = Math.floor((availableHeight + gap) / (cardHeight + gap));
+    
+    // Đảm bảo ít nhất minRows hàng
+    const minRows = CONFIG.minRows || 2;
+    rows = Math.max(rows, minRows);
+    
+    const itemsPerPage = rows * gridCols;
+    
+    log(`📊 Auto calculated items per page:
+    - Container height: ${containerHeight}px
+    - Available height: ${availableHeight}px
+    - Card height: ${cardHeight}px
+    - Gap: ${gap}px
+    - Columns: ${gridCols}
+    - Rows calculated: ${Math.floor((availableHeight + gap) / (cardHeight + gap))}
+    - Rows (with min ${minRows}): ${rows}
+    - Items per page: ${itemsPerPage}`);
+    
+    return Math.max(itemsPerPage, gridCols);
+  }
+
+  function updateItemsPerPageAuto() {
+    if (!CONFIG.autoCalculateItems) {
+      return;
+    }
+    
+    const newItemsPerPage = calculateItemsPerPage();
+    
+    if (newItemsPerPage !== state.pagination.itemsPerPage && newItemsPerPage > 0) {
+      const oldItemsPerPage = state.pagination.itemsPerPage;
+      state.pagination.itemsPerPage = newItemsPerPage;
+      
+      const firstItemOnCurrentPage = (state.pagination.currentPage - 1) * oldItemsPerPage;
+      state.pagination.currentPage = Math.floor(firstItemOnCurrentPage / newItemsPerPage) + 1;
+      
+      log(`✓ Items per page updated: ${oldItemsPerPage} → ${newItemsPerPage}`);
+      log(`  Current page adjusted: ${state.pagination.currentPage}`);
+      
+      renderArtifacts(state.filteredArtifacts);
+    }
+  }
+
+  // ============================================
+  // AUTO ADJUST CARD IMAGE HEIGHT
+  // ============================================
+
+  function adjustCardImageHeight() {
+    if (!CONFIG.autoAdjustImageHeight) {
+      return;
+    }
+    
+    const gridContainer = state.container?.querySelector('.artifacts-grid-container');
+    if (!gridContainer) {
+      log('Cannot adjust image height - grid container not found');
+      return;
+    }
+    
+    const grid = gridContainer.querySelector('.artifacts-grid');
+    if (!grid) {
+      return;
+    }
+    
+    // Lấy chiều cao container
+    const containerHeight = gridContainer.clientHeight;
+    const containerPaddingTop = parseInt(window.getComputedStyle(gridContainer).paddingTop) || 0;
+    const containerPaddingBottom = parseInt(window.getComputedStyle(gridContainer).paddingBottom) || 0;
+    
+    // Lấy gap và số cột
+    const gridStyles = window.getComputedStyle(grid);
+    const gap = parseInt(gridStyles.gap) || 15;
+    const gridCols = gridStyles.gridTemplateColumns.split(' ').length;
+    
+    // Tính số hàng dựa trên items per page
+    let rows = Math.ceil(state.pagination.itemsPerPage / gridCols);
+    
+    // Đảm bảo ít nhất minRows hàng
+    const minRows = CONFIG.minRows || 2;
+    rows = Math.max(rows, minRows);
+    
+    // Tính chiều cao mỗi card
+    const availableHeight = containerHeight - containerPaddingTop - containerPaddingBottom;
+    const cardHeight = (availableHeight - (gap * (rows - 1))) / rows;
+    
+    // Lấy chiều cao phần text (tên artifact)
+    const firstCardName = grid.querySelector('.artifact-name');
+    const textHeight = firstCardName ? firstCardName.offsetHeight : 50;
+    
+    // Chiều cao ảnh = chiều cao card - chiều cao text
+    const imageHeight = cardHeight - textHeight;
+    
+    // Tính aspect ratio cho ảnh
+    const firstThumb = grid.querySelector('.artifact-thumb');
+    if (firstThumb) {
+      const thumbWidth = firstThumb.offsetWidth;
+      const aspectRatio = (imageHeight / thumbWidth) * 100;
+      
+      // Giới hạn aspect ratio hợp lý (50% - 200%)
+      const finalAspectRatio = Math.max(50, Math.min(200, aspectRatio));
+      
+      log(`📐 Auto adjusted image height:
+    - Container height: ${containerHeight}px
+    - Available height: ${availableHeight}px
+    - Rows (with min ${minRows}): ${rows}
+    - Card height: ${cardHeight.toFixed(1)}px
+    - Text height: ${textHeight}px
+    - Image height: ${imageHeight.toFixed(1)}px
+    - Thumb width: ${thumbWidth}px
+    - Aspect ratio: ${finalAspectRatio.toFixed(1)}%`);
+      
+      // Apply CSS cho tất cả thumbnails
+      const allThumbs = grid.querySelectorAll('.artifact-thumb');
+      allThumbs.forEach(thumb => {
+        thumb.style.paddingTop = `${finalAspectRatio}%`;
+      });
+    }
+  }
+
+  function enableAutoImageHeight() {
+    CONFIG.autoAdjustImageHeight = true;
+    adjustCardImageHeight();
+    log('✓ Auto image height enabled');
+  }
+
+  function disableAutoImageHeight() {
+    CONFIG.autoAdjustImageHeight = false;
+    const allThumbs = document.querySelectorAll('.artifact-thumb');
+    allThumbs.forEach(thumb => {
+      thumb.style.paddingTop = '100%'; // Reset về vuông
+    });
+    log('✓ Auto image height disabled, reset to square (100%)');
+  }
+
+  function setImageAspectRatio(ratio) {
+    CONFIG.autoAdjustImageHeight = false;
+    const allThumbs = document.querySelectorAll('.artifact-thumb');
+    allThumbs.forEach(thumb => {
+      thumb.style.paddingTop = `${ratio}%`;
+    });
+    log(`✓ Image aspect ratio set to: ${ratio}%`);
   }
 
   // ============================================
@@ -150,7 +326,6 @@
 
   function scrollToTop() {
     if (state.container) {
-      // Scroll grid container về top
       const gridContainer = state.container.querySelector('.artifacts-grid-container');
       if (gridContainer) {
         gridContainer.scrollTop = 0;
@@ -229,14 +404,12 @@
   function applyFilters() {
     let filtered = state.artifacts;
     
-    // Filter by category
     if (state.selectedCategoryId !== null) {
       filtered = filtered.filter(artifact => 
         artifact.cate_id === state.selectedCategoryId
       );
     }
     
-    // Filter by search keyword
     if (state.searchKeyword && state.searchKeyword.trim() !== '') {
       const keyword = state.searchKeyword.toLowerCase().trim();
       filtered = filtered.filter(artifact => {
@@ -259,13 +432,11 @@
     state.selectedCategoryId = categoryId;
     state.searchKeyword = '';
     
-    // Cập nhật UI - xóa giá trị trong ô search
     const searchInput = state.container?.querySelector('#artifact-search');
     if (searchInput) {
         searchInput.value = '';
     }
     
-    // Ẩn nút clear search
     const clearBtn = state.container?.querySelector('#search-clear-btn');
     if (clearBtn) {
         clearBtn.style.display = 'none';
@@ -315,7 +486,7 @@
   }
 
   // ============================================
-  // CREATE CATEGORY FILTER UI - DROPDOWN WITH SEARCH
+  // CREATE CATEGORY FILTER UI
   // ============================================
   
   function createCategoryFilter() {
@@ -327,7 +498,6 @@
     const labelText = currentLang === 'en' || currentLang === 'en-US' ? 'Category:' : 'Danh mục:';
     const searchPlaceholder = currentLang === 'en' || currentLang === 'en-US' ? 'Search artifacts...' : 'Tìm kiếm hiện vật...';
     
-    // Create options HTML
     let optionsHTML = `<option value="null">${allText}</option>`;
     
     state.categories.forEach(category => {
@@ -513,11 +683,9 @@
     const wrapper = document.createElement('div');
     wrapper.className = 'artifacts-wrapper';
     
-    // Category Filter - FIXED TOP
     const categoryFilter = createCategoryFilter();
     wrapper.appendChild(categoryFilter);
     
-    // Grid Container - CHỈ SCROLL PHẦN NÀY
     const gridContainer = document.createElement('div');
     gridContainer.className = 'artifacts-grid-container';
     
@@ -542,7 +710,6 @@
     const pageItems = getCurrentPageItems(artifacts);
     log(`Rendering page ${state.pagination.currentPage}/${state.pagination.totalPages} (${pageItems.length} items)`);
     
-    // Grid
     const grid = document.createElement('div');
     grid.className = 'artifacts-grid';
     
@@ -554,7 +721,6 @@
     gridContainer.appendChild(grid);
     wrapper.appendChild(gridContainer);
     
-    // Pagination - FIXED BOTTOM
     const paginationBottom = createPaginationUI();
     if (paginationBottom) {
       wrapper.appendChild(paginationBottom);
@@ -569,6 +735,29 @@
     attachMouseWheelListener();
     
     log('Render hoàn tất!');
+    
+    // Auto features - chạy sau khi DOM đã render
+    if (state.pagination.currentPage === 1 && artifacts.length > 0) {
+      setTimeout(() => {
+        if (CONFIG.autoCalculateItems) {
+          updateItemsPerPageAuto();
+        }
+        
+        // Auto adjust image height AFTER items per page calculated
+        setTimeout(() => {
+          if (CONFIG.autoAdjustImageHeight) {
+            adjustCardImageHeight();
+          }
+        }, 100);
+      }, 150);
+    } else {
+      // Chỉ adjust image height khi không phải trang 1
+      setTimeout(() => {
+        if (CONFIG.autoAdjustImageHeight) {
+          adjustCardImageHeight();
+        }
+      }, 100);
+    }
   }
 
   // ============================================
@@ -582,23 +771,19 @@
     const clearBtn = state.container.querySelector('#search-clear-btn');
     
     if (searchInput) {
-      // Input event với debounce
       searchInput.addEventListener('input', (e) => {
         const value = e.target.value;
         
-        // Show/hide clear button
         if (clearBtn) {
           clearBtn.style.display = value ? 'flex' : 'none';
         }
         
-        // Debounce search
         clearTimeout(searchTimeout);
         searchTimeout = setTimeout(() => {
           searchArtifacts(value);
         }, 300);
       });
       
-      // Enter key
       searchInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
           clearTimeout(searchTimeout);
@@ -606,18 +791,15 @@
         }
       });
       
-      // Touch support - focus khi touch
       searchInput.addEventListener('touchstart', (e) => {
         e.currentTarget.focus();
       }, { passive: true });
       
-      // Click support
       searchInput.addEventListener('click', (e) => {
         e.currentTarget.focus();
       });
     }
     
-    // Clear button
     if (clearBtn) {
       clearBtn.addEventListener('click', (e) => {
         e.preventDefault();
@@ -677,23 +859,10 @@
     const gridContainer = state.container.querySelector('.artifacts-grid-container');
     
     if (gridContainer) {
-      // Loại bỏ listener cũ nếu có
-      if (gridContainer._wheelHandler) {
-        gridContainer.removeEventListener('wheel', gridContainer._wheelHandler);
-      }
+      gridContainer.style.overflowY = 'auto';
+      gridContainer.style.pointerEvents = 'auto';
       
-      // Tạo wheel handler - Giữ scroll mặc định
-      const wheelHandler = function(e) {
-        // Không cần custom, trình duyệt tự xử lý scroll với overflow-y: auto
-      };
-      
-      // Lưu reference
-      gridContainer._wheelHandler = wheelHandler;
-      
-      // Attach wheel event với passive để tối ưu performance
-      gridContainer.addEventListener('wheel', wheelHandler, { passive: true });
-      
-      log('✓ Mouse wheel scroll attached to grid container');
+      log('✓ Grid container scroll enabled (native browser scroll)');
     }
   }
 
@@ -803,7 +972,6 @@
 
   function openContainer() {
     if (state.container) {
-      // Xóa search khi mở container
       state.searchKeyword = '';
       const searchInput = state.container.querySelector('#artifact-search');
       if (searchInput) {
@@ -814,13 +982,11 @@
         clearBtn.style.display = 'none';
       }
 
-      // Reset dropdown về "Tất cả"
       const categorySelect = state.container.querySelector('#category-select');
       if (categorySelect) {
         categorySelect.value = 'null';
       }
 
-      // Áp dụng filter để cập nhật danh sách
       applyFilters();
       
       state.container.style.display = 'block';
@@ -835,7 +1001,7 @@
   }
 
   // ============================================
-  // INJECT STYLES - CHECK + FALLBACK
+  // INJECT STYLES
   // ============================================
   
   function injectStyles() {
@@ -870,6 +1036,48 @@
   }
 
   // ============================================
+  // WINDOW RESIZE HANDLER
+  // ============================================
+  
+  function setupResizeListener() {
+    window.addEventListener('resize', () => {
+      clearTimeout(state.resizeTimeout);
+      state.resizeTimeout = setTimeout(() => {
+        if (state.container && state.isLoaded) {
+          if (CONFIG.autoCalculateItems) {
+            log('Window resized - recalculating items per page...');
+            updateItemsPerPageAuto();
+          }
+          
+          if (CONFIG.autoAdjustImageHeight) {
+            log('Window resized - adjusting image height...');
+            adjustCardImageHeight();
+          }
+        }
+      }, 300);
+    });
+    
+    log('✓ Resize listener attached');
+  }
+
+  // ============================================
+  // MIN ROWS API
+  // ============================================
+  
+  function setMinRows(rows) {
+    CONFIG.minRows = Math.max(1, rows);
+    log(`✓ Min rows set to: ${CONFIG.minRows}`);
+    
+    if (CONFIG.autoCalculateItems) {
+      updateItemsPerPageAuto();
+    }
+  }
+
+  function getMinRows() {
+    return CONFIG.minRows;
+  }
+
+  // ============================================
   // MAIN INIT
   // ============================================
   
@@ -887,8 +1095,12 @@
       
       renderArtifacts();
       startLanguageMonitoring();
+      setupResizeListener();
       
       log('✓ Artifacts module initialized successfully!');
+      log(`  - Auto Items Per Page: ${CONFIG.autoCalculateItems ? 'ON' : 'OFF'}`);
+      log(`  - Auto Image Height: ${CONFIG.autoAdjustImageHeight ? 'ON' : 'OFF'}`);
+      log(`  - Min Rows: ${CONFIG.minRows}`);
       
     } catch (error) {
       logError('Failed to initialize Artifacts module', error);
@@ -969,6 +1181,32 @@
       state.currentLanguage = getCurrentLanguage();
       onLanguageChange();
     },
+    // Auto Items Per Page API
+    enableAutoItemsPerPage: function() {
+      CONFIG.autoCalculateItems = true;
+      updateItemsPerPageAuto();
+      log('✓ Auto items per page enabled');
+    },
+    disableAutoItemsPerPage: function() {
+      CONFIG.autoCalculateItems = false;
+      state.pagination.itemsPerPage = CONFIG.itemsPerPage;
+      renderArtifacts(state.filteredArtifacts);
+      log('✓ Auto items per page disabled, using default:', CONFIG.itemsPerPage);
+    },
+    getCurrentItemsPerPage: function() {
+      return state.pagination.itemsPerPage;
+    },
+    recalculateItemsPerPage: function() {
+      updateItemsPerPageAuto();
+    },
+    // Auto Image Height API
+    enableAutoImageHeight: enableAutoImageHeight,
+    disableAutoImageHeight: disableAutoImageHeight,
+    adjustImageHeight: adjustCardImageHeight,
+    setImageAspectRatio: setImageAspectRatio,
+    // Min Rows API
+    setMinRows: setMinRows,
+    getMinRows: getMinRows,
     getState: function() {
       return { 
         ...state,
