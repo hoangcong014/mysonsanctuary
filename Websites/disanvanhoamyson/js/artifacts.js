@@ -1,8 +1,8 @@
 /**
  * artifacts.js
  * Module quản lý hiển thị artifacts với Category Filter
- * Mobile Touch Support + Category Filtering + External CSS
- * Version: 2.0 - Option 2 (Safe fallback)
+ * Mobile Touch Support + Category Filtering + Mouse Wheel Scroll
+ * Version: 3.0 - Grid Only Scroll
  */
 
 (function() {
@@ -29,8 +29,8 @@
     artifacts: [],
     filteredArtifacts: [],
     categories: [],
-    selectedCategoryId: null, // null = "Tất cả"
-    searchKeyword: '', // Từ khóa tìm kiếm
+    selectedCategoryId: null,
+    searchKeyword: '',
     container: null,
     isLoaded: false,
     currentFilter: null,
@@ -150,17 +150,11 @@
 
   function scrollToTop() {
     if (state.container) {
-      // Scroll wrapper về top
-      const wrapper = state.container.querySelector('.artifacts-wrapper');
-      if (wrapper) {
-        wrapper.scrollTop = 0;
+      // Scroll grid container về top
+      const gridContainer = state.container.querySelector('.artifacts-grid-container');
+      if (gridContainer) {
+        gridContainer.scrollTop = 0;
       }
-      
-      // Scroll container về top
-      state.container.scrollTop = 0;
-      
-      // Scroll vào view nếu cần
-      state.container.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 
@@ -263,7 +257,7 @@
   
   function filterByCategory(categoryId) {
     state.selectedCategoryId = categoryId;
-    state.searchKeyword = ''; // Xóa từ khóa tìm kiếm
+    state.searchKeyword = '';
     
     // Cập nhật UI - xóa giá trị trong ô search
     const searchInput = state.container?.querySelector('#artifact-search');
@@ -519,9 +513,13 @@
     const wrapper = document.createElement('div');
     wrapper.className = 'artifacts-wrapper';
     
-    // Category Filter
+    // Category Filter - FIXED TOP
     const categoryFilter = createCategoryFilter();
     wrapper.appendChild(categoryFilter);
+    
+    // Grid Container - CHỈ SCROLL PHẦN NÀY
+    const gridContainer = document.createElement('div');
+    gridContainer.className = 'artifacts-grid-container';
     
     if (!artifacts || artifacts.length === 0) {
       const currentLang = state.currentLanguage;
@@ -529,11 +527,12 @@
         ? 'No artifacts found' 
         : 'Không có hiện vật';
       
-      wrapper.innerHTML += `
+      gridContainer.innerHTML = `
         <div class="no-data">
           <p>${noDataText}</p>
         </div>
       `;
+      wrapper.appendChild(gridContainer);
       state.container.appendChild(wrapper);
       attachCategoryListeners();
       attachSearchListeners();
@@ -552,12 +551,12 @@
       grid.appendChild(card);
     });
     
-    wrapper.appendChild(grid);
+    gridContainer.appendChild(grid);
+    wrapper.appendChild(gridContainer);
     
-    // Pagination ở cuối
+    // Pagination - FIXED BOTTOM
     const paginationBottom = createPaginationUI();
     if (paginationBottom) {
-      paginationBottom.classList.add('pagination-bottom');
       wrapper.appendChild(paginationBottom);
     }
     
@@ -567,6 +566,7 @@
     attachPaginationListeners();
     attachCategoryListeners();
     attachSearchListeners();
+    attachMouseWheelListener();
     
     log('Render hoàn tất!');
   }
@@ -608,7 +608,6 @@
       
       // Touch support - focus khi touch
       searchInput.addEventListener('touchstart', (e) => {
-        // Không preventDefault để keyboard xuất hiện
         e.currentTarget.focus();
       }, { passive: true });
       
@@ -650,18 +649,13 @@
   function attachCategoryListeners() {
     const categorySelect = state.container.querySelector('#category-select');
     if (categorySelect) {
-      // Change event cho cả desktop và mobile
       categorySelect.addEventListener('change', handleCategoryChange);
       
-      // Thêm click event để đảm bảo dropdown mở được
       categorySelect.addEventListener('click', (e) => {
-        // Force focus để mở dropdown
         e.currentTarget.focus();
       });
       
-      // Touch event để đảm bảo hoạt động trên mobile
       categorySelect.addEventListener('touchstart', (e) => {
-        // Không preventDefault để native select vẫn hoạt động
         e.currentTarget.focus();
       }, { passive: true });
     }
@@ -673,6 +667,34 @@
     
     log('Category selected:', actualCategoryId);
     filterByCategory(actualCategoryId);
+  }
+
+  // ============================================
+  // EVENT HANDLERS - MOUSE WHEEL SCROLL
+  // ============================================
+  
+  function attachMouseWheelListener() {
+    const gridContainer = state.container.querySelector('.artifacts-grid-container');
+    
+    if (gridContainer) {
+      // Loại bỏ listener cũ nếu có
+      if (gridContainer._wheelHandler) {
+        gridContainer.removeEventListener('wheel', gridContainer._wheelHandler);
+      }
+      
+      // Tạo wheel handler - Giữ scroll mặc định
+      const wheelHandler = function(e) {
+        // Không cần custom, trình duyệt tự xử lý scroll với overflow-y: auto
+      };
+      
+      // Lưu reference
+      gridContainer._wheelHandler = wheelHandler;
+      
+      // Attach wheel event với passive để tối ưu performance
+      gridContainer.addEventListener('wheel', wheelHandler, { passive: true });
+      
+      log('✓ Mouse wheel scroll attached to grid container');
+    }
   }
 
   // ============================================
@@ -813,11 +835,10 @@
   }
 
   // ============================================
-  // INJECT STYLES - OPTION 2: CHECK + FALLBACK
+  // INJECT STYLES - CHECK + FALLBACK
   // ============================================
   
   function injectStyles() {
-    // Kiểm tra xem CSS đã được load từ HTML chưa
     const existingLink = document.querySelector('link[href*="artifacts.css"]');
     
     if (existingLink) {
@@ -825,11 +846,9 @@
       return;
     }
     
-    // Nếu không tìm thấy CSS, hiển thị cảnh báo
     console.warn('⚠️ [Artifacts] CẢNH BÁO: Chưa thêm artifacts.css vào HTML!');
     console.warn('⚠️ [Artifacts] Hãy thêm <link rel="stylesheet" href="css/artifacts.css"> vào <head>');
     
-    // Tự động inject CSS như fallback
     const link = document.createElement('link');
     link.id = 'artifacts-styles-fallback';
     link.rel = 'stylesheet';
@@ -840,7 +859,6 @@
     
     log('⚠️ CSS đã được tự động inject (fallback mode)');
     
-    // Event listeners
     link.addEventListener('load', () => {
       log('✓ CSS fallback đã load thành công');
     });
@@ -859,24 +877,15 @@
     try {
       log('Initializing Artifacts module...');
       
-      // Kiểm tra CSS
       injectStyles();
-      
-      // Load data
       await loadCategoriesData();
       await loadArtifactsData();
-      
-      // Get container
       getContainer();
       
-      // Set language
       state.currentLanguage = getCurrentLanguage();
       log('Ngôn ngữ khởi tạo:', state.currentLanguage);
       
-      // Render
       renderArtifacts();
-      
-      // Start monitoring
       startLanguageMonitoring();
       
       log('✓ Artifacts module initialized successfully!');
@@ -977,7 +986,6 @@
     log('showArtifactContainer() called from tour');
     
     if (state.container) {
-      // Xóa search khi mở container
       state.searchKeyword = '';
       const searchInput = state.container.querySelector('#artifact-search');
       if (searchInput) {
@@ -988,13 +996,11 @@
         clearBtn.style.display = 'none';
       }
 
-      // Reset dropdown về "Tất cả"
       const categorySelect = state.container.querySelector('#category-select');
       if (categorySelect) {
         categorySelect.value = 'null';
       }
 
-      // Áp dụng filter để cập nhật danh sách
       applyFilters();
       
       state.container.style.display = 'block';
@@ -1012,7 +1018,6 @@
       logError('Container chưa sẵn sàng, đang khởi tạo...');
       window.ArtifactsManager.init().then(() => {
         if (state.container) {
-          // Xóa search sau khi init
           state.searchKeyword = '';
           const searchInput = state.container.querySelector('#artifact-search');
           if (searchInput) {
@@ -1023,13 +1028,11 @@
             clearBtn.style.display = 'none';
           }
 
-          // Reset dropdown về "Tất cả"
           const categorySelect = state.container.querySelector('#category-select');
           if (categorySelect) {
             categorySelect.value = 'null';
           }
 
-          // Áp dụng filter để cập nhật danh sách
           applyFilters();
           
           state.container.style.display = 'block';

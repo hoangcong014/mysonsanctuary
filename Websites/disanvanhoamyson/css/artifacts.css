@@ -19,64 +19,25 @@
 }
 
 .artifacts-wrapper {
-  padding: 15px;
+  display: flex;
+  flex-direction: column;
   height: 100%;
   width: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: hidden;
   background: white;
-  -webkit-overflow-scrolling: touch;
   pointer-events: auto !important;
-  padding-bottom: max(80px, calc(env(safe-area-inset-bottom, 0px) + 80px));
+  box-sizing: border-box;
 }
 
 /* ============================================ */
-/* CUSTOM SCROLLBAR */
-/* ============================================ */
-
-/* Webkit browsers (Chrome, Safari, Edge) */
-.artifacts-wrapper::-webkit-scrollbar {
-  width: 14px;
-}
-
-.artifacts-wrapper::-webkit-scrollbar-track {
-  background: rgba(234, 203, 50, 0.15);
-  border-radius: 10px;
-  margin: 5px;
-}
-
-.artifacts-wrapper::-webkit-scrollbar-thumb {
-  background: rgba(234, 203, 50, 0.7);
-  border-radius: 10px;
-  border: 3px solid white;
-  transition: background 0.3s ease;
-}
-
-.artifacts-wrapper::-webkit-scrollbar-thumb:hover {
-  background: rgba(234, 203, 50, 0.9);
-}
-
-.artifacts-wrapper::-webkit-scrollbar-thumb:active {
-  background: #EACB32;
-}
-
-/* Firefox */
-.artifacts-wrapper {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(234, 203, 50, 0.7) rgba(234, 203, 50, 0.15);
-}
-
-/* ============================================ */
-/* CATEGORY FILTER - DROPDOWN WITH SEARCH */
+/* CATEGORY FILTER - FIXED TOP */
 /* ============================================ */
 
 .category-filter {
-  position: sticky;
-  top: 0;
+  flex-shrink: 0;
   z-index: 200;
   background: white;
-  padding: 10px 0 15px 0;
-  margin-bottom: 15px;
+  padding: 25px 15px 15px 15px;
   border-bottom: 2px solid rgba(234, 203, 50, 0.3);
   pointer-events: auto !important;
 }
@@ -117,6 +78,7 @@
   -webkit-tap-highlight-color: rgba(234, 203, 50, 0.2);
   -webkit-user-select: text;
   user-select: text;
+  box-sizing: border-box;
 }
 
 .search-input:hover {
@@ -205,6 +167,7 @@
   user-select: none;
   position: relative;
   z-index: 201;
+  box-sizing: border-box;
 }
 
 .category-select:hover {
@@ -238,6 +201,55 @@
 }
 
 /* ============================================ */
+/* GRID CONTAINER - CHỈ SCROLL PHẦN NÀY */
+/* ============================================ */
+
+.artifacts-grid-container {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 15px;
+  padding-right: 20px;
+  -webkit-overflow-scrolling: touch;
+  pointer-events: auto !important;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  cursor: default;
+}
+
+/* CUSTOM SCROLLBAR cho grid container */
+.artifacts-grid-container::-webkit-scrollbar {
+  width: 14px;
+}
+
+.artifacts-grid-container::-webkit-scrollbar-track {
+  background: rgba(234, 203, 50, 0.15);
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.artifacts-grid-container::-webkit-scrollbar-thumb {
+  background: rgba(234, 203, 50, 0.7);
+  border-radius: 10px;
+  border: 3px solid white;
+  transition: background 0.3s ease;
+}
+
+.artifacts-grid-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(234, 203, 50, 0.9);
+}
+
+.artifacts-grid-container::-webkit-scrollbar-thumb:active {
+  background: #EACB32;
+}
+
+/* Firefox */
+.artifacts-grid-container {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(234, 203, 50, 0.7) rgba(234, 203, 50, 0.15);
+}
+
+/* ============================================ */
 /* GRID */
 /* ============================================ */
 
@@ -246,7 +258,6 @@
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 15px;
   margin-bottom: 0px;
-  margin-right: 20px;
   pointer-events: auto !important;
 }
 
@@ -344,33 +355,16 @@
 }
 
 /* ============================================ */
-/* PAGINATION */
+/* PAGINATION - FIXED BOTTOM */
 /* ============================================ */
 
 .pagination-container {
-  background: transparent;
-  border-radius: 0;
-  padding: 20px 15px;
-  box-shadow: none;
-  margin-bottom: 0;
-  margin-top: 20px;
+  flex-shrink: 0;
+  background: white;
+  border-top: 2px solid rgba(234, 203, 50, 0.3);
+  padding: 15px;
   pointer-events: auto !important;
-}
-
-.pagination-top {
-  position: relative;
-  top: auto;
-  z-index: 1;
-  margin-bottom: 0;
-  margin-top: 20px;
-}
-
-.pagination-bottom {
-  position: relative;
-  z-index: 1;
-  margin-top: -25px;
-  margin-bottom: 20px;
-  padding-bottom: max(60px, env(safe-area-inset-bottom, 60px));
+  z-index: 100;
 }
 
 .pagination-controls {
@@ -400,6 +394,7 @@
   touch-action: manipulation !important;
   -webkit-tap-highlight-color: transparent;
   user-select: none;
+  box-sizing: border-box;
 }
 
 .pagination-btn:hover:not(:disabled) {
@@ -443,6 +438,7 @@
   touch-action: manipulation !important;
   -webkit-tap-highlight-color: transparent;
   user-select: none;
+  box-sizing: border-box;
 }
 
 .page-btn:hover {
@@ -490,27 +486,29 @@
 @media (max-width: 1200px) {
   .artifacts-grid {
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    margin-right: 15px;
+  }
+  
+  .artifacts-grid-container {
+    padding-right: 15px;
   }
 }
 
 @media (max-width: 768px) {
   /* Scrollbar nhỏ hơn trên tablet/mobile */
-  .artifacts-wrapper::-webkit-scrollbar {
+  .artifacts-grid-container::-webkit-scrollbar {
     width: 10px;
   }
   
-  .artifacts-wrapper::-webkit-scrollbar-thumb {
+  .artifacts-grid-container::-webkit-scrollbar-thumb {
     border: 2px solid white;
   }
 
-  .artifacts-wrapper {
+  .artifacts-grid-container {
     padding: 10px;
-    padding-bottom: max(100px, calc(env(safe-area-inset-bottom, 0px) + 100px));
   }
   
   .category-filter {
-    padding: 8px 0 12px 0;
+    padding: 8px 10px 12px 10px;
     pointer-events: auto !important;
   }
   
@@ -520,6 +518,11 @@
     gap: 8px;
     padding-right: 0;
     pointer-events: auto !important;
+  }
+  
+  .search-box {
+    margin-left: 0;
+    max-width: 100%;
   }
   
   .category-label {
@@ -538,6 +541,7 @@
     z-index: 201;
     -webkit-appearance: menulist-button;
     min-height: 44px;
+    box-sizing: border-box;
   }
   
   .category-select:focus {
@@ -549,7 +553,6 @@
   .artifacts-grid {
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 10px;
-    margin-right: 0;
   }
   
   .artifact-name h4 {
@@ -558,8 +561,7 @@
   }
   
   .pagination-container {
-    padding: 15px 10px;
-    padding-bottom: max(80px, calc(env(safe-area-inset-bottom, 0px) + 80px));
+    padding: 12px 10px;
   }
   
   .pagination-btn {
@@ -568,6 +570,7 @@
     font-size: 16px;
     min-width: 44px;
     min-height: 44px;
+    box-sizing: border-box;
   }
   
   .page-btn {
@@ -576,6 +579,7 @@
     font-size: 13px;
     min-width: 44px;
     min-height: 44px;
+    box-sizing: border-box;
   }
   
   .pagination-controls {
@@ -584,10 +588,6 @@
   
   .pagination-pages {
     gap: 8px;
-  }
-  
-  .pagination-bottom {
-    padding-bottom: max(80px, calc(env(safe-area-inset-bottom, 0px) + 80px));
   }
   
   @media (hover: none) {
@@ -613,16 +613,12 @@
 
 @media (max-width: 480px) {
   /* Scrollbar rất nhỏ trên mobile nhỏ */
-  .artifacts-wrapper::-webkit-scrollbar {
+  .artifacts-grid-container::-webkit-scrollbar {
     width: 8px;
   }
   
-  .artifacts-wrapper::-webkit-scrollbar-thumb {
+  .artifacts-grid-container::-webkit-scrollbar-thumb {
     border: 1px solid white;
-  }
-
-  .artifacts-wrapper {
-    padding-bottom: max(120px, calc(env(safe-area-inset-bottom, 0px) + 120px));
   }
   
   .category-filter-wrapper {
@@ -631,7 +627,7 @@
   }
   
   .search-box {
-    margin-left: 100px;
+    margin-left: 0;
   }
   
   .search-input {
@@ -643,6 +639,7 @@
     -webkit-tap-highlight-color: rgba(234, 203, 50, 0.2);
     -webkit-user-select: text;
     user-select: text;
+    box-sizing: border-box;
   }
   
   .search-clear-btn {
@@ -650,6 +647,7 @@
     height: 24px;
     font-size: 10px;
     z-index: 202;
+    right: 10px;
   }
   
   .category-label {
@@ -664,11 +662,11 @@
     -webkit-appearance: menulist-button;
     pointer-events: auto !important;
     z-index: 201;
+    box-sizing: border-box;
   }
   
   .artifacts-grid {
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    margin-right: 0;
   }
   
   .artifact-card,
@@ -676,14 +674,10 @@
   .page-btn {
     min-width: 44px !important;
     min-height: 44px !important;
+    box-sizing: border-box;
   }
   
   .pagination-container {
     padding: 10px;
-    padding-bottom: max(100px, calc(env(safe-area-inset-bottom, 0px) + 100px));
-  }
-  
-  .pagination-bottom {
-    padding-bottom: max(100px, calc(env(safe-area-inset-bottom, 0px) + 100px));
   }
 }
