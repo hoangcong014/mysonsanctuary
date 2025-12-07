@@ -33,10 +33,12 @@
 	<script src="js/artifacts.js"></script>
 	<script src="js/towers.js"></script>
 	<script src="js/reconstruction.js"></script>
+	<script src="js/model-info.js"></script>
 - Thêm css vào thẻ <head>
 	<link rel="stylesheet" href="css/artifacts.css">
 	<link rel="stylesheet" href="css/towers.css">
 	<link rel="stylesheet" href="css/reconstruction.css">
+	<link rel="stylesheet" href="css/model-info.css">
 	
 	
 - Load đúng asset theo tên trong tour
