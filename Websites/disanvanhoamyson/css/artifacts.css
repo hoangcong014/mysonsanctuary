@@ -337,6 +337,7 @@
 
 .artifact-name {
   padding: 12px;
+  padding-top: 25px;
 }
 
 .artifact-name h4 {
@@ -351,6 +352,7 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   min-height: 38px;
+  text-align: center;
 }
 
 .artifact-card:hover .artifact-name h4 {

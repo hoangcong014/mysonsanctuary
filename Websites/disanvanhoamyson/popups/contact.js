@@ -1,6 +1,53 @@
 (function () {
   function createContactPopup() {
-    if (document.getElementById("contactPopup")) return;
+    // XÓA popup cũ nếu có (để tạo mới với ngôn ngữ hiện tại)
+    const oldPopup = document.getElementById("contactPopup");
+    const oldOverlay = document.getElementById("contactOverlay");
+    if (oldPopup) oldPopup.remove();
+    if (oldOverlay) oldOverlay.remove();
+
+    // LẤY NGÔN NGỮ HIỆN TẠI mỗi lần tạo popup
+    const currentLang = (typeof TourHelpers !== 'undefined' && TourHelpers.getCurrentLanguage) 
+      ? TourHelpers.getCurrentLanguage() 
+      : 'vi';
+    
+    const isEnglish = currentLang === 'en' || currentLang === 'en-US';
+
+    // Định nghĩa các text theo ngôn ngữ
+    const translations = {
+      vi: {
+        title: "LIÊN HỆ VỚI CHÚNG TÔI",
+        description: "Vui lòng điền thông tin bên dưới để gửi liên hệ:",
+        namePlaceholder: "Họ và tên",
+        emailPlaceholder: "Email",
+        phonePlaceholder: "Số điện thoại",
+        messagePlaceholder: "Nội dung liên hệ",
+        submitButton: "Gửi liên hệ",
+        contactInfoTitle: "THÔNG TIN LIÊN HỆ",
+        companyName: "DI SẢN VĂN HÓA THẾ GIỚI MỸ SƠN",
+        address: "Địa chỉ: thôn Mỹ Sơn, xã Thu Bồn, thành phố Đà Nẵng",
+        phone: "Điện thoại: 0963.412.068",
+        recaptchaError: "Vui lòng xác minh reCAPTCHA.",
+        successMessage: "Cảm ơn bạn đã liên hệ! (Demo - chưa gửi dữ liệu)"
+      },
+      en: {
+        title: "CONTACT US",
+        description: "Please fill in the information below to send us a message:",
+        namePlaceholder: "Full Name",
+        emailPlaceholder: "Email",
+        phonePlaceholder: "Phone Number",
+        messagePlaceholder: "Message",
+        submitButton: "Send Message",
+        contactInfoTitle: "CONTACT INFORMATION",
+        companyName: "MY SON WORLD CULTURAL HERITAGE",
+        address: "Address: My Son hamlet, Thu Bon commune, Da Nang city",
+        phone: "Phone: 0963.412.068",
+        recaptchaError: "Please verify reCAPTCHA.",
+        successMessage: "Thank you for contacting us! (Demo - data not sent)"
+      }
+    };
+
+    const t = isEnglish ? translations.en : translations.vi;
 
     const overlay = document.createElement("div");
     overlay.id = "contactOverlay";
@@ -14,7 +61,6 @@
     `;
     document.body.appendChild(overlay);
 
-    // Tạm chặn tương tác với các phần còn lại (menu, v.v.)
     document.body.style.pointerEvents = 'none';
     overlay.style.pointerEvents = 'auto';
 
@@ -27,7 +73,7 @@
       left: 0%;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.9); /* Transparent 10% */
+      background: rgba(0, 0, 0, 0.9);
       color: #ffffff;
       border: 0;
       border-radius: 0px;
@@ -35,7 +81,7 @@
       z-index: 9999;
       font-family: "Arial", Arial, sans-serif;
       overflow: hidden;
-      backdrop-filter: blur(1px); /* Làm mờ nền phía sau */
+      backdrop-filter: blur(1px);
     `;
 
     popup.innerHTML = `
@@ -117,49 +163,54 @@
       <div style="display: flex; height: calc(100% - 50px);">
         <!-- Form -->
         <div style="flex: 1; padding: 10px 0px 20px 80px; overflow-y: auto; overflow-x: hidden;">
-          <h2>LIÊN HỆ VỚI CHÚNG TÔI</h2>
-          <p>Vui lòng điền thông tin bên dưới để gửi liên hệ:</p>
+          <h2>${t.title}</h2>
+          <p>${t.description}</p>
           <form id="contactForm" style="display: grid; gap: 12px;">
-            <input type="text" name="name" placeholder="Họ và tên" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="text" name="phone" placeholder="Số điện thoại">
-            <textarea name="message" placeholder="Nội dung liên hệ" rows="5" required></textarea>
+            <input type="text" name="name" placeholder="${t.namePlaceholder}" required>
+            <input type="email" name="email" placeholder="${t.emailPlaceholder}" required>
+            <input type="text" name="phone" placeholder="${t.phonePlaceholder}">
+            <textarea name="message" placeholder="${t.messagePlaceholder}" rows="5" required></textarea>
 
             <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
 
-            <button type="submit">Gửi liên hệ</button>
+            <button type="submit">${t.submitButton}</button>
           </form>
 
           <div style="margin-top:30px;">
-            <h3>THÔNG TIN LIÊN HỆ</h3>
-            <p><strong>DI SẢN VĂN HÓA THẾ GIỚI MỸ SƠN</strong></p>
-            <p>Địa chỉ: thôn Mỹ Sơn, xã Thu Bồn, thành phố Đà Nẵng</p>
-            <p>Điện thoại: 0963.412.068</p>
+            <h3>${t.contactInfoTitle}</h3>
+            <p><strong>${t.companyName}</strong></p>
+            <p>${t.address}</p>
+            <p>${t.phone}</p>
             <p>Email: mysonstr@gmail.com</p>
           </div>
         </div>
 
         <!-- Map -->
         <div class="map-container" style="flex: 1; padding: 10px 40px 40px 40px; border-left: 1px solid #444; overflow: hidden;">
-          <iframe 
-            src="https://maps.google.com/maps?hl=vi&ie=UTF8&ll=15.775684055937122,108.10899282586176&z=16&output=embed"
-            width="600"
-            height="450"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy">
-          </iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21720.062196611318!2d108.10108091887567!3d15.77224269553354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314200918e1ccec1%3A0x470ae6f59070c40!2zRGkgc-G6o24gVsSDbiBob8OhIHRo4bq_IGdp4bubaSBN4bu5IFPGoW4!5e0!3m2!1svi!2s!4v1765089845091!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     `;
 
     document.body.appendChild(popup);
+    
     // Load reCAPTCHA nếu chưa có
     if (!document.getElementById('recaptcha-script')) {
       const recaptcha = document.createElement("script");
       recaptcha.src = "https://www.google.com/recaptcha/api.js";
       recaptcha.id = "recaptcha-script";
       document.body.appendChild(recaptcha);
+    } else {
+      // Reset reCAPTCHA nếu đã có
+      if (typeof grecaptcha !== 'undefined') {
+        setTimeout(() => {
+          try {
+            grecaptcha.render(document.querySelector('.g-recaptcha'));
+          } catch(e) {
+            // Ignore nếu đã render rồi
+          }
+        }, 100);
+      }
     }
 
     document.getElementById("contactForm").addEventListener("submit", function (e) {
@@ -167,16 +218,17 @@
 
       const response = grecaptcha.getResponse();
       if (!response) {
-        alert("Vui lòng xác minh reCAPTCHA.");
+        alert(t.recaptchaError);
         return;
       }
 
-      alert("Cảm ơn bạn đã liên hệ! (Demo - chưa gửi dữ liệu)");
+      alert(t.successMessage);
       hideContactPopup();
     });
   }
 
   window.showContactPopup = function () {
+    // TẠO MỚI popup mỗi lần show (để cập nhật ngôn ngữ)
     createContactPopup();
     document.getElementById("contactPopup").style.display = "block";
   };
@@ -186,7 +238,6 @@
     const overlay = document.getElementById("contactOverlay");
     if (popup) popup.style.display = "none";
     if (overlay) overlay.remove();
-    // Khôi phục tương tác toàn trang
     document.body.style.pointerEvents = 'auto';
   };
 })();

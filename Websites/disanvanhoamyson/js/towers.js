@@ -1,8 +1,8 @@
 /**
  * towers.js
- * Module quản lý hiển thị tower groups với Category Filter
+ * Module quản lý hiển thị tower groups với Category Buttons (Horizontal)
  * Auto Items Per Page + Auto Adjust Image Height + Min Rows
- * Version: 1.0 - Tower Groups Module (Standalone)
+ * Version: 2.0 - Horizontal Category Buttons
  */
 
 (function() {
@@ -451,7 +451,7 @@
   }
 
   // ============================================
-  // CREATE CATEGORY FILTER UI
+  // CREATE CATEGORY FILTER UI (HORIZONTAL BUTTONS)
   // ============================================
   
   function createCategoryFilter() {
@@ -459,20 +459,19 @@
     filterDiv.className = 'towers-category-filter';
     
     const currentLang = state.currentLanguage;
-    const allText = currentLang === 'en' || currentLang === 'en-US' ? 'All Tower Groups' : 'Tất cả nhóm tháp';
-    const labelText = currentLang === 'en' || currentLang === 'en-US' ? 'Tower Group:' : 'Nhóm tháp:';
+    const allText = currentLang === 'en' || currentLang === 'en-US' ? 'All' : 'Tất cả';
     const searchPlaceholder = currentLang === 'en' || currentLang === 'en-US' ? 'Search towers...' : 'Tìm kiếm tháp...';
     
-    let optionsHTML = `<option value="null">${allText}</option>`;
+    let categoriesHTML = `<button class="towers-category-btn ${state.selectedCategoryId === null ? 'active' : ''}" data-category-id="null">${allText}</button>`;
     
     state.categories.forEach(category => {
       const categoryName = getCategoryName(category);
-      const selected = state.selectedCategoryId === category.id ? 'selected' : '';
+      const activeClass = state.selectedCategoryId === category.id ? 'active' : '';
       
-      optionsHTML += `
-        <option value="${category.id}" ${selected}>
+      categoriesHTML += `
+        <button class="towers-category-btn ${activeClass}" data-category-id="${category.id}">
           ${categoryName}
-        </option>
+        </button>
       `;
     });
     
@@ -494,11 +493,8 @@
           </button>
         </div>
         
-        <div class="towers-category-select-wrapper">
-          <label for="towers-category-select" class="towers-category-label">${labelText}</label>
-          <select id="towers-category-select" class="towers-category-select">
-            ${optionsHTML}
-          </select>
+        <div class="towers-category-buttons-wrapper">
+          ${categoriesHTML}
         </div>
       </div>
     `;
@@ -787,27 +783,32 @@
   }
 
   // ============================================
-  // EVENT HANDLERS - CATEGORY FILTER
+  // EVENT HANDLERS - CATEGORY BUTTONS
   // ============================================
   
   function attachCategoryListeners() {
-    const categorySelect = state.container.querySelector('#towers-category-select');
-    if (categorySelect) {
-      categorySelect.addEventListener('change', handleCategoryChange);
-      
-      categorySelect.addEventListener('click', (e) => {
-        e.currentTarget.focus();
-      });
-      
-      categorySelect.addEventListener('touchstart', (e) => {
-        e.currentTarget.focus();
-      }, { passive: true });
-    }
+    const categoryButtons = state.container.querySelectorAll('.towers-category-btn');
+    
+    categoryButtons.forEach(btn => {
+      btn.addEventListener('click', handleCategoryClick);
+      btn.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        handleCategoryClick.call(btn, e);
+      }, { passive: false });
+    });
   }
 
-  function handleCategoryChange(event) {
-    const categoryId = event.target.value;
+  function handleCategoryClick(event) {
+    const categoryId = event.currentTarget.dataset.categoryId;
     const actualCategoryId = categoryId === 'null' ? null : categoryId;
+    
+    // Remove active class from all buttons
+    state.container.querySelectorAll('.towers-category-btn').forEach(btn => {
+      btn.classList.remove('active');
+    });
+    
+    // Add active class to clicked button
+    event.currentTarget.classList.add('active');
     
     log('Category selected:', actualCategoryId);
     filterByCategory(actualCategoryId);
@@ -944,11 +945,7 @@
         clearBtn.style.display = 'none';
       }
 
-      const categorySelect = state.container.querySelector('#towers-category-select');
-      if (categorySelect) {
-        categorySelect.value = 'null';
-      }
-
+      state.selectedCategoryId = null;
       applyFilters();
       
       state.container.style.display = 'block';
@@ -1095,11 +1092,7 @@
         clearBtn.style.display = 'none';
       }
 
-      const categorySelect = state.container.querySelector('#towers-category-select');
-      if (categorySelect) {
-        categorySelect.value = 'null';
-      }
-
+      state.selectedCategoryId = null;
       applyFilters();
       
       state.container.style.display = 'block';
@@ -1127,11 +1120,7 @@
             clearBtn.style.display = 'none';
           }
 
-          const categorySelect = state.container.querySelector('#towers-category-select');
-          if (categorySelect) {
-            categorySelect.value = 'null';
-          }
-
+          state.selectedCategoryId = null;
           applyFilters();
           
           state.container.style.display = 'block';

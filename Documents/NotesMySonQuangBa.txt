@@ -31,8 +31,12 @@
 	<script src="popups/contact.js"></script>
 	<script src="popups/about.js"></script>
 	<script src="js/artifacts.js"></script>
+	<script src="js/towers.js"></script>
+	<script src="js/reconstruction.js"></script>
 - Thêm css vào thẻ <head>
-	<link rel="stylesheet" href="css/artifacts.css?v=1764948102494">
+	<link rel="stylesheet" href="css/artifacts.css">
+	<link rel="stylesheet" href="css/towers.css">
+	<link rel="stylesheet" href="css/reconstruction.css">
 	
 	
 - Load đúng asset theo tên trong tour
