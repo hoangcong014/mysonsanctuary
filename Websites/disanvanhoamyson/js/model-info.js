@@ -1,7 +1,7 @@
 /**
  * model-info.js
  * Module quản lý hiển thị thông tin chi tiết model (artifact/tower/reconstruction)
- * Version: 1.1 - Enhanced Language Monitoring
+ * Version: 1.2 - Fixed ID-based lookup
  */
 
 (function() {
@@ -99,38 +99,26 @@
   
   function getCurrentModelInfo() {
     try {
-      if (!window.tour) {
-        log('Tour not available');
+      // Use TourHelpers to get media name
+      if (typeof TourHelpers === 'undefined' || !TourHelpers.getCurrentMediaName) {
+        log('TourHelpers not available');
         return null;
       }
 
-      const rootPlayer = window.tour._getRootPlayer();
-      if (!rootPlayer) {
-        log('RootPlayer not available');
+      const mediaName = TourHelpers.getCurrentMediaName();
+      if (!mediaName) {
+        log('No active media name');
         return null;
       }
 
-      const mainViewer = rootPlayer.MainViewer || rootPlayer.MainViewer_mobile;
-      if (!mainViewer) {
-        log('MainViewer not available');
-        return null;
-      }
-
-      const currentMedia = rootPlayer.getActiveMediaWithViewer(mainViewer);
-      if (!currentMedia) {
-        log('No active media');
-        return null;
-      }
-
-      const mediaName = currentMedia.get('label');
-      log('Current media label:', mediaName);
+      log('Current media name:', mediaName);
 
       // Check if it's an asset
-      if (mediaName && mediaName.startsWith('asset')) {
+      if (mediaName.startsWith('asset')) {
         const id = mediaName.replace('asset', '');
-        const asset = state.assets.find(a => a.id == id);
+        const asset = state.assets.find(a => String(a.id) === String(id));
         if (asset) {
-          log('Found asset:', asset.name);
+          log('Found asset with ID:', id, asset.name);
           return {
             type: 'asset',
             data: asset
@@ -139,11 +127,11 @@
       }
 
       // Check if it's a tower
-      if (mediaName && mediaName.startsWith('tower')) {
+      if (mediaName.startsWith('tower')) {
         const id = mediaName.replace('tower', '');
-        const tower = state.towers.find(t => t.id == id);
+        const tower = state.towers.find(t => String(t.id) === String(id));
         if (tower) {
-          log('Found tower:', tower.name);
+          log('Found tower with ID:', id, tower.name);
           return {
             type: 'tower',
             data: tower
@@ -152,11 +140,11 @@
       }
 
       // Check if it's a workspace/reconstruction
-      if (mediaName && mediaName.startsWith('workspace')) {
+      if (mediaName.startsWith('workspace')) {
         const id = mediaName.replace('workspace', '');
-        const workspace = state.workspaces.find(w => w.id == id);
+        const workspace = state.workspaces.find(w => String(w.id) === String(id));
         if (workspace) {
-          log('Found workspace:', workspace.name);
+          log('Found workspace with ID:', id, workspace.name);
           return {
             type: 'workspace',
             data: workspace
