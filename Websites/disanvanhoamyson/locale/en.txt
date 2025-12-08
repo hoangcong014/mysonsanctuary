@@ -395,3 +395,10 @@ HTMLText_45F51B16_79D1_CCC8_41DD_2E3791D39DB0.html = <div style="text-align:left
 
 ### Title
 tour.name = My Son Sanctuary
+
+## VR Menu
+
+### Text
+menuItem_FC780C8F_FBA4_D99E_41BF_32A9231F9D11.label = ---------------
+Menu_FC55C39B_FBEF_4F86_41A3_D72B8569D6CE.label = VR Mode
+menuItem_FC7869A7_FBA5_5B8E_41E8_91FEBEA08AB2.label = Exit VR

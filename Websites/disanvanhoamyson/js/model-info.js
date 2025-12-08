@@ -14,7 +14,8 @@
     assetsJson: './jsons/assets.json',
     towersJson: './jsons/towers.json',
     workspacesJson: './jsons/workspaces.json',
-    containerName: '-- THE MODEL INFO',
+    //containerName: '-- THE MODEL INFO',
+    containerName: 'Container Model Info',
     debug: true,
     autoInit: true
   };
@@ -388,7 +389,6 @@
         <div class="model-info-wrapper">
           <div class="model-info-header">
             <h2 class="model-info-title">Loading...</h2>
-            <button class="model-info-close-btn">✖</button>
           </div>
           
           <div class="model-info-content">
@@ -396,16 +396,6 @@
           </div>
         </div>
       `;
-
-      // Attach close button event
-      const closeBtn = state.container.querySelector('.model-info-close-btn');
-      if (closeBtn) {
-        closeBtn.addEventListener('click', hideModelInfo);
-        closeBtn.addEventListener('touchend', (e) => {
-          e.preventDefault();
-          hideModelInfo();
-        }, { passive: false });
-      }
 
       log('Container structure created');
     }
