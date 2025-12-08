@@ -405,6 +405,5 @@ tour.name = Di sản văn hóa Mỹ Sơn
 ## VR Menu
 
 ### Text
-menuItem_FC780C8F_FBA4_D99E_41BF_32A9231F9D11.label = ---------------
-Menu_FC55C39B_FBEF_4F86_41A3_D72B8569D6CE.label = Chế độ VR
-menuItem_FC7869A7_FBA5_5B8E_41E8_91FEBEA08AB2.label = Thoát VR
+menuItem_FC7869A7_FBA5_5B8E_41E8_91FEBEA08AB2.label = Thoát Thực tế ảo
+Menu_FC55C39B_FBEF_4F86_41A3_D72B8569D6CE.label = Trình đơn Thực tế ảo

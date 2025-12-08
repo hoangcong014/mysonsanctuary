@@ -51,112 +51,105 @@
     color: #EACB32;
     text-align: center;
     line-height: 1.4;
-    padding-right: 50px;
-}
-
-.model-info-close-btn {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(234, 203, 50, 0.3);
-    color: #fff;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-    padding: 5px 10px;
-    border-radius: 12px;
-    transition: all 0.2s ease;
-    pointer-events: auto !important;
-    touch-action: manipulation !important;
-}
-
-.model-info-close-btn:hover {
-    background-color: #EACB32;
-    color: #422118;
-    transform: translateY(-50%) scale(1.1);
-}
-
-.model-info-close-btn:active {
-    transform: translateY(-50%) scale(0.95);
 }
 
 /* ============================================ */
-/* CONTENT AREA */
+/* CONTENT AREA - LAYOUT MỚI */
 /* ============================================ */
 
 .model-info-content {
     flex: 1;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
     pointer-events: auto !important;
     box-sizing: border-box;
-    scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
 }
 
-/* Custom Scrollbar */
-.model-info-content::-webkit-scrollbar {
-    width: 12px;
-}
-
-.model-info-content::-webkit-scrollbar-track {
-    background: rgba(234, 203, 50, 0.15);
-    border-radius: 6px;
-    margin: 5px;
-}
-
-.model-info-content::-webkit-scrollbar-thumb {
-    background: rgba(234, 203, 50, 0.7);
-    border-radius: 6px;
-    border: 2px solid white;
-    transition: background 0.3s ease;
-}
-
-.model-info-content::-webkit-scrollbar-thumb:hover {
-    background: rgba(234, 203, 50, 0.9);
-}
-
-.model-info-content::-webkit-scrollbar-thumb:active {
-    background: #EACB32;
-}
-
-/* Firefox */
-.model-info-content {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(234, 203, 50, 0.7) rgba(234, 203, 50, 0.15);
-}
-
 /* ============================================ */
-/* DESCRIPTION */
+/* DESCRIPTION - Ở TRÊN, CÓ SCROLLBAR */
 /* ============================================ */
 
 .model-info-description {
+    order: 1;
+    flex: 1 1 auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 0;
+    padding: 10px 20px;
     font-size: 16px;
     line-height: 1.8;
     color: #333;
-    margin-bottom: 30px;
     text-align: justify;
     white-space: pre-wrap;
     font-family: Arial, sans-serif;
 }
 
 .model-info-no-description {
+    order: 1;
+    flex: 1 1 auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 0;
+    padding: 10px 20px;
     font-size: 16px;
     color: #999;
     font-style: italic;
     text-align: center;
-    padding: 40px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Custom Scrollbar cho Description */
+.model-info-description::-webkit-scrollbar,
+.model-info-no-description::-webkit-scrollbar {
+    width: 12px;
+}
+
+.model-info-description::-webkit-scrollbar-track,
+.model-info-no-description::-webkit-scrollbar-track {
+    background: rgba(234, 203, 50, 0.15);
+    border-radius: 6px;
+    margin: 5px;
+}
+
+.model-info-description::-webkit-scrollbar-thumb,
+.model-info-no-description::-webkit-scrollbar-thumb {
+    background: rgba(234, 203, 50, 0.7);
+    border-radius: 6px;
+    border: 2px solid white;
+    transition: background 0.3s ease;
+}
+
+.model-info-description::-webkit-scrollbar-thumb:hover,
+.model-info-no-description::-webkit-scrollbar-thumb:hover {
+    background: rgba(234, 203, 50, 0.9);
+}
+
+.model-info-description::-webkit-scrollbar-thumb:active,
+.model-info-no-description::-webkit-scrollbar-thumb:active {
+    background: #EACB32;
+}
+
+/* Firefox Scrollbar */
+.model-info-description,
+.model-info-no-description {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(234, 203, 50, 0.7) rgba(234, 203, 50, 0.15);
 }
 
 /* ============================================ */
-/* IMAGE GALLERY */
+/* IMAGE GALLERY - Ở DƯỚI */
 /* ============================================ */
 
 .model-info-gallery {
-    margin-top: 30px;
+    order: 2;
+    flex: 0 0 auto;
+    padding: 0 20px 10px 20px;
     position: relative;
+    max-height: 45%;
 }
 
 .model-info-gallery-label {
@@ -164,7 +157,8 @@
     font-weight: bold;
     color: #422118;
     margin-bottom: 15px;
-    display: block;
+    /* display: block; */
+    display: none;
 }
 
 .model-info-gallery-container {
@@ -173,7 +167,8 @@
     background: #f5f5f5;
     border-radius: 8px;
     overflow: hidden;
-    min-height: 300px;
+    min-height: 250px;
+    max-height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -182,7 +177,7 @@
 .model-info-gallery-image {
     width: 100%;
     height: auto;
-    max-height: 500px;
+    max-height: 100%;
     object-fit: contain;
     display: block;
 }
@@ -191,7 +186,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(66, 33, 24, 0.7);
+    background: rgba(66, 33, 24, 0.2);
     color: white;
     border: none;
     font-size: 24px;
@@ -205,7 +200,7 @@
 }
 
 .model-info-gallery-nav:hover {
-    background: rgba(234, 203, 50, 1);
+    background: rgba(234, 203, 50, 0.5);
     color: #422118;
     transform: translateY(-50%) scale(1.1);
 }
@@ -220,19 +215,19 @@
 }
 
 .model-info-gallery-nav.prev {
-    left: 10px;
+    left: 0px;
 }
 
 .model-info-gallery-nav.next {
-    right: 10px;
+    right: 0px;
 }
 
 .model-info-gallery-counter {
     position: absolute;
-    bottom: 15px;
+    bottom: 0px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(66, 33, 24, 0.8);
+    background: rgba(66, 33, 24, 0.2);
     color: white;
     padding: 8px 16px;
     border-radius: 20px;
@@ -242,6 +237,8 @@
 }
 
 .model-info-no-images {
+    order: 2;
+    flex: 0 0 auto;
     text-align: center;
     padding: 40px 20px;
     color: #999;
@@ -301,29 +298,28 @@
 
     .model-info-title {
         font-size: 20px;
-        padding-right: 45px;
     }
 
-    .model-info-close-btn {
-        right: 15px;
-        font-size: 18px;
-    }
-
-    .model-info-content {
+    .model-info-description,
+    .model-info-no-description {
         padding: 20px;
+        font-size: 15px;
+        line-height: 1.6;
     }
 
-    .model-info-content::-webkit-scrollbar {
+    .model-info-description::-webkit-scrollbar,
+    .model-info-no-description::-webkit-scrollbar {
         width: 8px;
     }
 
-    .model-info-content::-webkit-scrollbar-thumb {
+    .model-info-description::-webkit-scrollbar-thumb,
+    .model-info-no-description::-webkit-scrollbar-thumb {
         border: 1px solid white;
     }
 
-    .model-info-description {
-        font-size: 15px;
-        line-height: 1.6;
+    .model-info-gallery {
+        padding: 0 20px 20px 20px;
+        max-height: 50%;
     }
 
     .model-info-gallery-label {
@@ -331,11 +327,11 @@
     }
 
     .model-info-gallery-container {
-        min-height: 250px;
+        min-height: 200px;
     }
 
     .model-info-gallery-image {
-        max-height: 400px;
+        max-height: 350px;
     }
 
     .model-info-gallery-nav {
@@ -356,26 +352,22 @@
 
     .model-info-title {
         font-size: 18px;
-        padding-right: 40px;
     }
 
-    .model-info-close-btn {
-        right: 12px;
-        font-size: 16px;
-        padding: 4px 8px;
-    }
-
-    .model-info-content {
+    .model-info-description,
+    .model-info-no-description {
         padding: 15px;
+        font-size: 14px;
     }
 
-    .model-info-content::-webkit-scrollbar {
+    .model-info-description::-webkit-scrollbar,
+    .model-info-no-description::-webkit-scrollbar {
         width: 6px;
     }
 
-    .model-info-description {
-        font-size: 14px;
-        line-height: 1.6;
+    .model-info-gallery {
+        padding: 0 15px 15px 15px;
+        max-height: 55%;
     }
 
     .model-info-gallery-label {
@@ -384,11 +376,11 @@
     }
 
     .model-info-gallery-container {
-        min-height: 200px;
+        min-height: 180px;
     }
 
     .model-info-gallery-image {
-        max-height: 300px;
+        max-height: 250px;
     }
 
     .model-info-gallery-nav {
@@ -433,12 +425,7 @@
 /* ============================================ */
 
 .model-info-gallery-nav:focus {
-    outline: 2px solid #EACB32;
-    outline-offset: 2px;
-}
-
-.model-info-close-btn:focus {
-    outline: 2px solid #EACB32;
+    outline: 0px solid #EACB32;
     outline-offset: 2px;
 }
 
@@ -450,12 +437,6 @@
     .model-info-gallery-nav:hover {
         background: rgba(66, 33, 24, 0.7);
         color: white;
-        transform: translateY(-50%);
-    }
-
-    .model-info-close-btn:hover {
-        background: rgba(234, 203, 50, 0.3);
-        color: #fff;
         transform: translateY(-50%);
     }
 }
