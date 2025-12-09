@@ -18,7 +18,7 @@
 }
 @font-face {
    font-family: "Arial Greek";
-   src: url("fonts/Arial Black.woff2") format("woff2");
-   font-weight: normal;
+   src: url("fonts/Arial Narrow Bold.woff2") format("woff2");
+   font-weight: bold;
    font-style: normal;
 }

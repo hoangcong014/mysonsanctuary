@@ -82,7 +82,8 @@
       z-index: 9998;
       backdrop-filter: blur(1px);
     `;
-    document.body.appendChild(overlay);
+    const container = document.getElementById('viewer') || document.body;
+    container.appendChild(overlay);
     document.querySelectorAll("nav, header, footer, .menu, .navbar").forEach(el => el.style.pointerEvents = 'none');
 
     const popup = document.createElement("div");
@@ -222,7 +223,8 @@
       </div>
     `;
 
-    document.body.appendChild(popup);
+    const popupContainer = document.getElementById('viewer') || document.body;
+    popupContainer.appendChild(popup);
     renderContent();
   }
 
@@ -339,7 +341,8 @@
           z-index: 9998;
           backdrop-filter: blur(1px);
         `;
-      document.body.appendChild(overlay);
+      const overlayContainer = document.getElementById('viewer') || document.body;
+      overlayContainer.appendChild(overlay);
     }
     document.querySelectorAll("nav, header, footer, .menu, .navbar").forEach(el => el.style.pointerEvents = 'none');
   };

@@ -59,18 +59,19 @@
 	
 - JavaScript
 	showArtifactContainer()
-	Container Artifacts
+	tên element: "Container Artifacts"
 	
 	showReconstructionContainer()
-	Container Reconstruction
+	têm element: "Container Reconstruction"
 
 	showTowerGroupContainer()
-	Container Tower Group
+	tên element: "Container Tower Group"
 
 
 	showTowerGroupInfo()
-	-- THE TOWER GROUP INFO
+	tên element: "-- THE TOWER GROUP INFO"
 
 	showModelInfo()
-	-- THE MODEL INFO
-	Container Model Info
+	tên element: "Container Model Info"
+	
+	Lưu ý: khi đổi tên các element này trong 3DVista, phải cập nhật lại trong file .js tương ứng, thường là folder ./js/

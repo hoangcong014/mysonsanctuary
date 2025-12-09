@@ -63,7 +63,8 @@
       z-index: 9998;
       pointer-events: all;
     `;
-    document.body.appendChild(overlay);
+    const container = document.getElementById('viewer') || document.body;
+    container.appendChild(overlay);
 
     document.body.style.pointerEvents = 'none';
     overlay.style.pointerEvents = 'auto';
@@ -196,7 +197,8 @@
       </div>
     `;
 
-    document.body.appendChild(popup);
+    const popupContainer = document.getElementById('viewer') || document.body;
+    popupContainer.appendChild(popup);
 
     // Load reCAPTCHA nếu chưa có
     if (!document.getElementById('recaptcha-script')) {
