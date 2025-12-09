@@ -7,10 +7,14 @@
     if (oldOverlay) oldOverlay.remove();
 
     // LẤY NGÔN NGỮ HIỆN TẠI mỗi lần tạo popup
-    const currentLang = (typeof TourHelpers !== 'undefined' && TourHelpers.getCurrentLanguage) 
-      ? TourHelpers.getCurrentLanguage() 
+    // Thay thế '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI' bằng Site Key thực tế (Production) của bạn
+    // Đăng ký tại: https://www.google.com/recaptcha/admin
+    const RECAPTCHA_SITE_KEY = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"; // Test Key
+
+    const currentLang = (typeof TourHelpers !== 'undefined' && TourHelpers.getCurrentLanguage)
+      ? TourHelpers.getCurrentLanguage()
       : 'vi';
-    
+
     const isEnglish = currentLang === 'en' || currentLang === 'en-US';
 
     // Định nghĩa các text theo ngôn ngữ
@@ -28,7 +32,7 @@
         address: "Địa chỉ: thôn Mỹ Sơn, xã Thu Bồn, thành phố Đà Nẵng",
         phone: "Điện thoại: 0963.412.068",
         recaptchaError: "Vui lòng xác minh reCAPTCHA.",
-        successMessage: "Cảm ơn bạn đã liên hệ! (Demo - chưa gửi dữ liệu)"
+        successMessage: "Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm nhất."
       },
       en: {
         title: "CONTACT US",
@@ -43,7 +47,7 @@
         address: "Address: My Son hamlet, Thu Bon commune, Da Nang city",
         phone: "Phone: 0963.412.068",
         recaptchaError: "Please verify reCAPTCHA.",
-        successMessage: "Thank you for contacting us! (Demo - data not sent)"
+        successMessage: "Thank you for contacting us! We will respond shortly."
       }
     };
 
@@ -171,7 +175,7 @@
             <input type="text" name="phone" placeholder="${t.phonePlaceholder}">
             <textarea name="message" placeholder="${t.messagePlaceholder}" rows="5" required></textarea>
 
-            <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+            <div class="g-recaptcha" data-sitekey="${RECAPTCHA_SITE_KEY}"></div>
 
             <button type="submit">${t.submitButton}</button>
           </form>
@@ -193,7 +197,7 @@
     `;
 
     document.body.appendChild(popup);
-    
+
     // Load reCAPTCHA nếu chưa có
     if (!document.getElementById('recaptcha-script')) {
       const recaptcha = document.createElement("script");
@@ -206,7 +210,7 @@
         setTimeout(() => {
           try {
             grecaptcha.render(document.querySelector('.g-recaptcha'));
-          } catch(e) {
+          } catch (e) {
             // Ignore nếu đã render rồi
           }
         }, 100);
@@ -222,8 +226,50 @@
         return;
       }
 
-      alert(t.successMessage);
-      hideContactPopup();
+      const form = e.target;
+      const payload = {
+        fullname: form.name.value.trim(),
+        address: "N/A", // API requires address, default to N/A since form doesn't have it
+        tel: form.phone.value.trim(),
+        email: form.email.value.trim(),
+        subject: "General Inquiry",
+        content: form.message.value.trim()
+      };
+
+      console.log("Sending payload:", payload);
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn.innerText;
+      submitBtn.innerText = "Sending...";
+      submitBtn.disabled = true;
+
+      fetch('https://myson3d-preprod.api.dfm-engineering.com/api/contacts', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      })
+        .then(res => {
+          if (res.ok) {
+            return res.json().catch(() => ({})); // Handle empty json response
+          }
+          throw new Error('Network response was not ok');
+        })
+        .then(data => {
+          alert(t.successMessage);
+          hideContactPopup();
+          form.reset();
+          grecaptcha.reset();
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert(isEnglish ? "An error occurred. Please try again." : "Có lỗi xảy ra. Vui lòng thử lại.");
+        })
+        .finally(() => {
+          submitBtn.innerText = originalBtnText;
+          submitBtn.disabled = false;
+        });
     });
   }
 

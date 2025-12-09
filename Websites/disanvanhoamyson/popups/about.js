@@ -1,6 +1,76 @@
 (function () {
+  const translations = {
+    'vi-VN': {
+      title: "VỀ CHÚNG TÔI",
+      content: `
+        <p><strong>Di sản Văn hóa Thế giới Khu đền tháp Chăm Mỹ Sơn</strong> thuộc thôn Mỹ Sơn, xã Thu Bồn, thành phố Đà Nẵng có vị trí tọa độ địa lý:</p>
+        <ul>
+          <li>Vĩ độ Bắc: 15° 46′ 26.02″</li>
+          <li>Kinh độ Đông: 108° 6′ 32.71″</li>
+          <li>Quy hoạch bảo tồn và phát huy có tổng diện tích: 1.158 ha</li>
+          <li>Mỹ Sơn cách Trà Kiệu (Kinh thành Simhapura): 20 km</li>
+          <li>Cách Di sản Văn hóa Thế giới Đô thị cổ Hội An: 45 km</li>
+          <li>Cách cố đô Huế – Di sản Văn hóa Thế giới: 145 km</li>
+          <li>Cách thành phố Đà Nẵng: 68 km</li>
+        </ul>
+        <p>Thánh địa Mỹ Sơn tọa lạc trong một thung lũng kín có địa thế núi non hùng vĩ, thanh nghiêm. Nơi đây, với hơn 70 công trình kiến trúc đền tháp của nền văn minh Chămpa được kết tinh trong những di chứng vật chất trường tồn, chứa đựng những giá trị về lịch sử, văn hóa, kiến trúc, nghệ thuật được tạo lập trong một thời gian dài suốt 9 thế kỷ (từ thế kỷ IV đến thế kỷ XIII), được đánh giá ngang hàng với các di tích nổi tiếng trong khu vực Đông Nam Á như Angkor, Pagan, Borobudur.</p>
+        <p>Kazik (Kazimierz – Kwiatkowski) – người kiến trúc sư tài ba nhiều năm gắn bó với Mỹ Sơn đã nói: bên cạnh các di tích "người Chămpa cổ đã gửi tâm linh vào đất đá" và đã biết đưa thiên nhiên để làm nên một Mỹ Sơn tráng lệ – thâm nghiêm – hùng vĩ. Đây là một bảo tàng kiến trúc điêu khắc nghệ thuật vô giá của nhân loại mà sẽ còn lâu chúng ta mới hiểu hết.</p>
+        <p>Thời gian và chiến tranh đã tàn phá di tích nặng nề. Nhưng những gì còn lại ở Mỹ Sơn vẫn đóng một vai trò cực kỳ quan trọng trong di sản lịch sử văn hóa kiến trúc nghệ thuật thế giới.</p>
+        <p>Trước những giá trị nổi bật toàn cầu của một khu di sản văn hóa cần phải được bảo vệ vì lợi ích của cả nhân loại, ngày 4 tháng 12 năm 1999, tại thành phố Marrakesh – Vương quốc Ma-rốc, khu di tích Mỹ Sơn được ghi danh vào danh sách di sản văn hóa thế giới của UNESCO.</p>
+      `,
+      slides: [
+        { img: "https://disanvanhoamyson.vn/thumb/120x115x1x90/upload/news/b-1328.jpg", title: "Lịch Sử Văn Hóa", date: "📅 05 Tháng 6,2025" },
+        { img: "https://disanvanhoamyson.vn/thumb/120x115x1x90/upload/news/22222222-3481.jpg", title: "Chức Năng Nhiệm Vụ", date: "📅 06 Tháng 6,2025" },
+        { img: "https://disanvanhoamyson.vn/thumb/120x115x1x90/upload/news/c-2421.jpg", title: "Kiến Trúc Nghệ Thuật", date: "📅 10 Tháng 6,2025" },
+        { img: "https://disanvanhoamyson.vn/thumb/120x115x1x90/upload/news/d-9330.jpg", title: "Cảnh Quan Không Gian", date: "📅 15 Tháng 6,2025" },
+        { img: "https://disanvanhoamyson.vn/thumb/120x115x1x90/upload/news/ban-do-quy-hoach-tong-the-8362.jpg", title: "Bản Đồ", date: "📅 14 Tháng 6,2025" }
+      ]
+    },
+    'en': {
+      title: "ABOUT US",
+      content: `
+        <p><strong>My Son Sanctuary World Cultural Heritage</strong> is located in My Son village, Thu Bon commune, Da Nang city with geographic coordinates:</p>
+        <ul>
+          <li>Latitude North: 15° 46′ 26.02″</li>
+          <li>Longitude East: 108° 6′ 32.71″</li>
+          <li>Total conservation and planning area: 1,158 ha</li>
+          <li>My Son is 20 km from Tra Kieu (Simhapura Citadel)</li>
+          <li>45 km from Hoi An Ancient Town World Cultural Heritage</li>
+          <li>145 km from Hue Imperial City – World Cultural Heritage</li>
+          <li>68 km from Da Nang city</li>
+        </ul>
+        <p>My Son Sanctuary is situated in a closed valley with majestic and solemn mountains. Here, more than 70 architectural temple towers of the Champa civilization are crystallized in enduring material evidences, containing historical, cultural, architectural, and artistic values established over a long period of 9 centuries (from the 4th to the 13th century), evaluated on par with famous monuments in Southeast Asia such as Angkor, Pagan, Borobudur.</p>
+        <p>Kazik (Kazimierz – Kwiatkowski) – the talented architect who spent many years attached to My Son said: besides the monuments "the ancient Champa people entrusted their spirituality into the earth and stones" and knew how to use nature to create a My Son that is magnificent – solemn – majestic. This is a priceless museum of architectural and sculptural art of humanity that will take us a long time to fully understand.</p>
+        <p>Time and war have heavily devastated the monuments. But what remains at My Son still plays an extremely important role in the world's historical, cultural, architectural, and artistic heritage.</p>
+        <p>In the face of the outstanding global values of a cultural heritage site that needs to be protected for the benefit of all humanity, on December 4, 1999, in Marrakesh – Kingdom of Morocco, My Son relics were inscribed on the UNESCO World Cultural Heritage list.</p>
+      `,
+      slides: [
+        { img: "https://disanvanhoamyson.vn/thumb/120x115x1x90/upload/news/b-1328.jpg", title: "History & Culture", date: "📅 June 05, 2025" },
+        { img: "https://disanvanhoamyson.vn/thumb/120x115x1x90/upload/news/22222222-3481.jpg", title: "Functions & Duties", date: "📅 June 06, 2025" },
+        { img: "https://disanvanhoamyson.vn/thumb/120x115x1x90/upload/news/c-2421.jpg", title: "Architecture & Art", date: "📅 June 10, 2025" },
+        { img: "https://disanvanhoamyson.vn/thumb/120x115x1x90/upload/news/d-9330.jpg", title: "Landscape & Space", date: "📅 June 15, 2025" },
+        { img: "https://disanvanhoamyson.vn/thumb/120x115x1x90/upload/news/ban-do-quy-hoach-tong-the-8362.jpg", title: "Map", date: "📅 June 14, 2025" }
+      ]
+    }
+  };
+
+  let currentLang = 'vi-VN';
+  let sliderInterval;
+
+  function getLanguage() {
+    if (window.tour && typeof window.tour.getLocale === 'function') {
+      const locale = window.tour.getLocale(); // e.g., 'en-US' or 'vi-VN'
+      return locale.startsWith('vi') ? 'vi-VN' : 'en';
+    }
+    return 'vi-VN';
+  }
+
   function createAboutPopup() {
     if (document.getElementById("aboutPopup")) return;
+
+    // Detect language
+    currentLang = getLanguage();
+    const data = translations[currentLang] || translations['vi-VN'];
 
     const overlay = document.createElement("div");
     overlay.id = "aboutOverlay";
@@ -30,7 +100,7 @@
       border-radius: 0px;
       box-shadow: 0 0 20px rgba(0,0,0,0.5);
       z-index: 9999;
-      font-family: "Arial Greek", Arial, sans-serif;
+      font-family: "Arial", sans-serif;
       overflow: hidden;
     `;
 
@@ -147,77 +217,51 @@
         <button onclick="hideAboutPopup()" class="close-btn">✖</button>
       </div>
 
-      <div class="content">
-        <h2>VỀ CHÚNG TÔI</h2>
+      <div class="content" id="aboutContent">
+         <!-- Content injected via JS -->
+      </div>
+    `;
+
+    document.body.appendChild(popup);
+    renderContent();
+  }
+
+  function renderContent() {
+    const popup = document.getElementById("aboutPopup");
+    const container = document.getElementById("aboutContent");
+    if (!popup || !container) return;
+
+    const data = translations[currentLang] || translations['vi-VN'];
+
+    container.innerHTML = `
+        <h2 id="aboutTitle">${data.title}</h2>
         <hr class="title-divider">
-
-        <p><strong>Di sản Văn hóa Thế giới Khu đền tháp Chăm Mỹ Sơn</strong> thuộc thôn Mỹ Sơn, xã Thu Bồn, thành phố Đà Nẵng có vị trí tọa độ địa lý:</p>
-        <ul>
-          <li>Vĩ độ Bắc: 15° 46′ 26.02″</li>
-          <li>Kinh độ Đông: 108° 6′ 32.71″</li>
-          <li>Quy hoạch bảo tồn và phát huy có tổng diện tích: 1.158 ha</li>
-          <li>Mỹ Sơn cách Trà Kiệu (Kinh thành Simhapura): 20 km</li>
-          <li>Cách Di sản Văn hóa Thế giới Đô thị cổ Hội An: 45 km</li>
-          <li>Cách cố đô Huế – Di sản Văn hóa Thế giới: 145 km</li>
-          <li>Cách thành phố Đà Nẵng: 68 km</li>
-        </ul>
-
-        <p>Thánh địa Mỹ Sơn tọa lạc trong một thung lũng kín có địa thế núi non hùng vĩ, thanh nghiêm. Nơi đây, với hơn 70 công trình kiến trúc đền tháp của nền văn minh Chămpa được kết tinh trong những di chứng vật chất trường tồn, chứa đựng những giá trị về lịch sử, văn hóa, kiến trúc, nghệ thuật được tạo lập trong một thời gian dài suốt 9 thế kỷ (từ thế kỷ IV đến thế kỷ XIII), được đánh giá ngang hàng với các di tích nổi tiếng trong khu vực Đông Nam Á như Angkor, Pagan, Borobudur.</p>
-
-        <p>Kazik (Kazimierz – Kwiatkowski) – người kiến trúc sư tài ba nhiều năm gắn bó với Mỹ Sơn đã nói: bên cạnh các di tích "người Chămpa cổ đã gửi tâm linh vào đất đá" và đã biết đưa thiên nhiên để làm nên một Mỹ Sơn tráng lệ – thâm nghiêm – hùng vĩ. Đây là một bảo tàng kiến trúc điêu khắc nghệ thuật vô giá của nhân loại mà sẽ còn lâu chúng ta mới hiểu hết.</p>
-
-        <p>Thời gian và chiến tranh đã tàn phá di tích nặng nề. Nhưng những gì còn lại ở Mỹ Sơn vẫn đóng một vai trò cực kỳ quan trọng trong di sản lịch sử văn hóa kiến trúc nghệ thuật thế giới.</p>
-
-        <p>Trước những giá trị nổi bật toàn cầu của một khu di sản văn hóa cần phải được bảo vệ vì lợi ích của cả nhân loại, ngày 4 tháng 12 năm 1999, tại thành phố Marrakesh – Vương quốc Ma-rốc, khu di tích Mỹ Sơn được ghi danh vào danh sách di sản văn hóa thế giới của UNESCO.</p>
+        <div id="aboutText">${data.content}</div>
 
         <div class="slider-container">
           <button class="slider-button left">❮</button>
           <div class="slider-track" id="sliderTrack"></div>
           <button class="slider-button right">❯</button>
         </div>
-      </div>
     `;
 
-    document.body.appendChild(popup);
     setTimeout(() => {
-      const leftBtn = document.querySelector('.slider-button.left');
-      const rightBtn = document.querySelector('.slider-button.right');
-      const track = document.getElementById('sliderTrack');
+      initSlider(data.slides);
+    }, 100);
+  }
 
-      const slideData = [
-        {
-          img: "https://disanvanhoamyson.vn/thumb/120x115x1x90/upload/news/b-1328.jpg",
-          title: "Lịch Sử Văn Hóa",
-          date: "📅 05 Tháng 6,2025"
-        },
-        {
-          img: "https://disanvanhoamyson.vn/thumb/120x115x1x90/upload/news/22222222-3481.jpg",
-          title: "Chức Năng Nhiệm Vụ",
-          date: "📅 06 Tháng 6,2025"
-        },
-        {
-          img: "https://disanvanhoamyson.vn/thumb/120x115x1x90/upload/news/c-2421.jpg",
-          title: "Kiến Trúc Nghệ Thuật",
-          date: "📅 10 Tháng 6,2025"
-        },
-        {
-          img: "https://disanvanhoamyson.vn/thumb/120x115x1x90/upload/news/d-9330.jpg",
-          title: "Cảnh Quan Không Gian",
-          date: "📅 15 Tháng 6,2025"
-        },
-        {
-          img: "https://disanvanhoamyson.vn/thumb/120x115x1x90/upload/news/ban-do-quy-hoach-tong-the-8362.jpg",
-          title: "Bản Đồ",
-          date: "📅 14 Tháng 6,2025"
-        }
-        
-      ];
+  function initSlider(slideData) {
+    const leftBtn = document.querySelector('.slider-button.left');
+    const rightBtn = document.querySelector('.slider-button.right');
+    const track = document.getElementById('sliderTrack');
+    if (!track) return;
 
-      const loopData = [...slideData, ...slideData, ...slideData];
-      const itemWidth = 320;
-      const total = loopData.length;
+    if (sliderInterval) clearInterval(sliderInterval);
 
-      const buildSlide = ({ img, title, date }) => `
+    const loopData = [...slideData, ...slideData, ...slideData];
+    const itemWidth = 320;
+
+    const buildSlide = ({ img, title, date }) => `
         <div class="slide-item">
           <img src="${img}">
           <div class="slide-text">
@@ -227,43 +271,77 @@
         </div>
       `;
 
-      track.innerHTML = loopData.map(buildSlide).join('');
-      let index = slideData.length;
-      track.style.transition = 'none';
+    track.innerHTML = loopData.map(buildSlide).join('');
+    let index = slideData.length;
+    track.style.transition = 'none';
+    track.style.transform = `translateX(-${itemWidth * index}px)`;
+
+    function moveSlide(dir) {
+      if (track.moving) return;
+      track.moving = true;
+
+      index += dir;
+      track.style.transition = 'transform 0.5s ease-in-out';
       track.style.transform = `translateX(-${itemWidth * index}px)`;
 
-      function moveSlide(dir) {
-        if (track.moving) return;
-        track.moving = true;
+      track.addEventListener('transitionend', () => {
+        if (index <= slideData.length - 1) {
+          index += slideData.length;
+          track.style.transition = 'none';
+          track.style.transform = `translateX(-${itemWidth * index}px)`;
+        }
+        if (index >= loopData.length - slideData.length) {
+          index -= slideData.length;
+          track.style.transition = 'none';
+          track.style.transform = `translateX(-${itemWidth * index}px)`;
+        }
+        track.moving = false;
+      }, { once: true });
+    }
 
-        index += dir;
-        track.style.transition = 'transform 0.5s ease-in-out';
-        track.style.transform = `translateX(-${itemWidth * index}px)`;
+    // Clean up old listeners if any - simplest is to just clone node or re-bind
+    // Here we just re-bind as recreateAboutPopup calls initSlider
+    const newLeftBtn = leftBtn.cloneNode(true);
+    const newRightBtn = rightBtn.cloneNode(true);
+    leftBtn.parentNode.replaceChild(newLeftBtn, leftBtn);
+    rightBtn.parentNode.replaceChild(newRightBtn, rightBtn);
 
-        track.addEventListener('transitionend', () => {
-          if (index <= slideData.length - 1) {
-            index += slideData.length;
-            track.style.transition = 'none';
-            track.style.transform = `translateX(-${itemWidth * index}px)`;
-          }
-          if (index >= loopData.length - slideData.length) {
-            index -= slideData.length;
-            track.style.transition = 'none';
-            track.style.transform = `translateX(-${itemWidth * index}px)`;
-          }
-          track.moving = false;
-        }, { once: true });
-      }
+    newLeftBtn.addEventListener('click', () => moveSlide(-1));
+    newRightBtn.addEventListener('click', () => moveSlide(1));
 
-      leftBtn?.addEventListener('click', () => moveSlide(-1));
-      rightBtn?.addEventListener('click', () => moveSlide(1));
-      setInterval(() => moveSlide(1), 6000);
-    }, 100);
+    sliderInterval = setInterval(() => moveSlide(1), 6000);
   }
 
   window.showAboutPopup = function () {
-    createAboutPopup();
-    document.getElementById("aboutPopup").style.display = "block";
+    // Update language every time we show, just in case
+    currentLang = getLanguage();
+
+    // If popup doesn't exist, create it
+    if (!document.getElementById("aboutPopup")) {
+      createAboutPopup();
+    } else {
+      // If it exists, simple re-render to update text if language changed
+      renderContent();
+    }
+
+    const popup = document.getElementById("aboutPopup");
+    if (popup) popup.style.display = "block";
+
+    // Re-create overlay if missing (it's removed on hide)
+    if (!document.getElementById("aboutOverlay")) {
+      const overlay = document.createElement("div");
+      overlay.id = "aboutOverlay";
+      overlay.style = `
+          position: fixed;
+          top: 0; left: 0;
+          width: 100%; height: 100%;
+          background: rgba(0, 0, 0, 0.4);
+          z-index: 9998;
+          backdrop-filter: blur(1px);
+        `;
+      document.body.appendChild(overlay);
+    }
+    document.querySelectorAll("nav, header, footer, .menu, .navbar").forEach(el => el.style.pointerEvents = 'none');
   };
 
   window.hideAboutPopup = function () {
@@ -272,5 +350,7 @@
     if (popup) popup.style.display = "none";
     if (overlay) overlay.remove();
     document.querySelectorAll("nav, header, footer, .menu, .navbar").forEach(el => el.style.pointerEvents = 'auto');
+    if (sliderInterval) clearInterval(sliderInterval);
   };
 })();
+
