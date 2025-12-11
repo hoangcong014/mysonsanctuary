@@ -19,11 +19,9 @@
         <p>Trước những giá trị nổi bật toàn cầu của một khu di sản văn hóa cần phải được bảo vệ vì lợi ích của cả nhân loại, ngày 4 tháng 12 năm 1999, tại thành phố Marrakesh – Vương quốc Ma-rốc, khu di tích Mỹ Sơn được ghi danh vào danh sách di sản văn hóa thế giới của UNESCO.</p>
       `,
       slides: [
-        { img: "https://disanvanhoamyson.vn/thumb/120x115x1x90/upload/news/b-1328.jpg", title: "Lịch Sử Văn Hóa", date: "📅 05 Tháng 6,2025" },
-        { img: "https://disanvanhoamyson.vn/thumb/120x115x1x90/upload/news/22222222-3481.jpg", title: "Chức Năng Nhiệm Vụ", date: "📅 06 Tháng 6,2025" },
-        { img: "https://disanvanhoamyson.vn/thumb/120x115x1x90/upload/news/c-2421.jpg", title: "Kiến Trúc Nghệ Thuật", date: "📅 10 Tháng 6,2025" },
-        { img: "https://disanvanhoamyson.vn/thumb/120x115x1x90/upload/news/d-9330.jpg", title: "Cảnh Quan Không Gian", date: "📅 15 Tháng 6,2025" },
-        { img: "https://disanvanhoamyson.vn/thumb/120x115x1x90/upload/news/ban-do-quy-hoach-tong-the-8362.jpg", title: "Bản Đồ", date: "📅 14 Tháng 6,2025" }
+        { img: "https://myson3d-preprod.api.dfm-engineering.com/uploads/news/1765179220164-402644371.jpg", title: "KIẾN TRÚC SƯ KAZIMIERZ KWIATKOWSKI CHUYÊN GIA BA LAN VỚI MỸ SƠN", date: "📅 08/12/2025" },
+        { img: "https://myson3d-preprod.api.dfm-engineering.com/uploads/news/1765178460710-894489198.jpg", title: "THẢ CÁ THỂ TRĂN VÀ RÙA QUÝ HIẾM VỀ MÔI TRƯỜNG TỰ NHIÊN TẠI RỪNG MỸ SƠN", date: "📅 08/12/2025" },
+        { img: "https://myson3d-preprod.api.dfm-engineering.com/uploads/news/1764752180904-701438629.jpg", title: "ĐẠI HỘI CÔNG ĐOÀN CƠ SỞ BAN QUẢN LÝ DI SẢN VĂN HÓA THẾ GIỚI MỸ SƠN, NHIỆM KỲ 2025–2030", date: "📅 03/12/2025" }
       ]
     },
     'en': {
@@ -45,17 +43,39 @@
         <p>In the face of the outstanding global values of a cultural heritage site that needs to be protected for the benefit of all humanity, on December 4, 1999, in Marrakesh – Kingdom of Morocco, My Son relics were inscribed on the UNESCO World Cultural Heritage list.</p>
       `,
       slides: [
-        { img: "https://disanvanhoamyson.vn/thumb/120x115x1x90/upload/news/b-1328.jpg", title: "History & Culture", date: "📅 June 05, 2025" },
-        { img: "https://disanvanhoamyson.vn/thumb/120x115x1x90/upload/news/22222222-3481.jpg", title: "Functions & Duties", date: "📅 June 06, 2025" },
-        { img: "https://disanvanhoamyson.vn/thumb/120x115x1x90/upload/news/c-2421.jpg", title: "Architecture & Art", date: "📅 June 10, 2025" },
-        { img: "https://disanvanhoamyson.vn/thumb/120x115x1x90/upload/news/d-9330.jpg", title: "Landscape & Space", date: "📅 June 15, 2025" },
-        { img: "https://disanvanhoamyson.vn/thumb/120x115x1x90/upload/news/ban-do-quy-hoach-tong-the-8362.jpg", title: "Map", date: "📅 June 14, 2025" }
+        { img: "https://myson3d-preprod.api.dfm-engineering.com/uploads/news/1765179220164-402644371.jpg", title: "ARCHITECT KAZIMIERZ KWIATKOWSKI, POLISH EXPERT WITH MY SON", date: "📅 08/12/2025" },
+        { img: "https://myson3d-preprod.api.dfm-engineering.com/uploads/news/1765178460710-894489198.jpg", title: "RELEASING RARE SNAKES AND TURTLES INTO THE NATURAL ENVIRONMENT AT MY SON FOREST", date: "📅 08/12/2025" },
+        { img: "https://myson3d-preprod.api.dfm-engineering.com/uploads/news/1764752180904-701438629.jpg", title: "GRASSROOTS TRADE UNION CONGRESS OF THE MANAGEMENT BOARD OF THE MY SON WORLD CULTURAL HERITAGE SITE, TERM 2025–2030", date: "📅 03/12/2025" }
       ]
     }
   };
 
   let currentLang = 'vi-VN';
   let sliderInterval;
+  let newsData = [];
+
+  async function fetchNews() {
+    try {
+      const response = await fetch('jsons/news.json?v=' + Date.now());
+      const json = await response.json();
+      if (json.success && json.data) {
+        newsData = json.data.map(item => {
+          const d = new Date(item.createdAt);
+          const dateStr = `📅 ${d.getDate().toString().padStart(2, '0')}/${(d.getMonth() + 1).toString().padStart(2, '0')}/${d.getFullYear()}`;
+          return {
+            img: item.photo,
+            title_vi: item.title,
+            title_en: item.title_en,
+            content_vi: item.content,
+            content_en: item.content_en,
+            date: dateStr
+          };
+        });
+      }
+    } catch (error) {
+      console.error("Error fetching news:", error);
+    }
+  }
 
   function getLanguage() {
     if (window.tour && typeof window.tour.getLocale === 'function') {
@@ -186,15 +206,22 @@
           object-fit: cover;
         }
         .slide-text {
+          flex: 1;
           display: flex;
           flex-direction: column;
           justify-content: center;
           text-align: left;
+          overflow: hidden;
         }
         .slide-title {
           font-weight: bold;
-          margin-bottom: 48px;
+          margin-bottom: 5px;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
         }
+
         .slide-date {
           font-size: 14px;
           color: #422118;
@@ -235,6 +262,21 @@
 
     const data = translations[currentLang] || translations['vi-VN'];
 
+    // Use newsData if available, otherwise fallback to hardcoded slides
+    let slides = data.slides;
+    if (newsData.length > 0) {
+      slides = newsData.map(item => ({
+        img: item.img,
+        title: currentLang === 'vi-VN' ? item.title_vi : item.title_en,
+        title_vi: item.title_vi,
+        title_en: item.title_en,
+        content_vi: item.content_vi,
+        content_en: item.content_en,
+        date: item.date
+      }));
+    }
+    window.currentAboutSlides = slides;
+
     container.innerHTML = `
         <h2 id="aboutTitle">${data.title}</h2>
         <hr class="title-divider">
@@ -248,7 +290,7 @@
     `;
 
     setTimeout(() => {
-      initSlider(data.slides);
+      initSlider(slides);
     }, 100);
   }
 
@@ -263,8 +305,9 @@
     const loopData = [...slideData, ...slideData, ...slideData];
     const itemWidth = 320;
 
-    const buildSlide = ({ img, title, date }) => `
-        <div class="slide-item">
+    // Helper to escape single quotes if needed, though simple replacement is likely safe for titles here
+    const buildSlide = ({ img, title, date }, originalIndex) => `
+        <div class="slide-item" onclick="if(window.showNewsPopup && window.currentAboutSlides) window.showNewsPopup(window.currentAboutSlides[${originalIndex}])" style="cursor: pointer;">
           <img src="${img}">
           <div class="slide-text">
             <div class="slide-title">${title}</div>
@@ -273,7 +316,11 @@
         </div>
       `;
 
-    track.innerHTML = loopData.map(buildSlide).join('');
+    track.innerHTML = loopData.map((slide, i) => {
+      // Map current loop index to original slideData index
+      const originalIndex = i % slideData.length;
+      return buildSlide(slide, originalIndex);
+    }).join('');
     let index = slideData.length;
     track.style.transition = 'none';
     track.style.transform = `translateX(-${itemWidth * index}px)`;
@@ -314,9 +361,13 @@
     sliderInterval = setInterval(() => moveSlide(1), 6000);
   }
 
-  window.showAboutPopup = function () {
+  window.showAboutPopup = async function () {
     // Update language every time we show, just in case
     currentLang = getLanguage();
+
+    if (newsData.length === 0) {
+      await fetchNews();
+    }
 
     // If popup doesn't exist, create it
     if (!document.getElementById("aboutPopup")) {

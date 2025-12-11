@@ -30,6 +30,12 @@ quizTimeout_E28AB6F9_E292_97F8_41BC_81C9B4CDBC23.title = - TIMEOUT -
 quizTimeout_E28AB6F9_E292_97F8_41BC_81C9B4CDBC23.repeat = Repeat
 quizTimeout_E28AB6F9_E292_97F8_41BC_81C9B4CDBC23.score = View Score
 
+## Hotspot
+
+### Tooltip
+sprite_0AF660E1_0F23_D3E6_4187_4201C08AF354.toolTip = Tower E6
+sprite_0B04D5A8_0EE0_F266_4199_D212F89091E0.toolTip = Tower E7
+
 ## Media
 
 ### Audio
@@ -75,6 +81,7 @@ model_ED33B1FC_EE4A_3D8A_41B4_92F31D73B8B0.subtitle = MysonMuseum_KALA1_final
 model_D2DAF552_C88B_E374_41CC_CC37C79129EC.subtitle = Người đỡ trụ (24)-24_MysonSanctuaryD_Nguoidotru_final
 model_D2DEE5F0_C88B_E334_41D6_23BE3EF6BA3C.subtitle = Người đỡ trụ (25)-25_MysonSanctuaryD_Nguoidotru_final
 model_D2A2568A_C88B_E1D5_41E2_3E6BAEAA6250.subtitle = Người đỡ trụ (26)-26_MysonSanctuaryD_Nguoidotru_final
+model_B1608DB8_0560_AB5E_419D_989DB4F2119B.subtitle = Nhóm Tháp E-khuthapE_final
 model_D64AF370_D81B_43DD_41E5_6975D30D1A8F.subtitle = Phù điêu (41)-41_MysonSanctuaryD2_Phudieu_final
 model_EC7DB57C_EEBE_3A8A_41B0_300EF9FA3340.subtitle = Phù điêu Đản sinh Brahma (BVQG 2023)-2_phudieudansinhbrahma_final
 model_D6498319_D81B_434F_41BE_9A45CE302567.subtitle = Shiva múa (40)-40_MysonSanctuaryD2_ShivaMua_final
@@ -89,7 +96,8 @@ model_D648E2C7_D81B_42C4_41E4_786314B58095.subtitle = Sư tử voi (39)-39_Myson
 model_C336702D_CA54_85EB_41D4_B5FFE51D9496.subtitle = Thành phần kiến trúc (35)-35_MysonSanctuaryB_Detru_final
 model_D64B93C6_D81B_42C5_41D5_13357BCA974D.subtitle = Thành phần trang trí (55)-55_MysonSanctuaryD_Thanhphantrangtri_final
 model_D2D26414_C88B_E0FD_41E3_1F96A9F43D5F.subtitle = Thành phần đài thờ (3)-03_MysonSanctuaryD2_Thanhphandaitho_final
-model_C33672CB_CA54_8AAE_41AF_A35582D1EAAE.subtitle = Tháp E7-thape7_final
+model_A3DEF08B_0520_F932_417E_D1A8189AEDE6.subtitle = Tháp E6-thape6_final
+model_9DE04B2B_0520_EF72_418E_10216C929688.subtitle = Tháp E7-thape7_final
 model_78B5E789_7671_0502_41D1_4876D80EFFCA.subtitle = Tháp G1-tower_G
 model_ECAD0F9B_EE5F_E58E_41D3_8583BC5E82D6.subtitle = Thất tú-7_nhóm 7 linga_final
 model_D64561C3_D81B_5F3C_41D9_D028C51D2E5C.subtitle = Thần KUBERA (36)-36_MysonSanctuaryD2_ThanKUBERA_final
@@ -166,7 +174,6 @@ model_ED5097E5_EEC6_E585_41ED_8CEDA5B0AD1A.subtitle = MysonMyseum_dinhthapgocban
 
 ### Title
 model_787AA119_766F_1D03_41DD_513B1EB2AE1C.label = Linga Yoni
-model_6B769250_7B6C_A72C_41CD_312EC5D41497.label = Toàn cảnh
 model_ED10C8B2_EE46_6B9F_41E5_A1B941ACD994.label = asset100
 model_ED13D299_EE4A_7F8A_41DA_67D132521ADA.label = asset101
 model_ED18238E_EE45_DD87_41E2_1A8D04C0A89C.label = asset102
@@ -290,7 +297,9 @@ model_D6435116_D81B_5F44_41A5_F06500E00F99.label = asset219
 model_D63B3CCA_D81B_46CD_41DA_DA47FDB27F99.label = asset220
 model_D642AD19_D81B_474F_41E6_6AB7E7D39EE5.label = asset221
 model_78B5E789_7671_0502_41D1_4876D80EFFCA.label = tower100
-model_C33672CB_CA54_8AAE_41AF_A35582D1EAAE.label = tower102
+model_9DE04B2B_0520_EF72_418E_10216C929688.label = tower102
+model_A3DEF08B_0520_F932_417E_D1A8189AEDE6.label = tower137
+model_B1608DB8_0560_AB5E_419D_989DB4F2119B.label = Toàn cảnh
 
 ## Skin
 
@@ -377,7 +386,7 @@ Label_CE21A174_6C1C_B0B8_41D6_DD4EA6C2CDE8.text = Tower group
 Label_471E78F5_736F_B3B9_41B5_45795192EC99.text = Restoration
 
 ### Multiline Text
-HTMLText_33FABB70_68C0_96EB_41D2_A57D20856584.html = <div style="text-align:left; color:#000; "><DIV STYLE="line-height:155%;text-align:center;font-size:36px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-wrap;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#eacc2c;font-size:36px;font-family:'Noticia Text';"><B>G TOWER GROUP</B></SPAN></SPAN></DIV><p STYLE="margin:0; line-height:6px;"><BR STYLE="display:inline-block; letter-spacing:0px; white-space:pre-wrap;color:#000000;font-size:16px;font-family:Arial, Helvetica, sans-serif;"/></p><DIV STYLE="line-height:155%;text-align:justify;font-size:14.000000000000004px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-line;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#ffffff;font-size:14px;font-family:'Noticia Text';">G Tower at the My Son Sanctuary is one of the representative Cham architectural structures dating to around the 12th–13th centuries, belonging to the late period of Cham culture. The tower was built with fired bricks using a brick-joining technique that required no mortar. Its architecture reflects the Binh Dinh style, characterized by a square, solid form, a steeply rising roof, and more minimalistic decorative details compared to earlier periods. G Tower was once a place of worship dedicated to Shiva, featuring a linga–yoni altar in the main chamber. Although considerably damaged, the tower still retains its foundation and lower walls, serving as an important resource for the study of late Cham Pa art and religion.</SPAN></SPAN></DIV></div>
+HTMLText_33FABB70_68C0_96EB_41D2_A57D20856584.html = <div style="text-align:left; color:#000; "><DIV STYLE="line-height:155%;text-align:center;font-size:36px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-wrap;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#eacc2c;font-size:36px;font-family:'Noticia Text';"><B>E TOWER GROUP</B></SPAN></SPAN></DIV><p STYLE="margin:0; line-height:6px;"><BR STYLE="display:inline-block; letter-spacing:0px; white-space:pre-wrap;color:#000000;font-size:16px;font-family:Arial, Helvetica, sans-serif;"/></p><DIV STYLE="line-height:155%;text-align:justify;font-size:14.000000000000004px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-line;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#ffffff;font-size:14px;font-family:'Noticia Text';">    Group E towers consist of structures dating primarily from the 7th–8th to 11th–12th centuries, most of which are now ruins with varying degrees of collapse: E1 is almost completely collapsed, E4 is buried with only the northern wall remaining at a height of nearly 10m, E5 has only its foundation and base remaining, and E8 has a northern wall approximately 3m high and a section of the western wall approximately 2.5m high. \r\n\r\nCurrently, E6 and E7 are open to visitors; E6 still has its base and north/east walls approximately 5 meters high, while E7 is the most intact ruin in the group, retaining its overall shape, approximately 11 meters high, and featuring many distinct brick decorations. The remaining towers in the E group are undergoing restoration.</SPAN></SPAN></DIV></div>
 HTMLText_10DE7CA7_6947_9275_4197_C61A4C2F537D.html = <div style="text-align:left; color:#000; "><DIV STYLE="line-height:172%;text-align:justify;font-size:36px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-line;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#eacc2c;font-size:36px;font-family:'Noticia Text';"><B>LINGA -YONI</B></SPAN></SPAN></DIV><p STYLE="margin:0; line-height:6px;"><BR STYLE="display:inline-block; letter-spacing:0px; white-space:pre-wrap;color:#000000;font-size:16px;font-family:Arial, Helvetica, sans-serif;"/></p><DIV STYLE="line-height:172%;text-align:justify;font-size:16px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-line;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#ffffff;font-size:16px;font-family:'Noticia Text';">Linga - Yoni ở Mỹ Sơn là một biểu tượng tôn giáo đặc trưng của đạo Hindu (Ấn Độ giáo), thể hiện rõ nét trong văn hóa Chăm Pa cổ.</SPAN></SPAN></DIV><DIV STYLE="line-height:172%;text-align:justify;font-size:16px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-line;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#ffffff;font-size:16px;font-family:'Noticia Text';"> Linga: Là biểu tượng sinh thực khí nam, đại diện cho thần Shiva – một trong ba vị thần tối cao của Ấn Độ giáo. Thường có dạng trụ tròn, dựng đứng ở giữa Yoni.</SPAN></SPAN></DIV><DIV STYLE="line-height:172%;text-align:justify;font-size:16px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-line;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#ffffff;font-size:16px;font-family:'Noticia Text';"> Yoni: Là biểu tượng sinh thực khí nữ, thường có hình vuông hoặc chữ nhật với một rãnh thoát nước ở một góc, tượng trưng cho nữ thần Shakti, năng lượng sáng tạo của vũ trụ.</SPAN></SPAN></DIV><DIV STYLE="line-height:172%;text-align:justify;font-size:16px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-line;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#ffffff;font-size:16px;font-family:'Noticia Text';"> Chất liệu: Đa số được làm bằng sa thạch hoặc đá granit, được chế tác tỉ mỉ, có tỷ lệ cân đối, thường đặt trong thánh điện (Kalan) – nơi linh thiêng nhất của đền tháp.</SPAN></SPAN></DIV><DIV STYLE="line-height:172%;text-align:justify;font-size:16px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-line;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#ffffff;font-size:16px;font-family:'Noticia Text';"> Cấu trúc: Linga đặt chính giữa Yoni. Yoni có rãnh thoát nước gọi là Soma Sutra, dùng để dẫn dòng nước thánh sau khi được dâng lên Linga.</SPAN></SPAN></DIV></div>
 HTMLText_4A4DBCC2_5202_956B_41D0_A913F0367946.html = <div style="text-align:left; color:#000; "><DIV STYLE="line-height:130%;text-align:left;font-size:12.999999999999998px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-wrap;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#ffffff;font-size:13px;font-family:'Open Sans Light';">Click on the model to start measuring.</SPAN></SPAN></DIV><DIV STYLE="line-height:130%;text-align:left;font-size:12.999999999999998px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-wrap;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#ffffff;font-size:13px;font-family:'Open Sans Light';">Double click or Esc key to finish measure.</SPAN></SPAN></DIV><DIV STYLE="line-height:130%;text-align:left;font-size:12.999999999999998px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-wrap;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#ffffff;font-size:13px;font-family:'Open Sans Light';">Click on the Measure button to finish.</SPAN></SPAN></DIV></div>
 HTMLText_64D4F284_5F47_7369_41D6_83FE2F4DD3CE.html = <div style="text-align:left; color:#000; "><DIV STYLE="text-shadow:0px 0px 10px rgba(0,0,0,0.65);text-align:left;font-size:12.999999999999998px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-wrap;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#cccccc;font-size:13px;font-family:'Open Sans';">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu nisl facilisis, luctus ligula aliquet.</SPAN></SPAN></DIV></div>

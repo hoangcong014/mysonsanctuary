@@ -17,6 +17,8 @@
 	
 	+ Tháp E:
 		https://nextcloud.dfm-groupe.com/s/CQcB6aRYL6nJGrd?path=%2Fthape7
+	+ Nhóm tháp E:
+		https://nextcloud.dfm-groupe.com/s/H3YQDtjTTj6QxCj
 		
 	+ Compress: texture 85%; mesh 0.7
 		
@@ -26,14 +28,15 @@
 	
 	
 - Thêm các file js vào thẻ body của file index.html
-	<script src="js/tourHelpers.js"></script>		
-	<script src="js/index.js"></script>
-	<script src="popups/contact.js"></script>
-	<script src="popups/about.js"></script>
-	<script src="js/artifacts.js"></script>
-	<script src="js/towers.js"></script>
-	<script src="js/reconstruction.js"></script>
-	<script src="js/model-info.js"></script>
+	<script src="js/tourHelpers.js"></script>
+    <script src="js/index.js"></script>
+    <script src="popups/contact.js"></script>
+    <script src="popups/about.js"></script>
+    <script src="popups/news.js"></script>
+    <script src="js/artifacts.js"></script>
+    <script src="js/towers.js"></script>
+    <script src="js/reconstruction.js"></script>
+    <script src="js/model-info.js"></script>
 - Thêm css vào thẻ <head>
 	<link rel="stylesheet" href="css/artifacts.css">
 	<link rel="stylesheet" href="css/towers.css">
@@ -73,5 +76,7 @@
 
 	showModelInfo()
 	tên element: "Container Model Info"
+	
+	
 	
 	Lưu ý: khi đổi tên các element này trong 3DVista, phải cập nhật lại trong file .js tương ứng, thường là folder ./js/

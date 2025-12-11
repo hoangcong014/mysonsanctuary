@@ -8,7 +8,7 @@ function waitForMsgType(target, type) {
   });
 }
 waitForMsgType(self, "wasm_bindgen_worker_init").then(async ({ init, receiver }) => {
-  const pkg = await import("./gslib-j-u3o2DI.js");
+  const pkg = await import("./gslib-CKNphS5l.js");
   await pkg.default(init);
   postMessage({ type: "wasm_bindgen_worker_ready" });
   pkg.wbg_rayon_start_worker(receiver);
