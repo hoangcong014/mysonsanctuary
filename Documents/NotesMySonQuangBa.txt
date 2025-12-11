@@ -80,3 +80,21 @@
 	
 	
 	Lưu ý: khi đổi tên các element này trong 3DVista, phải cập nhật lại trong file .js tương ứng, thường là folder ./js/
+	
+- Hotspots:
+	+ Khi click hostpot để mở mô hình mới: 
+		1- ẩn info pannel, ẩn button group tower info, ẩn menu detail, xóa thước đo
+		2- Show button model info
+		3- Load 3D model
+		Lưu ý: theo thứ tự
+
+- 3D models:
+	+ Import
+		++ Environment: baked texture;
+		++ Add background image: background_dgm.jpg
+		++ Add floor: 333333, transparent: 0.08
+		++ Take thumbnail
+		++ World Measure
+		++ Edit rotate limit (if nescessary)
+		++ Add hotspot if overview or tower group
+		
