@@ -39,15 +39,21 @@ async function goToPano(panoName) {
 // API Config
 const API_VISIT = "https://myson3d-preprod.api.dfm-engineering.com/api/users/visit";
 const API_STATS = "https://myson3d-preprod.api.dfm-engineering.com/api/users/stats";
-const AUTH_TOKEN = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZmYxNDdhN2ZjNDZiNGIxZWNlNWY0YSIsImlhdCI6MTc2MzY4ODQ1NSwiZXhwIjoxNzY2MjgwNDU1fQ.cfnVd3G_Vn4ks-m35axBYwMAZXfaoSaNYMEdn1OPd88";
 
 async function increaseVisitCount() {
   try {
+    // Check if we already counted this session to avoid spam on refresh
+    if (sessionStorage.getItem('hasVisited')) {
+      console.log("Visit already counted for this session.");
+      return;
+    }
+
     await fetch(API_VISIT, {
       method: "POST",
       headers: { "Content-Type": "application/json" }
     });
     console.log("Visit count incremented");
+    sessionStorage.setItem('hasVisited', 'true');
   } catch (e) {
     console.error("Failed to increment visit count", e);
   }
@@ -55,32 +61,54 @@ async function increaseVisitCount() {
 
 async function getVisitStats() {
   const renderStats = (count) => {
-    // Display count in top-left corner
-    let counterEl = document.getElementById("globalVisitCounter");
-    if (!counterEl) {
-      counterEl = document.createElement("div");
-      counterEl.id = "globalVisitCounter";
-      counterEl.style.cssText = `
-              position: fixed;
-              top: 70px;
-              left: 20px;
-              z-index: 2;
-              color: #000000ff;
-              background: rgba(255, 255, 255, 1);
-              padding: 5px 10px;
-              border-radius: 0px;
-              font-family: Arial, sans-serif;
-              font-size: 14px;
-              pointer-events: none;
-              display: flex;
-              align-items: center;
-              gap: 5px;
-          `;
-      counterEl.innerHTML = `<span id="visitLabel" style="color: #000000ff; font-weight: bold; margin-left: 2px;">Số lượt truy cập:</span><span id="visitCountValue" style="color: #ff0000ff; font-weight: bold; margin-left: 2px;"></span>`;
+    // Display count in ContainerCounter
 
-      const tourViewer = document.getElementById('viewer') || document.body;
-      tourViewer.appendChild(counterEl);
-    }
+    // Helper to get ContainerCounter
+    const mountCounter = async () => {
+      let container = null;
+      let attempts = 0;
+
+      while (!container && attempts < 20) {
+        if (window.TourHelpers && typeof window.TourHelpers.getComponentByName === 'function') {
+          container = window.TourHelpers.getComponentByName("ContainerCounter");
+        }
+        if (!container) await new Promise(r => setTimeout(r, 100));
+        attempts++;
+      }
+
+      if (!container) {
+        console.warn("ContainerCounter not found in tour");
+        return;
+      }
+
+      let counterEl = document.getElementById("globalVisitCounter");
+      if (!counterEl) {
+        counterEl = document.createElement("div");
+        counterEl.id = "globalVisitCounter";
+        // inherit styles from parent or use minimal styles
+        counterEl.style.cssText = `
+                  position: absolute;
+                  bottom: 0;
+                  left: 20px;
+                  background: white;
+                  padding: 5px 10px;
+                  display: flex;
+                  align-items: center;
+                  gap: 5px;
+                  pointer-events: auto;
+                  font-family: Arial, sans-serif;
+                  font-size: 14px;
+              `;
+        // Append to container without clearing it
+        if (!container.contains(counterEl)) {
+          container.appendChild(counterEl);
+        }
+      }
+
+      counterEl.innerHTML = `<span id="visitLabel" style="color: #000000ff; font-weight: bold; margin-left: 2px;">Số lượt truy cập:</span><span id="visitCountValue" style="color: #ff0000ff; font-weight: bold; margin-left: 2px;"></span>`;
+    };
+
+    mountCounter();
 
     // Logic to update text and keep it updated
     const updateLabel = () => {
@@ -111,10 +139,8 @@ async function getVisitStats() {
 
   try {
     const res = await fetch(API_STATS, {
-      method: "GET",
-      headers: {
-        "Authorization": AUTH_TOKEN
-      }
+      method: "GET"
+      // Auth token removed as backend handles it now
     });
 
     if (!res.ok) {
