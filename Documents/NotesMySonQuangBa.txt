@@ -51,6 +51,9 @@
 	
 	Lưu ý:
 		- Khi thêm mô hình nhớ kiểm tra tên tiếng Việt và tiếng Anh phải giống nhau, nếu không khi chuyển qua tiếng Anh sẽ không load được mô hình
+- Load đúng ngôn ngữ:
+	+ https://www.360tour.vn/disanvanhoamyson/index.html?language=en
+	+ Mặc định là vi, thay vi bằng en hay ngôn ngữ khác đã thêm trong tour
 	
 
 - Colors
@@ -104,3 +107,9 @@
 		++ Add hotspot if overview or tower group
 		++ Đổi tên thành "asset + Id" hoặc "tower + Id" hoặc "workspace + Id" tương ứng (dựa vào Mã số mô tả để tìm Id trong API jsons).
 		
+
+- Chỉnh thông báo âm thanh sang tiếng Việt
+	+ Tìm từ khóa "enable-audio-prompt" trong "en-us": { ... } trong file lib/tdvplayer.js
+	+ Thay "Enable audio?" bằng "Thông báo: Website có âm thanh"
+	+ Thay yes: "OK" bằng "BẬT"
+	+ Thay no: "no" bằng "TẮT"

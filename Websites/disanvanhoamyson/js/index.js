@@ -188,15 +188,14 @@ window.addEventListener('DOMContentLoaded', async function () {
   const url = window.location.href;
   const parts = url.split("?");
 
-  let productId = null;
-  if (parts.length > 1 && parts[1].trim() !== "") {
-    productId = parts[1].trim();
+  let productName = null;
+  if (parts.length > 1 && parts[1].trim() !== "=") {
+    productName = parts[1].trim().split("=")[1];
   }
 
-  if (productId) {
-    console.log("Product ID =", productId);
-    const panoName = 'asset' + productId;
-    await goToPano(panoName);
+  if (productName) {
+    console.log("Product Name =", productName);
+    await goToPano(productName);
   } else {
     console.log("Không có product ID trên URL");
   }

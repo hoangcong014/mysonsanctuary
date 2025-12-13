@@ -33,8 +33,10 @@ quizTimeout_E28AB6F9_E292_97F8_41BC_81C9B4CDBC23.score = View Score
 ## Hotspot
 
 ### Tooltip
+sprite_14F6A252_17A6_030D_4170_64EF23B331D3.toolTip = Tower E6
 sprite_0AF660E1_0F23_D3E6_4187_4201C08AF354.toolTip = Tower E6
 sprite_0B04D5A8_0EE0_F266_4199_D212F89091E0.toolTip = Tower E7
+sprite_14F4724E_17BA_0314_4176_7279710E0BC8.toolTip = Tower E7
 
 ## Media
 
@@ -85,6 +87,7 @@ model_ED33B1FC_EE4A_3D8A_41B4_92F31D73B8B0.subtitle = MysonMuseum_KALA1_final
 model_D2DAF552_C88B_E374_41CC_CC37C79129EC.subtitle = Người đỡ trụ (24)-24_MysonSanctuaryD_Nguoidotru_final
 model_D2DEE5F0_C88B_E334_41D6_23BE3EF6BA3C.subtitle = Người đỡ trụ (25)-25_MysonSanctuaryD_Nguoidotru_final
 model_D2A2568A_C88B_E1D5_41E2_3E6BAEAA6250.subtitle = Người đỡ trụ (26)-26_MysonSanctuaryD_Nguoidotru_final
+model_E99F43E6_17EA_0114_41B4_211808B1E6D7.subtitle = Nhóm Tháp E-khuthapE_final
 model_B1608DB8_0560_AB5E_419D_989DB4F2119B.subtitle = Nhóm Tháp E-khuthapE_final
 model_D64AF370_D81B_43DD_41E5_6975D30D1A8F.subtitle = Phù điêu (41)-41_MysonSanctuaryD2_Phudieu_final
 model_EC7DB57C_EEBE_3A8A_41B0_300EF9FA3340.subtitle = Phù điêu Đản sinh Brahma (BVQG 2023)-2_phudieudansinhbrahma_final
@@ -186,6 +189,7 @@ model_ED5097E5_EEC6_E585_41ED_8CEDA5B0AD1A.subtitle = MysonMyseum_dinhthapgocban
 
 ### Title
 model_787AA119_766F_1D03_41DD_513B1EB2AE1C.label = Linga Yoni
+model_B1608DB8_0560_AB5E_419D_989DB4F2119B.label = Toàn cảnh
 model_ED10C8B2_EE46_6B9F_41E5_A1B941ACD994.label = asset100
 model_ED13D299_EE4A_7F8A_41DA_67D132521ADA.label = asset101
 model_ED18238E_EE45_DD87_41E2_1A8D04C0A89C.label = asset102
@@ -323,7 +327,7 @@ model_78B5E789_7671_0502_41D1_4876D80EFFCA.label = tower100
 model_3C5F36EE_0DD8_B8DE_4178_56228BB23609.label = tower101
 model_9DE04B2B_0520_EF72_418E_10216C929688.label = tower102
 model_A3DEF08B_0520_F932_417E_D1A8189AEDE6.label = tower137
-model_B1608DB8_0560_AB5E_419D_989DB4F2119B.label = Toàn cảnh
+model_E99F43E6_17EA_0114_41B4_211808B1E6D7.label = tower139
 
 ## Skin
 
@@ -357,7 +361,7 @@ Button_44B7780B_79F1_4CD8_41D9_9639506FC3F6.label = OPEN GOOGLE MAPS
 Button_8E0B1A69_9B1C_52C1_41D8_9F407E957BAE.label = Relief
 Button_01108E24_6C3C_7058_41D1_8086FE7DD597.label = Restoration
 Button_6226F019_EBFC_DF58_41EC_19C1F30D235D.label = Skip Intro
-Button_87707436_9B15_B643_41DC_5BBDE40B0DBB.label = Overview
+Button_87707436_9B15_B643_41DC_5BBDE40B0DBB.label = Panorama
 Button_8F274BD1_9B15_D1C1_41DC_D9FE3B86D14B.label = God statue
 Button_8FD2DE9D_9B14_D241_41E2_12246FC50B91.label = Carved stone
 
@@ -400,15 +404,16 @@ Image_94650760_B207_2B0B_41C2_8FB1EE8DDF13.url = skin/Image_94650760_B207_2B0B_4
 Image_D57857F4_F406_85D6_41E2_72B393BE0F76.url = skin/Image_D57857F4_F406_85D6_41E2_72B393BE0F76_en.png
 
 ### Label
-Label_47125907_736F_B259_41D4_6F5EBCAC0607.text = <   1   2   3   4   5   ...   >
 Label_C7B73E70_6C0C_F0B8_41CE_90D3A3A62D8A.text = <   1   2   3   4   5   ...   >
+Label_47125907_736F_B259_41D4_6F5EBCAC0607.text = <   1   2   3   4   5   ...   >
 Label_6CFCB610_6DF5_9078_41DB_10BCB977314D.text = <   1   2   3   4   5   ...   >
 Label_6CFCB5FE_6DF5_93A8_41D3_5EEF007A882F.text = Artifact / Carved stone
+Label_1518C3BC_166A_0174_417A_934519523EE2.text = NHÓM THÁP E
 Label_CE21A174_6C1C_B0B8_41D6_DD4EA6C2CDE8.text = Tower group
 Label_471E78F5_736F_B3B9_41B5_45795192EC99.text = Restoration
 
 ### Multiline Text
-HTMLText_33FABB70_68C0_96EB_41D2_A57D20856584.html = <div style="text-align:left; color:#000; "><DIV STYLE="line-height:155%;text-align:center;font-size:36px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-wrap;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#eacc2c;font-size:36px;font-family:'Noticia Text';"><B>E TOWER GROUP</B></SPAN></SPAN></DIV><p STYLE="margin:0; line-height:6px;"><BR STYLE="display:inline-block; letter-spacing:0px; white-space:pre-wrap;color:#000000;font-size:16px;font-family:Arial, Helvetica, sans-serif;"/></p><DIV STYLE="line-height:155%;text-align:justify;font-size:14.000000000000004px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-line;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#ffffff;font-size:14px;font-family:'Noticia Text';">    Group E towers consist of structures dating primarily from the 7th–8th to 11th–12th centuries, most of which are now ruins with varying degrees of collapse: E1 is almost completely collapsed, E4 is buried with only the northern wall remaining at a height of nearly 10m, E5 has only its foundation and base remaining, and E8 has a northern wall approximately 3m high and a section of the western wall approximately 2.5m high. \r\n\r\nCurrently, E6 and E7 are open to visitors; E6 still has its base and north/east walls approximately 5 meters high, while E7 is the most intact ruin in the group, retaining its overall shape, approximately 11 meters high, and featuring many distinct brick decorations. The remaining towers in the E group are undergoing restoration.</SPAN></SPAN></DIV></div>
+HTMLText_15001D1F_165A_0134_41A0_26C1D07FB535.html = <div style="text-align:left; color:#000; "><DIV STYLE="line-height:155%;text-align:center;font-size:36px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-wrap;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#eacc2c;font-size:36px;font-family:'Noticia Text';"><B>E TOWER GROUP</B></SPAN></SPAN></DIV><p STYLE="margin:0; line-height:6px;"><BR STYLE="display:inline-block; letter-spacing:0px; white-space:pre-wrap;color:#000000;font-size:16px;font-family:Arial, Helvetica, sans-serif;"/></p><DIV STYLE="line-height:155%;text-align:justify;font-size:14.000000000000004px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-line;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#ffffff;font-size:14px;font-family:'Noticia Text';">    Group E towers consist of structures dating primarily from the 7th–8th to 11th–12th centuries, most of which are now ruins with varying degrees of collapse: E1 is almost completely collapsed, E4 is buried with only the northern wall remaining at a height of nearly 10m, E5 has only its foundation and base remaining, and E8 has a northern wall approximately 3m high and a section of the western wall approximately 2.5m high. \r\n\r\nCurrently, E6 and E7 are open to visitors; E6 still has its base and north/east walls approximately 5 meters high, while E7 is the most intact ruin in the group, retaining its overall shape, approximately 11 meters high, and featuring many distinct brick decorations. The remaining towers in the E group are undergoing restoration.</SPAN></SPAN></DIV></div>
 HTMLText_10DE7CA7_6947_9275_4197_C61A4C2F537D.html = <div style="text-align:left; color:#000; "><DIV STYLE="line-height:172%;text-align:justify;font-size:36px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-line;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#eacc2c;font-size:36px;font-family:'Noticia Text';"><B>LINGA -YONI</B></SPAN></SPAN></DIV><p STYLE="margin:0; line-height:6px;"><BR STYLE="display:inline-block; letter-spacing:0px; white-space:pre-wrap;color:#000000;font-size:16px;font-family:Arial, Helvetica, sans-serif;"/></p><DIV STYLE="line-height:172%;text-align:justify;font-size:16px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-line;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#ffffff;font-size:16px;font-family:'Noticia Text';">Linga - Yoni ở Mỹ Sơn là một biểu tượng tôn giáo đặc trưng của đạo Hindu (Ấn Độ giáo), thể hiện rõ nét trong văn hóa Chăm Pa cổ.</SPAN></SPAN></DIV><DIV STYLE="line-height:172%;text-align:justify;font-size:16px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-line;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#ffffff;font-size:16px;font-family:'Noticia Text';"> Linga: Là biểu tượng sinh thực khí nam, đại diện cho thần Shiva – một trong ba vị thần tối cao của Ấn Độ giáo. Thường có dạng trụ tròn, dựng đứng ở giữa Yoni.</SPAN></SPAN></DIV><DIV STYLE="line-height:172%;text-align:justify;font-size:16px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-line;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#ffffff;font-size:16px;font-family:'Noticia Text';"> Yoni: Là biểu tượng sinh thực khí nữ, thường có hình vuông hoặc chữ nhật với một rãnh thoát nước ở một góc, tượng trưng cho nữ thần Shakti, năng lượng sáng tạo của vũ trụ.</SPAN></SPAN></DIV><DIV STYLE="line-height:172%;text-align:justify;font-size:16px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-line;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#ffffff;font-size:16px;font-family:'Noticia Text';"> Chất liệu: Đa số được làm bằng sa thạch hoặc đá granit, được chế tác tỉ mỉ, có tỷ lệ cân đối, thường đặt trong thánh điện (Kalan) – nơi linh thiêng nhất của đền tháp.</SPAN></SPAN></DIV><DIV STYLE="line-height:172%;text-align:justify;font-size:16px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-line;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#ffffff;font-size:16px;font-family:'Noticia Text';"> Cấu trúc: Linga đặt chính giữa Yoni. Yoni có rãnh thoát nước gọi là Soma Sutra, dùng để dẫn dòng nước thánh sau khi được dâng lên Linga.</SPAN></SPAN></DIV></div>
 HTMLText_4A4DBCC2_5202_956B_41D0_A913F0367946.html = <div style="text-align:left; color:#000; "><DIV STYLE="line-height:130%;text-align:left;font-size:12.999999999999998px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-wrap;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#ffffff;font-size:13px;font-family:'Open Sans Light';">Click on the model to start measuring.</SPAN></SPAN></DIV><DIV STYLE="line-height:130%;text-align:left;font-size:12.999999999999998px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-wrap;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#ffffff;font-size:13px;font-family:'Open Sans Light';">Double click or Esc key to finish measure.</SPAN></SPAN></DIV><DIV STYLE="line-height:130%;text-align:left;font-size:12.999999999999998px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-wrap;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#ffffff;font-size:13px;font-family:'Open Sans Light';">Click on the Measure button to finish.</SPAN></SPAN></DIV></div>
 HTMLText_64D4F284_5F47_7369_41D6_83FE2F4DD3CE.html = <div style="text-align:left; color:#000; "><DIV STYLE="text-shadow:0px 0px 10px rgba(0,0,0,0.65);text-align:left;font-size:12.999999999999998px;"><SPAN STYLE="display:inline-block; letter-spacing:0px; white-space:pre-wrap;color:#000000;font-family:Arial, Helvetica, sans-serif;"><SPAN STYLE="color:#cccccc;font-size:13px;font-family:'Open Sans';">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu nisl facilisis, luctus ligula aliquet.</SPAN></SPAN></DIV></div>
@@ -426,9 +431,9 @@ Button_7185F4C2_68AC_418C_41BB_B8CCB0B5A943.toolTip = Enter / Exit Full Screen
 Button_9918A970_AC55_7963_41B6_EF9756D29D68.toolTip = Toggle Music
 Button_4B2AAD6F_68E4_C094_41D8_D7F228371E8D.toolTip = Toggle detailed information
 Button_A16A649B_B260_E043_41D5_0E9ECE460639.toolTip = Virtual Reality Mode
-Button_7F3A85CA_68BF_C39F_41B3_B80923FDF971.toolTip = Overview
-Button_7039CE92_68A4_418F_41D8_6DF7CAFA463D.toolTip = Overview
+Button_7039CE92_68A4_418F_41D8_6DF7CAFA463D.toolTip = Panorama
 Button_4D01F886_5201_BDEB_41D1_AA9250062AF7.toolTip = Disable distance measurement
+Button_7F3A85CA_68BF_C39F_41B3_B80923FDF971.toolTip = Auto Rotate Panorama
 Button_96D0E9A5_AC56_D9EC_41BF_5CF1B3EA8A61.toolTip = Hide / Show access points
 
 ## Tour
